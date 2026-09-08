@@ -1,49 +1,138 @@
 # -*- coding: utf-8 -*-
 """
 Academic Chart Generator for Chemical Fibers & Textile Engineering Monograph
-遵循 /texpdf 高端咨询/投行级学术图表设计规范：
-- 去除顶部和右侧外边框 (Remove top & right spines)
-- 极简浅灰背景网格 (Minimal subtle gridlines)
+遵照学术图表设计规范与中文字形排版要求：
+- 显式注册与配置跨平台 CJK 中文字体 (Ubuntu Linux CI / macOS / Windows)
+- 自动化自检机制，杜绝方块字 (Tofu / Missing Glyphs)
+- 去除顶部和右侧外边框 (Spines)
+- 极简浅灰背景网格
 - 严谨学术配色系统 (Oxford Navy, Slate Teal, Amber Crimson, Forest Green)
-- 清晰数据标签与象限标注
-- 输出高精度 PDF 矢量图至 texlog/figures/
+- 输出高精度 PDF 矢量图至 book/figures/
 """
 
 import os
+import glob
 import sqlite3
+import warnings
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
+plt.rcParams['axes.unicode_minus'] = False
+
 OUTPUT_DIR = os.path.join("book", "figures")
 DB_PATH = "chemical_fibers.db"
 
-# 1. 字体配置 (兼容 macOS 与 Linux 容器)
-font_candidates = [
-    'Arial Unicode MS', 'Songti SC', 'PingFang SC', 'Heiti SC', 
-    'Noto Sans CJK SC', 'Source Han Sans CN', 'WenQuanYi Micro Hei', 'DejaVu Sans'
-]
-available_fonts = [f.name for f in fm.fontManager.ttflist]
-selected_font = next((f for f in font_candidates if f in available_fonts), 'sans-serif')
-
-plt.rcParams['font.sans-serif'] = [selected_font, 'DejaVu Sans', 'sans-serif']
-plt.rcParams['axes.unicode_minus'] = False
-plt.rcParams['figure.autolayout'] = True
-plt.rcParams['pdf.fonttype'] = 42
-plt.rcParams['ps.fonttype'] = 42
-
 # 咨询/学术级品牌主色系
-C_NAVY   = "#1A365D"  # 经典牛津藏青 (Oxford Navy)
-C_BLUE   = "#2B6CB0"  # 科技蓝 (Tech Blue)
-C_TEAL   = "#0D9488"  # 墨水青 (Slate Teal)
-C_CRIMSON= "#9B2C2C"  # 砖红/警示 (Crimson Amber)
-C_AMBER  = "#D69E2E"  # 琥珀橙 (Amber)
-C_GREEN  = "#22543D"  # 常青绿 (Forest Green)
-C_GRAY   = "#718096"  # 中性灰 (Slate Gray)
-C_LIGHT  = "#F7FAFC"  # 浅灰底色
-C_BORDER = "#E2E8F0"  # 边框线
+C_NAVY    = "#1A365D"  # 经典牛津藏青 (Oxford Navy)
+C_BLUE    = "#2B6CB0"  # 科技蓝 (Tech Blue)
+C_TEAL    = "#0D9488"  # 墨水青 (Slate Teal)
+C_CRIMSON = "#9B2C2C"  # 砖红/警示 (Crimson Amber)
+C_AMBER   = "#D69E2E"  # 琥珀橙 (Amber)
+C_GREEN   = "#22543D"  # 常青绿 (Forest Green)
+C_GRAY    = "#718096"  # 中性灰 (Slate Gray)
+C_LIGHT   = "#F7FAFC"  # 浅灰底色
+C_BORDER  = "#E2E8F0"  # 边框线
+
+def init_academic_fonts():
+    """
+    配置 Matplotlib 中文字体支持，确保在 Ubuntu Linux (CI)、macOS 与 Windows 各环境下
+    均能完整渲染汉字（如'连续氧化锆耐火陶瓷纤维'），杜绝字形缺失。
+    """
+    # 1. 显式添加 Linux, macOS, Windows 常见 CJK 字体物理文件
+    candidate_font_paths = [
+        # Ubuntu / Debian
+        '/usr/share/fonts/truetype/wqy/wqy-microhei.ttc',
+        '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc',
+        '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc',
+        '/usr/share/fonts/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc',
+        # macOS
+        '/System/Library/Fonts/PingFang.ttc',
+        '/System/Library/Fonts/STHeiti Light.ttc',
+        '/System/Library/Fonts/STHeiti Medium.ttc',
+        '/System/Library/Fonts/Supplemental/Songti.ttc',
+        '/System/Library/Fonts/Supplemental/Arial Unicode.ttf',
+        '/Library/Fonts/Arial Unicode.ttf',
+        # Windows
+        r'C:\Windows\Fonts\msyh.ttc',
+        r'C:\Windows\Fonts\simhei.ttf',
+    ]
+
+    # 递归扫描 Linux 系统字体目录 /usr/share/fonts 下所有可能的 CJK 字体
+    if os.path.exists('/usr/share/fonts'):
+        for fpath in glob.glob('/usr/share/fonts/**/*', recursive=True):
+            if fpath.lower().endswith(('.ttc', '.ttf', '.otf')):
+                fn = os.path.basename(fpath).lower()
+                if any(k in fn for k in ['cjk', 'noto', 'wqy', 'hei', 'song', 'microhei', 'zenhei']):
+                    candidate_font_paths.append(fpath)
+
+    for font_path in candidate_font_paths:
+        if os.path.isfile(font_path):
+            try:
+                fm.fontManager.addfont(font_path)
+            except Exception:
+                pass
+
+    # 2. 候选字体家族优先级列表
+    preferred_fonts = [
+        'Noto Sans CJK SC',
+        'Source Han Sans SC',
+        'Source Han Sans CN',
+        'WenQuanYi Micro Hei',
+        'WenQuanYi Zen Hei',
+        'PingFang SC',
+        'Hiragino Sans GB',
+        'Songti SC',
+        'Heiti SC',
+        'STHeiti',
+        'SimHei',
+        'Microsoft YaHei',
+        'Arial Unicode MS',
+    ]
+
+    available_font_names = {f.name for f in fm.fontManager.ttflist}
+    usable_fonts = [name for name in preferred_fonts if name in available_font_names]
+
+    # 将系统中其他注册了的 CJK 字体也追加至备选链
+    for f in fm.fontManager.ttflist:
+        fn_lower = f.name.lower()
+        if any(k in fn_lower for k in ['cjk', 'micro hei', 'zen hei', 'noto sans sc', 'pingfang', 'songti', 'heiti']):
+            if f.name not in usable_fonts:
+                usable_fonts.append(f.name)
+
+    # 3. 设置 Matplotlib 字体全局参数
+    plt.rcParams['font.sans-serif'] = usable_fonts + ['DejaVu Sans', 'sans-serif']
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['axes.unicode_minus'] = False
+    plt.rcParams['figure.autolayout'] = True
+    plt.rcParams['pdf.fonttype'] = 42
+    plt.rcParams['ps.fonttype'] = 42
+
+    print(f"Font initialization completed. Active CJK font candidates: {usable_fonts[:5]}")
+    verify_cjk_glyph_rendering()
+
+def verify_cjk_glyph_rendering():
+    """
+    自检验证中文渲染与关键字符（特别是 '连续氧化锆耐火陶瓷纤维 (ZrO2纤维)'）
+    杜绝方块字或字形缺失带入生成的 PDF。
+    """
+    test_str = "化学纤维研究：连续氧化锆耐火陶瓷纤维 (ZrO2纤维) 2200℃ 极限氧指数 LOI"
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        fig, ax = plt.subplots(figsize=(3, 1))
+        ax.text(0.5, 0.5, test_str)
+        fig.canvas.draw()
+        plt.close(fig)
+        glyph_warnings = [item for item in w if "Glyph" in str(item.message)]
+        if glyph_warnings:
+            err = f"FATAL: Missing CJK Glyphs detected in Matplotlib! Found {len(glyph_warnings)} warnings. First warning: {glyph_warnings[0].message}"
+            raise RuntimeError(err)
+    print("✓ CJK Glyph verification PASSED: zero missing glyphs.")
 
 def setup_ax_style(ax, grid_axis='both'):
     ax.spines['top'].set_visible(False)
@@ -148,22 +237,22 @@ def generate_chart2_ashby():
     ax.set_xscale('log')
     ax.set_yscale('log')
 
-    # 代表性纤维标注
+    # 代表性纤维标注（微调坐标避免重叠）
     key_labels = [
-        ('PBO', 5.8, 270, 'PBO (超级纤维)'),
-        ('T1000G', 6.37, 294, 'T1000G 碳纤维'),
-        ('M65J', 3.53, 640, 'M65J 超高模碳纤维'),
-        ('UHMWPE', 3.8, 120, 'UHMWPE 迪尼玛'),
-        ('PPTA', 3.2, 110, 'PPTA 对位芳纶'),
-        ('SIC-HI', 3.0, 390, 'SiC 陶瓷纤维'),
-        ('PET', 0.8, 14, '常规聚酯涤纶'),
-        ('MICRO-PA', 0.7, 4.5, '微细旦锦纶'),
-        ('LYOCELL', 0.65, 12, '天丝莱赛尔'),
-        ('SPANDEX', 0.08, 0.02, '氨纶 (高弹区)'),
+        ('PBO', 5.8, 270, 'PBO (超级纤维)', 6.2, 230),
+        ('T1000G', 6.37, 294, 'T1000G 碳纤维', 6.8, 320),
+        ('M65J', 3.53, 640, 'M65J 超高模碳纤维', 3.8, 680),
+        ('UHMWPE', 3.8, 120, 'UHMWPE 迪尼玛', 4.1, 115),
+        ('PPTA', 3.2, 110, 'PPTA 对位芳纶', 3.5, 85),
+        ('SIC-HI', 3.0, 390, 'SiC 陶瓷纤维', 3.3, 410),
+        ('PET', 0.8, 14, '常规聚酯涤纶', 0.92, 15),
+        ('MICRO-PA', 0.7, 4.5, '微细旦锦纶', 0.82, 4.0),
+        ('LYOCELL', 0.65, 12, '天丝莱赛尔', 0.72, 10.5),
+        ('SPANDEX', 0.08, 0.02, '氨纶 (高弹区)', 0.095, 0.022),
     ]
 
-    for code, x, y, lbl in key_labels:
-        ax.annotate(lbl, xy=(x, y), xytext=(x * 1.15, y * 0.9),
+    for code, x, y, lbl, tx, ty in key_labels:
+        ax.annotate(lbl, xy=(x, y), xytext=(tx, ty),
                     fontsize=8.5, fontweight='bold', color='#1A202C',
                     arrowprops=dict(arrowstyle='->', lw=0.6, color='#4A5568'))
 
@@ -210,29 +299,29 @@ def generate_chart3_comfort_flame():
     # 散点
     scatter = ax.scatter(regains, lois, c=lois, cmap='viridis', s=50, edgecolors='#2D3748', linewidths=0.5, alpha=0.85)
 
-    # 重点纤维标注
+    # 重点纤维标注（微调坐标避免重叠）
     key_points = [
-        ('FR-CV', 12.5, 30.0, 'FR-CV 阻燃粘胶 (舒适+阻燃兼备)'),
-        ('PSA', 5.5, 33.0, 'PSA 芳砜纶 (舒适耐火)'),
-        ('NOMEX', 5.0, 31.0, '间位芳纶 Nomex'),
-        ('PTFE', 0.0, 95.0, 'PTFE 氟纶 (极限难燃)'),
-        ('PBI', 15.0, 43.0, 'PBI 聚苯并咪唑 (超强吸湿耐火)'),
-        ('MODAL', 12.0, 19.0, '莫代尔 (纯舒适)'),
-        ('PET', 0.4, 21.0, '常规涤纶'),
-        ('PP', 0.05, 18.0, '常规丙纶'),
-        ('COOLMAX', 0.4, 20.5, 'Coolmax 导湿涤纶'),
-        ('ALGINATE', 16.0, 34.0, '海藻酸纤维 (难燃抑菌)'),
+        ('FR-CV', 12.5, 30.0, 'FR-CV 阻燃粘胶 (舒适+阻燃兼备)', 12.8, 31.5),
+        ('PSA', 5.5, 33.0, 'PSA 芳砜纶 (舒适耐火)', 5.8, 34.5),
+        ('NOMEX', 5.0, 31.0, '间位芳纶 Nomex', 5.3, 31.2),
+        ('PTFE', 0.0, 95.0, 'PTFE 氟纶 (极限难燃)', 0.3, 93.0),
+        ('PBI', 15.0, 43.0, 'PBI 聚苯并咪唑 (超强吸湿耐火)', 15.2, 44.5),
+        ('MODAL', 12.0, 19.0, '莫代尔 (纯舒适)', 12.2, 21.0),
+        ('PET', 0.4, 21.0, '常规涤纶', 0.8, 23.2),
+        ('PP', 0.05, 18.0, '常规丙纶', 0.3, 16.0),
+        ('COOLMAX', 0.4, 20.5, 'Coolmax 导湿涤纶', 0.9, 19.8),
+        ('ALGINATE', 16.0, 34.0, '海藻酸纤维 (难燃抑菌)', 16.2, 35.5),
     ]
 
-    for code, x, y, lbl in key_points:
-        ax.annotate(lbl, xy=(x, y), xytext=(x + 0.3, y + 1.2),
+    for code, x, y, lbl, tx, ty in key_points:
+        ax.annotate(lbl, xy=(x, y), xytext=(tx, ty),
                     fontsize=8.5, fontweight='bold', color='#1A202C',
                     arrowprops=dict(arrowstyle='->', lw=0.6, color='#4A5568'))
 
     ax.set_xlim(-0.5, 18.5)
     ax.set_ylim(14, 70)
-    ax.set_xlabel("公定回潮率 $W$ (\\%, 亲肤透湿舒适度指标)", fontsize=10.5, fontweight='bold', color=C_NAVY, labelpad=8)
-    ax.set_ylabel("极限氧指数 LOI (\\%, 燃烧难易与阻燃安全性指标)", fontsize=10.5, fontweight='bold', color=C_NAVY, labelpad=8)
+    ax.set_xlabel("公定回潮率 $W$ (%, 亲肤透湿舒适度指标)", fontsize=10.5, fontweight='bold', color=C_NAVY, labelpad=8)
+    ax.set_ylabel("极限氧指数 LOI (%, 燃烧难易与阻燃安全性指标)", fontsize=10.5, fontweight='bold', color=C_NAVY, labelpad=8)
     ax.set_title("图 1-3  化学纤维公定回潮率 (舒适度) 与极限氧指数 LOI (阻燃安全性) 四象限定位", 
                  fontsize=12, fontweight='bold', color=C_NAVY, pad=12, loc='left')
 
@@ -261,7 +350,7 @@ def generate_chart4_service_temp():
     names = [f"{r[1]} ({r[0]})" for r in rows]
     temps = [r[2] for r in rows]
 
-    fig, ax = plt.subplots(figsize=(9, 5.8), dpi=300)
+    fig, ax = plt.subplots(figsize=(9.5, 6.0), dpi=300)
     setup_ax_style(ax, grid_axis='x')
 
     y_pos = np.arange(len(names))
@@ -283,19 +372,20 @@ def generate_chart4_service_temp():
     bars = ax.barh(y_pos, temps, height=0.6, color=colors, alpha=0.9)
 
     for bar, temp in zip(bars, temps):
-        ax.text(bar.get_width() + 20, bar.get_y() + bar.get_height()/2,
-                f"{temp} ℃", va='center', ha='left',
+        ax.text(bar.get_width() + 25, bar.get_y() + bar.get_height()/2,
+                f"{temp:.1f} ℃" if isinstance(temp, float) else f"{temp} ℃",
+                va='center', ha='left',
                 fontsize=9.5, fontweight='bold', color='#1A202C')
 
-    # 添加温度应用区间竖向参考带
+    # 添加温度应用区间竖向参考带 (覆盖至 2450℃，确保 ZRO2-F 2200℃ 条形与文字完整容纳)
     ax.axvspan(0, 150, color='#E2E8F0', alpha=0.3, label='民用常规服用温度区 (<150℃)')
     ax.axvspan(150, 300, color='#BEE3F8', alpha=0.3, label='工业中高温服役区 (150-300℃)')
     ax.axvspan(300, 700, color='#FEEBC8', alpha=0.3, label='特种耐高温阻燃区 (300-700℃)')
-    ax.axvspan(700, 2200, color='#FED7D7', alpha=0.3, label='超高温陶瓷/航空热障区 (>700℃)')
+    ax.axvspan(700, 2450, color='#FED7D7', alpha=0.3, label='超高温陶瓷/航空热障区 (>700℃)')
 
     ax.set_yticks(y_pos)
     ax.set_yticklabels(names, fontsize=9.5, color='#2D3748')
-    ax.set_xlim(0, 1850)
+    ax.set_xlim(0, 2450)
     ax.set_xlabel("最高连续服役耐温极限 ($^\\circ\\mathrm{C}$)", fontsize=10.5, fontweight='bold', color=C_NAVY, labelpad=8)
     ax.set_title("图 1-4  现代化学纤维耐温极限服役温度天花板梯队排行 (Top 14)", 
                  fontsize=12, fontweight='bold', color=C_NAVY, pad=12, loc='left')
@@ -308,6 +398,8 @@ def generate_chart4_service_temp():
 
 def generate_all_charts():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    print("Initializing Academic Fonts...")
+    init_academic_fonts()
     print("Generating Academic Charts...")
     generate_chart1_distribution()
     generate_chart2_ashby()

@@ -50,6 +50,12 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Install System CJK Fonts (for Vector Chart Rendering)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk fonts-wqy-microhei fonts-wqy-zenhei
+          fc-cache -fv
+
       - name: Install Visualization Dependencies
         run: |
           python -m pip install --upgrade pip
