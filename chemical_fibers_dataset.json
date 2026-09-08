@@ -1,0 +1,5809 @@
+{
+  "database_title": "人类化学纤维全景数据库 (Chemical Fibers Comprehensive Dataset - Up to 2026)",
+  "version": "2026.1.0",
+  "date": "2026-09-08",
+  "total_fibers_count": 96,
+  "categories_hierarchy": [
+    [
+      1,
+      "REG",
+      "再生纤维与人造天然聚合物纤维",
+      "Regenerated & Natural Polymer Fibers",
+      null,
+      "以天然多糖、天然蛋白质等天然高分子为原料，经化学溶解、衍生化或塑化后纺丝再生的纤维"
+    ],
+    [
+      2,
+      "SYN_CONV",
+      "常规与差别化通用合成纤维",
+      "Conventional & Differentiated Synthetic Fibers",
+      null,
+      "以石油化工或煤化工等单体经聚合反应制备的高分子合成纤维，涵盖民用与工业通用大品种"
+    ],
+    [
+      3,
+      "BIO_DEGR",
+      "生物基与生物可降解聚合物纤维",
+      "Bio-based & Biodegradable Synthetic Fibers",
+      null,
+      "利用可再生生物质制备单体或在自然环境中可降解的环保型合成纤维"
+    ],
+    [
+      4,
+      "HIGH_PERF",
+      "高性能与特种工程有机纤维",
+      "High-Performance & Specialty Synthetic Fibers",
+      null,
+      "具备超高强高模、耐超高温、极端耐化学腐蚀等特征的战略级有机聚合物特种纤维"
+    ],
+    [
+      5,
+      "CARBON",
+      "碳纤维及先进碳基纤维",
+      "Carbon & Advanced Carbon-based Fibers",
+      null,
+      "由前驱体经高温热解碳化形成的碳纤维，以及基于低维碳材料（碳管、石墨烯）制备的连续宏观纤维"
+    ],
+    [
+      6,
+      "INORGANIC",
+      "无机非金属与金属化学纤维",
+      "Inorganic & Metallic Chemical Fibers",
+      null,
+      "以无机矿物氧化物、碳化物、氮化物或金属为原料，经熔体牵引、化学气相沉积或前驱体转化制成的纤维"
+    ],
+    [
+      7,
+      "EMERGING",
+      "前沿智能、仿生与生物工程化学纤维",
+      "Emerging Smart, Biomimetic & Bioengineered Fibers (2026)",
+      null,
+      "融合合成生物学、柔性电子、微纳结构仿生与能源捕获的前沿下一代智能纤维体系"
+    ],
+    [
+      101,
+      "REG_CELL",
+      "再生纤维素纤维",
+      "Regenerated Cellulose Fibers",
+      1,
+      "包括传统粘胶法、铜氨法、环保NMMO溶剂法(莱赛尔)、离子液体法及醋酸纤维素"
+    ],
+    [
+      102,
+      "REG_PROT",
+      "再生蛋白质纤维",
+      "Regenerated Protein Fibers",
+      1,
+      "包括酪蛋白(牛奶)、大豆蛋白复合、再生蚕丝蛋白、玉米醇溶蛋白等"
+    ],
+    [
+      103,
+      "REG_POLY",
+      "其他多糖与天然聚合物基纤维",
+      "Other Polysaccharide & Natural Polymer Fibers",
+      1,
+      "海藻酸钠纤维、甲壳素/壳聚糖纤维、玻尿酸复合纤维、天然胶乳弹性纤维等"
+    ],
+    [
+      201,
+      "SYN_PET",
+      "聚酯系纤维",
+      "Polyester Fibers",
+      2,
+      "PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯"
+    ],
+    [
+      202,
+      "SYN_PA",
+      "脂肪族与半芳香族聚酰胺纤维",
+      "Polyamide (Nylon) Fibers",
+      2,
+      "PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳香PA"
+    ],
+    [
+      203,
+      "SYN_PAN",
+      "聚丙烯腈系纤维 (腈纶)",
+      "Polyacrylonitrile (Acrylic) Fibers",
+      2,
+      "标准三元共聚腈纶、改性腈纶(变性腈纶/阻燃腈纶Modacrylic)"
+    ],
+    [
+      204,
+      "SYN_PO",
+      "聚烯烃系纤维",
+      "Polyolefin Fibers",
+      2,
+      "聚丙烯纤维(丙纶PP)、普通聚乙烯纤维(乙纶PE)、聚4-甲基-1-戊烯纤维(PMP)"
+    ],
+    [
+      205,
+      "SYN_PU",
+      "聚氨酯与弹性聚合物纤维",
+      "Polyurethane & Elastic Fibers",
+      2,
+      "聚氨酯弹性纤维(氨纶Spandex/Elastane)、热塑性聚氨酯(TPU)弹性纤维"
+    ],
+    [
+      206,
+      "SYN_PVA",
+      "聚乙烯醇系纤维 (维纶)",
+      "Polyvinyl Alcohol Fibers",
+      2,
+      "聚乙烯醇缩甲醛纤维(维纶)、水溶性PVA纤维、高强高模PVA短纤与长丝"
+    ],
+    [
+      207,
+      "SYN_HALO",
+      "含卤素通用纤维",
+      "Halogenated Vinyl Fibers",
+      2,
+      "聚氯乙烯纤维(氯纶PVC)、聚偏二氯乙烯纤维(偏氯纶PVDC)"
+    ],
+    [
+      301,
+      "BIO_ALIPH",
+      "脂肪族可降解聚酯纤维",
+      "Aliphatic Biodegradable Polyester Fibers",
+      3,
+      "聚乳酸(PLA)、聚羟基脂肪酸酯(PHA/PHBV/P34HB)、聚己内酯(PCL)、聚乙醇酸(PGA)、PBS/PBAT"
+    ],
+    [
+      302,
+      "BIO_FDCA",
+      "新型生物基呋喃与芳杂聚酯纤维",
+      "Bio-based Furanic & Co-polyesters",
+      3,
+      "聚呋喃二甲酸乙二醇酯(PEF)、生物基聚碳酸亚丙酯(PPC)"
+    ],
+    [
+      401,
+      "HP_ARAMID",
+      "芳香族聚酰胺类纤维 (芳纶家族)",
+      "Aramid Fibers",
+      4,
+      "对位芳纶(PPTA)、间位芳纶(PMIA)、杂环芳纶(芳纶III)、芳砜纶(PSA)、共聚对位芳纶(Technora)"
+    ],
+    [
+      402,
+      "HP_UHMWPE",
+      "超高分子量聚乙烯纤维",
+      "Ultra-High Molecular Weight Polyethylene Fibers",
+      4,
+      "凝胶纺丝-超倍拉伸制备的超高强模UHMWPE纤维"
+    ],
+    [
+      403,
+      "HP_HETERO",
+      "刚性链杂环与热致液晶聚合物纤维",
+      "Rigid-rod Heterocyclic & Liquid Crystalline Polymer Fibers",
+      4,
+      "PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD/M5、TLCP/聚芳酯(Vectran)"
+    ],
+    [
+      404,
+      "HP_ENG",
+      "特种工程热塑性与耐高温纤维",
+      "High-Performance Engineering Thermoplastic Fibers",
+      4,
+      "聚苯硫醚(PPS)、聚醚醚酮(PEEK)、聚醚酮酮(PEKK)、聚酰亚胺(PI)、聚酰胺酰亚胺(PAI)"
+    ],
+    [
+      405,
+      "HP_FLUORO",
+      "含氟特种聚合物纤维",
+      "Fluoropolymer Specialty Fibers",
+      4,
+      "聚四氟乙烯(PTFE)、聚偏氟乙烯(PVDF)、乙烯-四氟乙烯共聚物(ETFE)"
+    ],
+    [
+      406,
+      "HP_THERMO",
+      "耐高温交联热固性树脂纤维",
+      "Cross-linked Thermoset Specialty Fibers",
+      4,
+      "酚醛树脂纤维(Novoloid/Kynol)、三聚氰胺甲醛纤维(Basofil)"
+    ],
+    [
+      501,
+      "CF_PAN",
+      "聚丙烯腈基碳纤维",
+      "PAN-based Carbon Fibers",
+      5,
+      "高强型(T300/T700/T800/T1000/T1100/T1200)与高模型(M40/M50/M55/M60/M65J)"
+    ],
+    [
+      502,
+      "CF_PITCH",
+      "沥青基碳纤维",
+      "Pitch-based Carbon Fibers",
+      5,
+      "各向同性通用级与中间相各向异性超高模量沥青基碳纤维"
+    ],
+    [
+      503,
+      "CF_RAYON",
+      "纤维素与生物基前驱体碳纤维",
+      "Cellulose & Bio-based Precursor Carbon Fibers",
+      5,
+      "粘胶基碳纤维(宇航烧蚀防热)、木质素基前驱体碳纤维"
+    ],
+    [
+      504,
+      "CF_NANO",
+      "先进低维碳连续纤维",
+      "Advanced Low-Dimensional Carbon Fibers",
+      5,
+      "碳纳米管(CNT)宏观连续纤维、石墨烯(Graphene)宏观长丝"
+    ],
+    [
+      505,
+      "CF_ACT",
+      "活性碳纤维材料",
+      "Activated Carbon Fibers (ACF)",
+      5,
+      "具有微孔超大比表面积的活性碳纤维"
+    ],
+    [
+      601,
+      "INORG_GLASS",
+      "高性能玻璃纤维系列",
+      "Glass Fiber Series",
+      6,
+      "无碱E玻纤、高强S/S-2玻纤、耐化学C玻纤、耐碱AR玻纤、高硅氧玻纤、超纯石英纤维、低介电Low-Dk玻纤"
+    ],
+    [
+      602,
+      "INORG_MINERAL",
+      "天然玄武岩熔融矿物纤维",
+      "Basalt Continuous Fibers",
+      6,
+      "100%天然玄武岩石料高温熔融直接拉丝绿色纤维"
+    ],
+    [
+      603,
+      "INORG_CERAMIC",
+      "先进连续陶瓷纤维",
+      "Advanced Continuous Ceramic Fibers",
+      6,
+      "碳化硅纤维(SiC 1/2/3代)、氧化铝纤维(Alumina)、氮化硅纤维(Si3N4)、莫来石纤维、硼纤维(Boron)"
+    ],
+    [
+      604,
+      "INORG_METAL",
+      "微细金属与智能液态金属纤维",
+      "Metallic & Liquid Metal Fibers",
+      6,
+      "不锈钢微丝、铜/银导电微纤、镍铬耐高温发热丝、镓铟液态合金柔性拉伸纤维"
+    ],
+    [
+      701,
+      "EMG_BIOENG",
+      "合成生物工程与仿生结构蛋白纤维",
+      "Synthetic Biology & Structural Protein Fibers",
+      7,
+      "重组基因蜘蛛丝纤维(Recombinant Spider Silk)、工程化重组胶原蛋白纤维"
+    ],
+    [
+      702,
+      "EMG_SMART",
+      "智能响应与自适应调温变色纤维",
+      "Intelligent Responsive & Adaptive Fibers",
+      7,
+      "微胶囊相变储能纤维、力致变色/温致变色纤维、形状记忆聚合物纤维"
+    ],
+    [
+      703,
+      "EMG_ENERGY",
+      "纤维状储能、发电与光电探测器件",
+      "Fiber Electronics, Energy Harvesters & Sensors",
+      7,
+      "纤维锂离子电池、纤维摩擦纳米发电机(TENG)、纤维钙钛矿太阳能电池、发光纤维显示器件"
+    ],
+    [
+      704,
+      "EMG_AERO",
+      "仿生纳微多孔气凝胶超绝热纤维",
+      "Biomimetic Aerogel Ultra-Insulating Fibers",
+      7,
+      "仿北极熊毛发中空超绝热气凝胶纤维、凯夫拉气凝胶纤维"
+    ],
+    [
+      705,
+      "EMG_2D",
+      "二维晶体材料复合功能纤维",
+      "2D Crystal Materials Functional Fibers",
+      7,
+      "MXene基导电屏蔽纤维、石墨炔微纳光催化纤维"
+    ]
+  ],
+  "fibers": [
+    {
+      "id": 1,
+      "category_id": 101,
+      "code": "CV",
+      "name_zh": "粘胶纤维 (普通粘胶/人造棉/人造丝)",
+      "name_en": "Viscose Rayon",
+      "chemical_name": "再生纤维素 (黄原酸酯法)",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第1代人造纤维",
+      "discovery_year": "1891",
+      "commercial_year": "1905",
+      "pioneering_entity": "Cross, Bevan & Beadle (英国 Courtaulds)",
+      "spinning_method": "湿法纺丝 (硫酸/硫酸锌/硫酸钠酸浴凝固)",
+      "density_g_cm3": 1.51,
+      "tensile_strength_cn_dtex": 2.2,
+      "tensile_strength_gpa": 0.33,
+      "tensile_modulus_gpa": 5.5,
+      "elongation_at_break_pct": 20.0,
+      "moisture_regain_pct": 13.0,
+      "loi_pct": 19.5,
+      "melting_point_c": null,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "服装内衣、面料衬里、家用纺织品、医用纱布水刺无纺布、湿巾",
+      "representative_brands": "Danufil, Rayon, 人造丝, 人造棉",
+      "tech_status_2026": "产业规模成熟；全面升级为密闭化二硫化碳全回收环保生产线与循环再生棉浆粕源",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "Rayon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "人造棉",
+          "type": "colloquial"
+        },
+        {
+          "alias": "人造丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "粘纤",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "CV",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Man-made fibres - Generic names"
+        },
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "纺织品 化学纤维 第1部分：属名"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category_id": 101,
+      "code": "CMD",
+      "name_zh": "莫代尔纤维 (高湿模量粘胶纤维)",
+      "name_en": "Modal Fiber",
+      "chemical_name": "高湿模量改性再生纤维素",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第2代差别化纤维",
+      "discovery_year": "1951",
+      "commercial_year": "1960s",
+      "pioneering_entity": "Tachikawa (日本立川) / 兰精 (Lenzing)",
+      "spinning_method": "改性湿法纺丝 (慢凝固浴、高拉伸低酸工艺)",
+      "density_g_cm3": 1.52,
+      "tensile_strength_cn_dtex": 3.4,
+      "tensile_strength_gpa": 0.52,
+      "tensile_modulus_gpa": 7.0,
+      "elongation_at_break_pct": 14.0,
+      "moisture_regain_pct": 12.5,
+      "loi_pct": 19.5,
+      "melting_point_c": null,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "高档贴身内衣、床品家纺、高支针织面料、柔顺亲肤混纺纺织品",
+      "representative_brands": "Lenzing Modal, MicroModal",
+      "tech_status_2026": "全球高档纺织核心原料，广泛结合环保认证榉木浆与零碳碳中和认证",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "Modal",
+          "type": "trade_name"
+        },
+        {
+          "alias": "木代尔",
+          "type": "colloquial"
+        },
+        {
+          "alias": "高湿模量粘胶",
+          "type": "standard_name"
+        },
+        {
+          "alias": "CMD",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 22704-2019",
+          "title": "莫代尔纤维及混纺织物"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Modal definition"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category_id": 101,
+      "code": "CLY",
+      "name_zh": "莱赛尔纤维 (天丝/溶剂法纤维素纤维)",
+      "name_en": "Lyocell Fiber",
+      "chemical_name": "N-甲基氧化吗啉 (NMMO) 溶剂法再生纤维素",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第3代绿色人造纤维",
+      "discovery_year": "1972",
+      "commercial_year": "1992",
+      "pioneering_entity": "Akzo Nobel / Courtaulds / Lenzing",
+      "spinning_method": "干湿法纺丝 (NMMO水溶液直接物理溶解，溶剂回收率>99.5%)",
+      "density_g_cm3": 1.5,
+      "tensile_strength_cn_dtex": 4.2,
+      "tensile_strength_gpa": 0.63,
+      "tensile_modulus_gpa": 11.0,
+      "elongation_at_break_pct": 13.0,
+      "moisture_regain_pct": 11.5,
+      "loi_pct": 20.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 140.0,
+      "typical_applications": "中高端服装面料、牛仔服饰、水刺高级医美无纺布、电池隔膜纸基材料",
+      "representative_brands": "Tencel (天丝), Lenzing Lyocell, 中纺院绿纤",
+      "tech_status_2026": "绿色纤维主导品种，百万吨级产能落地，原纤化调控与非原纤化改性技术全面成熟",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "Tencel",
+          "type": "trade_name"
+        },
+        {
+          "alias": "天丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "溶剂法纤维素纤维",
+          "type": "standard_name"
+        },
+        {
+          "alias": "CLY",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 22703-2008",
+          "title": "莱赛尔本色短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Lyocell generic name"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category_id": 101,
+      "code": "CUP",
+      "name_zh": "铜氨纤维",
+      "name_en": "Cupro (Cuprammonium Rayon)",
+      "chemical_name": "氢氧化四氨合铜络合物溶剂法再生纤维素",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第1代人造纤维",
+      "discovery_year": "1897",
+      "commercial_year": "1919",
+      "pioneering_entity": "Bemberg (宾霸 / 旭化成 Asahi Kasei)",
+      "spinning_method": "漏斗式湿法喷丝成形 (铜氨络合物水溶液溶解棉短绒)",
+      "density_g_cm3": 1.52,
+      "tensile_strength_cn_dtex": 2.3,
+      "tensile_strength_gpa": 0.35,
+      "tensile_modulus_gpa": 6.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 12.0,
+      "loi_pct": 20.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 125.0,
+      "typical_applications": "奢华西服里料、高级真丝触感时装、透气面膜基布、超纯无尘擦拭布",
+      "representative_brands": "Bemberg (宾霸), Asahi Kasei Cupro",
+      "tech_status_2026": "以棉籽短绒为全降解原料的高端闭环制造，日本与中国新增高洁净化生产基地",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "Bemberg",
+          "type": "trade_name"
+        },
+        {
+          "alias": "宾霸",
+          "type": "trade_name"
+        },
+        {
+          "alias": "铜氨丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "CUP",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52022-2012",
+          "title": "铜氨短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Cupro definition"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category_id": 101,
+      "code": "CA",
+      "name_zh": "醋酯纤维 (二醋酸纤维)",
+      "name_en": "Acetate Fiber (Cellulose Diacetate)",
+      "chemical_name": "二乙酰基纤维素酯",
+      "chemical_formula": "[C6H7O2(OH)x(OOCCH3)y]n (y≈2.4)",
+      "cas_number": "9004-35-7",
+      "generation": "第1代半合成纤维",
+      "discovery_year": "1865",
+      "commercial_year": "1924",
+      "pioneering_entity": "Dreyfus 兄弟 (Celanese / 塞拉尼斯)",
+      "spinning_method": "干法纺丝 (丙酮溶剂溶解二醋酸纤维素，热空气挥发成形)",
+      "density_g_cm3": 1.32,
+      "tensile_strength_cn_dtex": 1.4,
+      "tensile_strength_gpa": 0.18,
+      "tensile_modulus_gpa": 3.8,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 6.5,
+      "loi_pct": 18.5,
+      "melting_point_c": 260.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "香烟滤嘴丝束、高端仿真丝礼服、轻奢围巾领带、女士缎面面料",
+      "representative_brands": "Celanese Acetate, Eastman Estron",
+      "tech_status_2026": "滤嘴丝束全面推广可自然堆肥降解新型增塑剂配方，纺织领域向超细高回弹长丝扩展",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "醋酸纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "二醋酸",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Celanese",
+          "type": "trade_name"
+        },
+        {
+          "alias": "CA",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "醋酯纤维定义"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Acetate"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category_id": 101,
+      "code": "CTA",
+      "name_zh": "三醋酯纤维 (三醋酸纤维)",
+      "name_en": "Triacetate Fiber (Cellulose Triacetate)",
+      "chemical_name": "三乙酰基纤维素酯",
+      "chemical_formula": "[C6H7O2(OOCCH3)3]n",
+      "cas_number": "9012-09-3",
+      "generation": "第2代改性半合成纤维",
+      "discovery_year": "1894",
+      "commercial_year": "1954",
+      "pioneering_entity": "Celanese / Courtaulds",
+      "spinning_method": "干法纺丝 (二氯甲烷/甲醇混合溶剂挥发)",
+      "density_g_cm3": 1.3,
+      "tensile_strength_cn_dtex": 1.2,
+      "tensile_strength_gpa": 0.16,
+      "tensile_modulus_gpa": 4.0,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 3.5,
+      "loi_pct": 19.0,
+      "melting_point_c": 300.0,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "免烫高档西服、百褶裙、醋酸缎光礼服、光学偏光片保护膜前驱体",
+      "representative_brands": "Soalon (日本三菱化学), Arnel",
+      "tech_status_2026": "日本三菱化学独家技术持续垄断超高端时尚女装，环保非卤溶剂纺丝新产线落成",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "三醋酸",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "三醋酯",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Soalon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "CTA",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Triacetate"
+        },
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "三醋酯纤维"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category_id": 101,
+      "code": "BC",
+      "name_zh": "细菌纤维素纤维",
+      "name_en": "Bacterial Cellulose Fiber",
+      "chemical_name": "醋酸杆菌生物合成超微纯纤维素",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第4代生物工程合成纤维",
+      "discovery_year": "1886",
+      "commercial_year": "2010s",
+      "pioneering_entity": "Brown / 现代合成生物学研究机构",
+      "spinning_method": "生物反应发酵自组装网络，或微流控湿法定向纺丝",
+      "density_g_cm3": 1.55,
+      "tensile_strength_cn_dtex": 6.5,
+      "tensile_strength_gpa": 1.0,
+      "tensile_modulus_gpa": 25.0,
+      "elongation_at_break_pct": 4.0,
+      "moisture_regain_pct": 14.0,
+      "loi_pct": 20.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 150.0,
+      "typical_applications": "人工血管移植管腔、高阶医用创面敷料、高端声学耳机振膜、柔性显示透明基底",
+      "representative_brands": "Biofibe, Nata de coco derived medical pulp",
+      "tech_status_2026": "生物反应器规模化量产达到千吨级，微流控连续拉伸制备高模长丝实现临床级体内植入认证",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "BC纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "生化纤维素",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM F3160-16",
+          "title": "Standard Guide for Characterization of Bacterial Cellulose"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category_id": 102,
+      "code": "SPF",
+      "name_zh": "大豆蛋白复合纤维",
+      "name_en": "Soybean Protein Composite Fiber",
+      "chemical_name": "大豆球蛋白/聚乙烯醇(PVA)或纤维素共混共聚物",
+      "chemical_formula": "Protein-PVA graft polymer",
+      "cas_number": null,
+      "generation": "第3代生物质人造纤维",
+      "discovery_year": "1937",
+      "commercial_year": "2000",
+      "pioneering_entity": "李官奇 (中国原创发明) / 江山大豆纤维",
+      "spinning_method": "湿法纺丝 (大豆粕提取豆粕球蛋白，与高聚物共混纺丝，乙二醛或无醛交联)",
+      "density_g_cm3": 1.29,
+      "tensile_strength_cn_dtex": 3.0,
+      "tensile_strength_gpa": 0.39,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 8.6,
+      "loi_pct": 22.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "保暖内衣、羊绒混纺大衣、亲肤养肤床品、抗菌母婴服饰",
+      "representative_brands": "Soybean Silk, 大豆羊绒",
+      "tech_status_2026": "第二代无醛生物酶交联与大豆蛋白高保留率技术全面推广，耐热水洗性大幅增强",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_PROT",
+      "category_name_zh": "再生蛋白质纤维",
+      "category_name_en": "Regenerated Protein Fibers",
+      "aliases": [
+        {
+          "alias": "大豆纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "大豆蛋白丝",
+          "type": "trade_name"
+        },
+        {
+          "alias": "SPF",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52014-2010",
+          "title": "大豆蛋白复合短纤维"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category_id": 102,
+      "code": "MCF",
+      "name_zh": "牛奶酪蛋白纤维",
+      "name_en": "Milk Casein Fiber",
+      "chemical_name": "牛奶酪蛋白接枝共聚高分子",
+      "chemical_formula": "Casein copolymer",
+      "cas_number": "9000-71-9",
+      "generation": "第2代人造纤维",
+      "discovery_year": "1935",
+      "commercial_year": "1936 / 2000s改性",
+      "pioneering_entity": "Ferretti (Lanital / 意大利) / 现代高分子共混改良",
+      "spinning_method": "湿法纺丝 (废弃牛奶提取酪蛋白后碱溶，酸浴凝固及交联)",
+      "density_g_cm3": 1.3,
+      "tensile_strength_cn_dtex": 2.5,
+      "tensile_strength_gpa": 0.32,
+      "tensile_modulus_gpa": 4.0,
+      "elongation_at_break_pct": 22.0,
+      "moisture_regain_pct": 7.0,
+      "loi_pct": 23.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 115.0,
+      "typical_applications": "高端轻奢内衣、婴儿贴身织物、抑菌床品家纺、高档混纺羊毛衫",
+      "representative_brands": "Lanital, QMilch, 普力纤维",
+      "tech_status_2026": "全生物源无重金属交联工艺普及，利用变质牛奶资源化生产实现零石化添加",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_PROT",
+      "category_name_zh": "再生蛋白质纤维",
+      "category_name_en": "Regenerated Protein Fibers",
+      "aliases": [
+        {
+          "alias": "牛奶丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "酪蛋白纤维",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Lanital",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52019-2012",
+          "title": "牛奶蛋白复合短纤维"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category_id": 102,
+      "code": "RSF",
+      "name_zh": "再生蚕丝蛋白纤维",
+      "name_en": "Regenerated Silk Fibroin Fiber",
+      "chemical_name": "天然蚕丝丝素蛋白再生聚合物",
+      "chemical_formula": "Fibroin polypeptide",
+      "cas_number": "9007-76-5",
+      "generation": "第4代生物医用高分子纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2015",
+      "pioneering_entity": "国内外高校科研机构及生物医用材料企业",
+      "spinning_method": "微流控湿纺 / 静电纺丝 (天然下脚丝脱胶溶解于六氟异丙醇或氯化钙-乙醇水溶液)",
+      "density_g_cm3": 1.35,
+      "tensile_strength_cn_dtex": 3.8,
+      "tensile_strength_gpa": 0.51,
+      "tensile_modulus_gpa": 12.0,
+      "elongation_at_break_pct": 16.0,
+      "moisture_regain_pct": 11.0,
+      "loi_pct": 24.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "人工韧带与软骨支架、神经导管、无疤痕缝合线、可穿戴生物传感水凝胶基质",
+      "representative_brands": "SilkProtec, FibroinSilk",
+      "tech_status_2026": "多项三类医疗器械获批上市，具有优异的生物相容性与受控可吸收周期",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "REG_PROT",
+      "category_name_zh": "再生蛋白质纤维",
+      "category_name_en": "Regenerated Protein Fibers",
+      "aliases": [
+        {
+          "alias": "丝素纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "再生真丝",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "YY",
+          "code": "YY/T 1680-2019",
+          "title": "组织工程医疗器械产品 丝素蛋白"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category_id": 103,
+      "code": "ALG",
+      "name_zh": "海藻酸盐纤维 (海藻纤维)",
+      "name_en": "Alginate Fiber",
+      "chemical_name": "海藻酸钙/海藻酸钠多糖高分子",
+      "chemical_formula": "[(C6H7O6)2Ca]n",
+      "cas_number": "9005-38-3",
+      "generation": "第2代特种医用人造纤维",
+      "discovery_year": "1883",
+      "commercial_year": "1940s",
+      "pioneering_entity": "Stanford / Courtaulds",
+      "spinning_method": "水相湿法纺丝 (海藻酸钠水溶液挤入氯化钙水浴进行离子置换凝胶)",
+      "density_g_cm3": 1.7,
+      "tensile_strength_cn_dtex": 2.2,
+      "tensile_strength_gpa": 0.37,
+      "tensile_modulus_gpa": 6.0,
+      "elongation_at_break_pct": 12.0,
+      "moisture_regain_pct": 16.0,
+      "loi_pct": 34.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "高吸收医用凝胶伤口敷料、阻燃防护服里衬、重金属吸附过滤棉、医美级护肤膜布",
+      "representative_brands": "Kaltostat, Sorbsan, 青岛明月海藻",
+      "tech_status_2026": "锌-铜-银复合抑菌离子海藻纤维量产；高吸水凝胶化敷料占据全球烧伤止血核心市场",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_POLY",
+      "category_name_zh": "其他多糖与天然聚合物基纤维",
+      "category_name_en": "Other Polysaccharide & Natural Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "海藻纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "海藻酸钙纤维",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "ALG",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52026-2013",
+          "title": "海藻酸短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Alginate"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category_id": 103,
+      "code": "CHT",
+      "name_zh": "甲壳素与壳聚糖纤维",
+      "name_en": "Chitin & Chitosan Fiber",
+      "chemical_name": "聚脱乙酰氨基葡萄糖",
+      "chemical_formula": "(C6H11NO4)n",
+      "cas_number": "9012-76-4",
+      "generation": "第3代生物活性纤维",
+      "discovery_year": "1859",
+      "commercial_year": "1990s",
+      "pioneering_entity": "日本富士纺 (Fujibo) / 中国海洋大学等",
+      "spinning_method": "湿法纺丝 (稀乙酸水溶液溶解，氢氧化钠凝固浴中再生中和脱酸)",
+      "density_g_cm3": 1.45,
+      "tensile_strength_cn_dtex": 1.8,
+      "tensile_strength_gpa": 0.26,
+      "tensile_modulus_gpa": 5.0,
+      "elongation_at_break_pct": 15.0,
+      "moisture_regain_pct": 14.0,
+      "loi_pct": 26.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "广谱抑菌内衣面料、慢伤口止血纱布、可降解手术缝线、环保果蔬保鲜功能布",
+      "representative_brands": "Chitopoly, 恒天海龙壳聚糖短纤",
+      "tech_status_2026": "高脱乙酰度(>95%)高强长丝技术成熟，实现与莱赛尔、纯棉的均匀混纺与原液着色",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_POLY",
+      "category_name_zh": "其他多糖与天然聚合物基纤维",
+      "category_name_en": "Other Polysaccharide & Natural Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "甲壳素纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "几丁质纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "壳聚糖丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "CHT",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52020-2012",
+          "title": "壳聚糖短纤维"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category_id": 103,
+      "code": "ED",
+      "name_zh": "二烯类弹性纤维 (天然胶乳橡胶丝)",
+      "name_en": "Elastodiene (Natural Rubber Thread)",
+      "chemical_name": "顺-1,4-聚异戊二烯 (交联橡胶)",
+      "chemical_formula": "(C5H8)n",
+      "cas_number": "9006-04-6",
+      "generation": "第1代天然聚合物弹性纤维",
+      "discovery_year": "1930s",
+      "commercial_year": "1930s",
+      "pioneering_entity": "Dunlop / 固特异",
+      "spinning_method": "挤出凝固硫化法 (天然乳胶与硫化助剂挤出酸浴凝结并高温交联)",
+      "density_g_cm3": 0.98,
+      "tensile_strength_cn_dtex": 0.35,
+      "tensile_strength_gpa": 0.035,
+      "tensile_modulus_gpa": 0.005,
+      "elongation_at_break_pct": 650.0,
+      "moisture_regain_pct": 0.8,
+      "loi_pct": 17.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 85.0,
+      "typical_applications": "松紧带、弹性织带、高拉伸蹦极绳索芯、传统弹力袜套口",
+      "representative_brands": "Lastex, Rubber Flex",
+      "tech_status_2026": "部分被氨纶替代，但凭借超大回弹力和抗反复大应变在重型弹性织物中维持专属市场",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_POLY",
+      "category_name_zh": "其他多糖与天然聚合物基纤维",
+      "category_name_en": "Other Polysaccharide & Natural Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "乳胶丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "橡筋线",
+          "type": "colloquial"
+        },
+        {
+          "alias": "橡胶纤维",
+          "type": "standard_name"
+        },
+        {
+          "alias": "ED",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Elastodiene"
+        },
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "二烯类弹性纤维"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category_id": 201,
+      "code": "PET",
+      "name_zh": "聚对苯二甲酸乙二醇酯纤维 (涤纶/聚酯纤维)",
+      "name_en": "Polyethylene Terephthalate Fiber (Polyester)",
+      "chemical_name": "聚对苯二甲酸乙二醇酯",
+      "chemical_formula": "[-CO-C6H4-CO-O-(CH2)2-O-]n",
+      "cas_number": "25038-59-9",
+      "generation": "第1代大宗合成纤维",
+      "discovery_year": "1941",
+      "commercial_year": "1953",
+      "pioneering_entity": "Whinfield & Dickson (CPA / ICI / 杜邦)",
+      "spinning_method": "直接熔融纺丝法 (连续聚合-喷丝板挤出-侧吹风冷却-高速牵伸卷绕)",
+      "density_g_cm3": 1.38,
+      "tensile_strength_cn_dtex": 5.2,
+      "tensile_strength_gpa": 0.72,
+      "tensile_modulus_gpa": 12.5,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.4,
+      "loi_pct": 21.0,
+      "melting_point_c": 260.0,
+      "max_service_temp_c": 150.0,
+      "typical_applications": "民用全领域服装、家纺床品、汽车轮胎帘子布、安全带、工业过滤网、非织造布",
+      "representative_brands": "Dacron (达克纶), Terylene (特丽纶), 恒力聚酯, 桐昆涤纶",
+      "tech_status_2026": "全球产销量最大的化学纤维（年产超6500万吨）；化学法循环再生(rPET)与原液着色成为行业标配",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "涤纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Polyester",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Dacron",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PET",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚酯纤维命名"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyester"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category_id": 201,
+      "code": "PTT",
+      "name_zh": "聚对苯二甲酸丙二醇酯纤维 (PTT纤维)",
+      "name_en": "Polytrimethylene Terephthalate Fiber",
+      "chemical_name": "聚对苯二甲酸-1,3-丙二醇酯",
+      "chemical_formula": "[-CO-C6H4-CO-O-(CH2)3-O-]n",
+      "cas_number": "26590-75-0",
+      "generation": "第2代记忆型聚酯纤维",
+      "discovery_year": "1941",
+      "commercial_year": "1998",
+      "pioneering_entity": "壳牌 (Shell Corterra) / 杜邦 (DuPont Sorona)",
+      "spinning_method": "熔体纺丝 (生物发酵法1,3-丙二醇与PTA缩聚物)",
+      "density_g_cm3": 1.34,
+      "tensile_strength_cn_dtex": 3.8,
+      "tensile_strength_gpa": 0.51,
+      "tensile_modulus_gpa": 3.5,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 0.45,
+      "loi_pct": 21.0,
+      "melting_point_c": 228.0,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "记忆弹力外套、高档抗皱西服、高端地毯、泳装瑜伽服、羽绒服防钻绒面料",
+      "representative_brands": "Sorona (杜邦索罗娜), Corterra",
+      "tech_status_2026": "生物基PDO单体自给率超90%，其Z字型分子链赋予其接近氨纶的优异弹性回复率",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PTT",
+          "type": "iso_code"
+        },
+        {
+          "alias": "Sorona",
+          "type": "trade_name"
+        },
+        {
+          "alias": "索罗娜",
+          "type": "trade_name"
+        },
+        {
+          "alias": "聚丙酯",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 30102-2013",
+          "title": "聚对苯二甲酸丙二醇酯(PTT)牵伸丝"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category_id": 201,
+      "code": "PBT",
+      "name_zh": "聚对苯二甲酸丁二醇酯纤维 (PBT纤维)",
+      "name_en": "Polybutylene Terephthalate Fiber",
+      "chemical_name": "聚对苯二甲酸-1,4-丁二醇酯",
+      "chemical_formula": "[-CO-C6H4-CO-O-(CH2)4-O-]n",
+      "cas_number": "26062-94-2",
+      "generation": "第2代高回弹聚酯纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Celanese / 帝人 (Teijin)",
+      "spinning_method": "熔融纺丝 (常规纺或高速纺丝与拉伸变形POY-DTY)",
+      "density_g_cm3": 1.31,
+      "tensile_strength_cn_dtex": 3.6,
+      "tensile_strength_gpa": 0.47,
+      "tensile_modulus_gpa": 2.8,
+      "elongation_at_break_pct": 38.0,
+      "moisture_regain_pct": 0.4,
+      "loi_pct": 21.5,
+      "melting_point_c": 225.0,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "专业抗氯泳衣、高弹牛仔布、滑雪服、假发丝、高档牙刷刷毛及化妆刷毛",
+      "representative_brands": "Wonderon, T-400 (与PET双组分复合)",
+      "tech_status_2026": "在耐氯漂弹性服饰与工业刷丝领域稳步增长，与PET复合制备机械双螺旋转曲自卷曲纤维",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PBT",
+          "type": "iso_code"
+        },
+        {
+          "alias": "聚丁酯",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 54037-2014",
+          "title": "聚对苯二甲酸丁二醇酯(PBT)低弹丝"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category_id": 201,
+      "code": "PEN",
+      "name_zh": "聚萘二甲酸乙二醇酯纤维 (PEN纤维)",
+      "name_en": "Polyethylene Naphthalate Fiber",
+      "chemical_name": "聚2,6-萘二甲酸乙二醇酯",
+      "chemical_formula": "[-CO-C10H6-CO-O-(CH2)2-O-]n",
+      "cas_number": "25853-85-4",
+      "generation": "第3代高性能聚酯纤维",
+      "discovery_year": "1948",
+      "commercial_year": "1995",
+      "pioneering_entity": "Amoco / 帝人 (Teijin Teonex)",
+      "spinning_method": "高温熔融纺丝与高倍热拉伸 (熔体温度约300℃)",
+      "density_g_cm3": 1.36,
+      "tensile_strength_cn_dtex": 8.5,
+      "tensile_strength_gpa": 1.15,
+      "tensile_modulus_gpa": 24.0,
+      "elongation_at_break_pct": 8.0,
+      "moisture_regain_pct": 0.3,
+      "loi_pct": 24.0,
+      "melting_point_c": 269.0,
+      "max_service_temp_c": 165.0,
+      "typical_applications": "超高速赛车高性能轮胎帘子线、深海系泊缆绳、高性能船帆布、高耐热绝缘层",
+      "representative_brands": "Teonex, Pentex",
+      "tech_status_2026": "作为尺寸稳定性优于涤纶、模量逼近芳纶的耐蠕变高模聚酯，在新能源车轮胎与航海帆布广泛应用",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PEN",
+          "type": "iso_code"
+        },
+        {
+          "alias": "聚萘二甲酸乙二酯",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Pentex",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D885",
+          "title": "Testing Tire Cords from Man-Made Organic-Base Fibers"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category_id": 201,
+      "code": "CDP",
+      "name_zh": "阳离子染料可染聚酯纤维 (CDP/ECDP)",
+      "name_en": "Cationic Dyeable Polyester Fiber",
+      "chemical_name": "含有间苯二甲酸二甲酯-5-磺酸钠共聚酯",
+      "chemical_formula": "PET-co-SIPM copolymer",
+      "cas_number": null,
+      "generation": "第2代改性差别化聚酯",
+      "discovery_year": "1960s",
+      "commercial_year": "1970s",
+      "pioneering_entity": "DuPont",
+      "spinning_method": "熔体纺丝 (SIPM第三单体及PEG第四单体共聚酯)",
+      "density_g_cm3": 1.37,
+      "tensile_strength_cn_dtex": 4.2,
+      "tensile_strength_gpa": 0.58,
+      "tensile_modulus_gpa": 10.0,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 0.5,
+      "loi_pct": 21.0,
+      "melting_point_c": 245.0,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "多色提花织物、双色运动时装、免高压常压沸染色面料 (ECDP)",
+      "representative_brands": "Dacron T-64, ECDP",
+      "tech_status_2026": "常压低温可染(ECDP)节能减排品种占比超70%，显著降低染整热能消耗",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "阳离子涤纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "CDP",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "ECDP",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 33615-2017",
+          "title": "阳离子染料可染聚酯低弹丝"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category_id": 202,
+      "code": "PA6",
+      "name_zh": "聚酰胺6纤维 (锦纶6/尼龙6)",
+      "name_en": "Polyamide 6 Fiber (Nylon 6)",
+      "chemical_name": "聚己内酰胺",
+      "chemical_formula": "[-NH-(CH2)5-CO-]n",
+      "cas_number": "25038-54-4",
+      "generation": "第1代大宗合成纤维",
+      "discovery_year": "1938",
+      "commercial_year": "1943",
+      "pioneering_entity": "Paul Schlack (德国 IG Farben / BASF)",
+      "spinning_method": "熔融纺丝 (己内酰胺开环聚合切片熔融挤出)",
+      "density_g_cm3": 1.14,
+      "tensile_strength_cn_dtex": 4.8,
+      "tensile_strength_gpa": 0.55,
+      "tensile_modulus_gpa": 3.8,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 4.5,
+      "loi_pct": 21.5,
+      "melting_point_c": 220.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "民用丝袜、贴身内衣、冲锋衣户外防撕裂面料、渔网、工业安全带、短纤地毯",
+      "representative_brands": "Perlon (贝纶), Enka Nylon, 中石化巴陵己内酰胺",
+      "tech_status_2026": "超细旦原液着色锦纶与己内酰胺化学闭环回收再生系统(Econyl等)大规模应用",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "锦纶6",
+          "type": "colloquial"
+        },
+        {
+          "alias": "尼龙6",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Perlon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PA6",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚酰胺纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyamide"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category_id": 202,
+      "code": "PA66",
+      "name_zh": "聚酰胺66纤维 (锦纶66/尼龙66)",
+      "name_en": "Polyamide 66 Fiber (Nylon 66)",
+      "chemical_name": "聚己二酰己二胺",
+      "chemical_formula": "[-NH-(CH2)6-NH-CO-(CH2)4-CO-]n",
+      "cas_number": "32131-17-2",
+      "generation": "第1代大宗合成纤维 (人类历史上首个纯合成纤维)",
+      "discovery_year": "1935",
+      "commercial_year": "1939",
+      "pioneering_entity": "Wallace Carothers (卡罗瑟斯 / 杜邦 DuPont)",
+      "spinning_method": "熔体纺丝 (己二胺己二酸盐聚合熔融高速纺丝)",
+      "density_g_cm3": 1.14,
+      "tensile_strength_cn_dtex": 5.5,
+      "tensile_strength_gpa": 0.63,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 4.0,
+      "loi_pct": 22.0,
+      "melting_point_c": 260.0,
+      "max_service_temp_c": 130.0,
+      "typical_applications": "高端汽车安全气囊布、高性能军用被服Cordura面料、重载工业帘子布、瑜伽高弹服",
+      "representative_brands": "Nylon 66, Cordura (考杜拉), 华峰锦纶66",
+      "tech_status_2026": "己二腈国产化技术彻底攻关放量，安全气囊与高耐磨军工装备全面自给并降本增效",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "锦纶66",
+          "type": "colloquial"
+        },
+        {
+          "alias": "尼龙66",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Nylon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Cordura",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PA66",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 16604-2017",
+          "title": "聚酰胺66工业用帘子布"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyamide"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category_id": 202,
+      "code": "PA56",
+      "name_zh": "聚酰胺56纤维 (生物基锦纶56)",
+      "name_en": "Polyamide 56 Fiber (Bio-based Nylon 56)",
+      "chemical_name": "聚己二酰戊二胺",
+      "chemical_formula": "[-NH-(CH2)5-NH-CO-(CH2)4-CO-]n",
+      "cas_number": "119864-77-6",
+      "generation": "第4代生物基合成纤维",
+      "discovery_year": "2000s",
+      "commercial_year": "2018",
+      "pioneering_entity": "凯赛生物 (Cathay Biotech) / 中国纺科院",
+      "spinning_method": "熔融纺丝 (淀粉玉米生物发酵法戊二胺与己二酸缩聚)",
+      "density_g_cm3": 1.15,
+      "tensile_strength_cn_dtex": 5.0,
+      "tensile_strength_gpa": 0.58,
+      "tensile_modulus_gpa": 4.2,
+      "elongation_at_break_pct": 32.0,
+      "moisture_regain_pct": 5.5,
+      "loi_pct": 23.0,
+      "melting_point_c": 254.0,
+      "max_service_temp_c": 125.0,
+      "typical_applications": "亲肤透气运动服、军旅阻燃战备服、高吸湿羽绒面料、绿色地毯长丝",
+      "representative_brands": "Terryl (泰纶), 凯赛生物PA56",
+      "tech_status_2026": "全球生物制造万吨级标杆，吸湿排汗指标逼近棉花，减碳幅度达50%以上",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "生物基锦纶56",
+          "type": "colloquial"
+        },
+        {
+          "alias": "泰纶",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Terryl",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PA56",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 54109-2018",
+          "title": "生物基聚酰胺56牵伸丝"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category_id": 202,
+      "code": "PA11",
+      "name_zh": "聚酰胺11纤维 (锦纶11/蓖麻油基尼龙)",
+      "name_en": "Polyamide 11 Fiber (Nylon 11)",
+      "chemical_name": "聚十一内酰胺",
+      "chemical_formula": "[-NH-(CH2)10-CO-]n",
+      "cas_number": "25035-04-5",
+      "generation": "第2代长碳链生物基合成纤维",
+      "discovery_year": "1942",
+      "commercial_year": "1955",
+      "pioneering_entity": "Arkema (阿科玛 Rilsan)",
+      "spinning_method": "熔体纺丝 (100%源自蓖麻油经裂解制备11-氨基十一酸单体)",
+      "density_g_cm3": 1.04,
+      "tensile_strength_cn_dtex": 4.0,
+      "tensile_strength_gpa": 0.42,
+      "tensile_modulus_gpa": 2.5,
+      "elongation_at_break_pct": 40.0,
+      "moisture_regain_pct": 1.2,
+      "loi_pct": 21.0,
+      "melting_point_c": 187.0,
+      "max_service_temp_c": 105.0,
+      "typical_applications": "耐高低温工业管路织物、极地运动服饰、高韧性耐盐雾海洋特种绳网、高级刷丝",
+      "representative_brands": "Rilsan (阿科玛), Rilsan Clear",
+      "tech_status_2026": "作为全生物基长碳链高性能特种尼龙，在耐低温冲击与低吸水率领域保持高价值应用",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "锦纶11",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Rilsan",
+          "type": "trade_name"
+        },
+        {
+          "alias": "蓖麻尼龙",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PA11",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyamide"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category_id": 202,
+      "code": "PA46",
+      "name_zh": "聚酰胺46纤维 (锦纶46)",
+      "name_en": "Polyamide 46 Fiber (Nylon 46)",
+      "chemical_name": "聚己二酰丁二胺",
+      "chemical_formula": "[-NH-(CH2)4-NH-CO-(CH2)4-CO-]n",
+      "cas_number": "50327-22-5",
+      "generation": "第3代耐热工程合成纤维",
+      "discovery_year": "1977",
+      "commercial_year": "1984",
+      "pioneering_entity": "DSM (帝斯曼 / Envalior Stanyl)",
+      "spinning_method": "高温熔融纺丝及固相后聚合",
+      "density_g_cm3": 1.18,
+      "tensile_strength_cn_dtex": 8.0,
+      "tensile_strength_gpa": 0.94,
+      "tensile_modulus_gpa": 7.0,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 3.8,
+      "loi_pct": 23.0,
+      "melting_point_c": 295.0,
+      "max_service_temp_c": 160.0,
+      "typical_applications": "高热负荷汽车引擎舱传动皮带帘线、耐高温工业过滤毡、航空发动机密封增强织物",
+      "representative_brands": "Stanyl (斯泰尼尔)",
+      "tech_status_2026": "耐热蠕变与耐疲劳性能卓越，在新能源电驱系统高转速耐磨增强织物中获得新拓展",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "锦纶46",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Stanyl",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PA46",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D885",
+          "title": "Testing Industrial Polyamides"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category_id": 203,
+      "code": "PAN",
+      "name_zh": "聚丙烯腈纤维 (腈纶/人造羊毛)",
+      "name_en": "Polyacrylonitrile Fiber (Acrylic Fiber)",
+      "chemical_name": "丙烯腈多元共聚物 (丙烯腈含量>85%)",
+      "chemical_formula": "[-CH2-CH(CN)-]n",
+      "cas_number": "25014-41-9",
+      "generation": "第1代大宗合成纤维",
+      "discovery_year": "1942",
+      "commercial_year": "1950",
+      "pioneering_entity": "DuPont (杜邦 Orlon / 奥纶)",
+      "spinning_method": "湿法或干法纺丝 (DMF、DMAc或NaSCN水溶液溶解喷丝)",
+      "density_g_cm3": 1.18,
+      "tensile_strength_cn_dtex": 3.2,
+      "tensile_strength_gpa": 0.38,
+      "tensile_modulus_gpa": 6.5,
+      "elongation_at_break_pct": 30.0,
+      "moisture_regain_pct": 2.0,
+      "loi_pct": 18.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 125.0,
+      "typical_applications": "羊毛衫毛线、毛毯人造毛皮、户外遮阳篷帆布、高耐日晒篷布、碳纤维原丝前驱体",
+      "representative_brands": "Orlon (奥纶), Dralon (德绒), 抚顺腈纶, 吉林化纤腈纶",
+      "tech_status_2026": "民用以超细旦高蓬松发热保暖(德绒品类)为主，高端转向大丝束高质量碳纤维原丝配套",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PAN",
+      "category_name_zh": "聚丙烯腈系纤维 (腈纶)",
+      "category_name_en": "Polyacrylonitrile (Acrylic) Fibers",
+      "aliases": [
+        {
+          "alias": "腈纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "人造羊毛",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Orlon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Dralon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PAN",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚丙烯腈纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Acrylic"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category_id": 203,
+      "code": "MAC",
+      "name_zh": "改性聚丙烯腈纤维 (变性腈纶/阻燃腈纶)",
+      "name_en": "Modacrylic Fiber",
+      "chemical_name": "丙烯腈与偏二氯乙烯或氯乙烯共聚物 (丙烯腈含量35%~85%)",
+      "chemical_formula": "[-CH2-CH(CN)-]x-[-CH2-CCl2-]y",
+      "cas_number": "26877-39-4",
+      "generation": "第2代本质阻燃差别化合成纤维",
+      "discovery_year": "1949",
+      "commercial_year": "1950s",
+      "pioneering_entity": "Union Carbide (Dynel) / 钟渊化学 (Kaneka)",
+      "spinning_method": "湿法或干法纺丝 (丙酮或DMF溶剂溶解)",
+      "density_g_cm3": 1.37,
+      "tensile_strength_cn_dtex": 2.8,
+      "tensile_strength_gpa": 0.38,
+      "tensile_modulus_gpa": 5.0,
+      "elongation_at_break_pct": 32.0,
+      "moisture_regain_pct": 2.5,
+      "loi_pct": 31.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "高级逼真阻燃假发、电力冶金电弧防护工服、民航阻燃毛毯、酒店防火窗帘面料",
+      "representative_brands": "Kanecaron (钟化假发丝/阻燃丝), Protex",
+      "tech_status_2026": "全球高端假发与安全防护面料的核心支柱原料，无锑环保阻燃与高耐热卷曲工艺普及",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PAN",
+      "category_name_zh": "聚丙烯腈系纤维 (腈纶)",
+      "category_name_en": "Polyacrylonitrile (Acrylic) Fibers",
+      "aliases": [
+        {
+          "alias": "变性腈纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "阻燃腈纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Kanecaron",
+          "type": "trade_name"
+        },
+        {
+          "alias": "MAC",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "改性聚丙烯腈纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Modacrylic"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "category_id": 204,
+      "code": "PP",
+      "name_zh": "聚丙烯纤维 (丙纶)",
+      "name_en": "Polypropylene Fiber",
+      "chemical_name": "等规聚丙烯",
+      "chemical_formula": "[-CH2-CH(CH3)-]n",
+      "cas_number": "9003-07-0",
+      "generation": "第1代大宗合成纤维 (所有商业合成纤维中密度最低)",
+      "discovery_year": "1954",
+      "commercial_year": "1957",
+      "pioneering_entity": "Giulio Natta (纳塔 / 意大利 Montecatini)",
+      "spinning_method": "熔体纺丝 (熔融纺丝牵伸、纺粘法Spunbond、熔喷法Meltblown)",
+      "density_g_cm3": 0.91,
+      "tensile_strength_cn_dtex": 5.0,
+      "tensile_strength_gpa": 0.45,
+      "tensile_modulus_gpa": 4.0,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 0.05,
+      "loi_pct": 18.0,
+      "melting_point_c": 168.0,
+      "max_service_temp_c": 95.0,
+      "typical_applications": "医用外科口罩及防护服熔喷过滤层、土工布、包装集装袋、速干贴身排汗运动衣",
+      "representative_brands": "Herculon, Meraklon, 蒙特卡蒂尼丙纶",
+      "tech_status_2026": "超细熔喷驻极体寿命突破5年，超细旦微孔丙纶在单向速干运动服与纸尿裤无纺布上深度普及",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PO",
+      "category_name_zh": "聚烯烃系纤维",
+      "category_name_en": "Polyolefin Fibers",
+      "aliases": [
+        {
+          "alias": "丙纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "聚丙烯短纤",
+          "type": "standard_name"
+        },
+        {
+          "alias": "PP",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚丙烯纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polypropylene"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "category_id": 204,
+      "code": "PE-REG",
+      "name_zh": "普通聚乙烯纤维 (普通乙纶)",
+      "name_en": "Polyethylene Fiber (Conventional)",
+      "chemical_name": "高密度聚乙烯 (HDPE)",
+      "chemical_formula": "[-CH2-CH2-]n",
+      "cas_number": "9002-88-4",
+      "generation": "第1代通用合成纤维",
+      "discovery_year": "1933",
+      "commercial_year": "1940s",
+      "pioneering_entity": "ICI / 齐格勒",
+      "spinning_method": "熔融纺丝 (常规单丝或扁丝挤出)",
+      "density_g_cm3": 0.95,
+      "tensile_strength_cn_dtex": 3.5,
+      "tensile_strength_gpa": 0.33,
+      "tensile_modulus_gpa": 2.5,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.01,
+      "loi_pct": 17.5,
+      "melting_point_c": 130.0,
+      "max_service_temp_c": 80.0,
+      "typical_applications": "农业遮阳网、防虫网、浅海渔网绳缆、编织袋、人工草坪草丝",
+      "representative_brands": "Courlene, Polythene filament",
+      "tech_status_2026": "抗紫外UV老化母粒配方与长寿命抗刮擦草丝技术高度成熟",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PO",
+      "category_name_zh": "聚烯烃系纤维",
+      "category_name_en": "Polyolefin Fibers",
+      "aliases": [
+        {
+          "alias": "乙纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "聚乙烯纤维",
+          "type": "standard_name"
+        },
+        {
+          "alias": "PE",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚乙烯纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyethylene"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "category_id": 204,
+      "code": "PMP",
+      "name_zh": "聚4-甲基-1-戊烯纤维 (TPX纤维)",
+      "name_en": "Poly(4-methyl-1-pentene) Fiber",
+      "chemical_name": "聚(4-甲基-1-戊烯)",
+      "chemical_formula": "[-CH2-CH(CH2CH(CH3)2)-]n",
+      "cas_number": "25068-26-2",
+      "generation": "第3代特种耐热聚烯烃纤维",
+      "discovery_year": "1965",
+      "commercial_year": "1975",
+      "pioneering_entity": "ICI / 三井化学 (Mitsui TPX)",
+      "spinning_method": "熔融纺丝与高倍拉伸",
+      "density_g_cm3": 0.83,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 0.37,
+      "tensile_modulus_gpa": 3.8,
+      "elongation_at_break_pct": 22.0,
+      "moisture_regain_pct": 0.01,
+      "loi_pct": 18.0,
+      "melting_point_c": 240.0,
+      "max_service_temp_c": 140.0,
+      "typical_applications": "超轻离型织物、医疗透析空心纤维膜、超轻高绝缘电缆绕包层、微波加热容器滤布",
+      "representative_brands": "TPX (三井化学)",
+      "tech_status_2026": "凭借极低介电常数(Dk≈2.1)和优异透气耐温性，在6G高频通信及特种分离膜稳步放量",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "SYN_PO",
+      "category_name_zh": "聚烯烃系纤维",
+      "category_name_en": "Polyolefin Fibers",
+      "aliases": [
+        {
+          "alias": "TPX",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PMP",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D4101",
+          "title": "Propylene Plastic Injection and Extrusion Materials"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "category_id": 205,
+      "code": "EL",
+      "name_zh": "聚氨酯弹性纤维 (氨纶/斯潘德克斯)",
+      "name_en": "Elastane / Spandex Fiber",
+      "chemical_name": "聚氨基甲酸酯嵌段共聚物 (聚醚/聚酯软段与二异氰酸酯硬段)",
+      "chemical_formula": "[-O-R-O-CONH-R'-NHCO-]n",
+      "cas_number": "61788-20-7",
+      "generation": "第2代合成弹性高分子",
+      "discovery_year": "1952",
+      "commercial_year": "1959",
+      "pioneering_entity": "Joseph Shivers (杜邦 DuPont Lycra / 莱卡)",
+      "spinning_method": "干法纺丝 (DMAC溶液挤入高温氮气甬道)、少部分熔融纺丝或湿纺",
+      "density_g_cm3": 1.21,
+      "tensile_strength_cn_dtex": 1.1,
+      "tensile_strength_gpa": 0.13,
+      "tensile_modulus_gpa": 0.05,
+      "elongation_at_break_pct": 520.0,
+      "moisture_regain_pct": 1.1,
+      "loi_pct": 18.0,
+      "melting_point_c": 230.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "瑜伽服、游泳衣、紧身牛仔裤、运动功能压缩衣、高档贴身无缝内衣、纸尿裤防漏边",
+      "representative_brands": "Lycra (莱卡), Creora (晓星), 华峰千禧氨纶",
+      "tech_status_2026": "生物基BDO原料氨纶(生物基含量超70%)与低温可热熔粘合氨纶成为产业升级核心",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PU",
+      "category_name_zh": "聚氨酯与弹性聚合物纤维",
+      "category_name_en": "Polyurethane & Elastic Fibers",
+      "aliases": [
+        {
+          "alias": "氨纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Spandex",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Lycra",
+          "type": "trade_name"
+        },
+        {
+          "alias": "莱卡",
+          "type": "trade_name"
+        },
+        {
+          "alias": "EL",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "氨纶定义"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Elastane"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "category_id": 205,
+      "code": "TPU-F",
+      "name_zh": "热塑性聚氨酯弹性纤维 (熔纺TPU纤维)",
+      "name_en": "Thermoplastic Polyurethane Fiber",
+      "chemical_name": "热塑性聚氨酯弹性体 (TPU)",
+      "chemical_formula": "Thermoplastic Polyurethane",
+      "cas_number": "61788-20-7",
+      "generation": "第3代绿色无溶剂弹性纤维",
+      "discovery_year": "1980s",
+      "commercial_year": "2000s",
+      "pioneering_entity": "BASF (巴斯夫) / Lubrizol (路博润) / 万华化学",
+      "spinning_method": "环保无溶剂熔融纺丝法 (无需DMF/DMAC，环境极度友好)",
+      "density_g_cm3": 1.18,
+      "tensile_strength_cn_dtex": 1.6,
+      "tensile_strength_gpa": 0.19,
+      "tensile_modulus_gpa": 0.08,
+      "elongation_at_break_pct": 450.0,
+      "moisture_regain_pct": 0.8,
+      "loi_pct": 20.0,
+      "melting_point_c": 195.0,
+      "max_service_temp_c": 115.0,
+      "typical_applications": "飞织一体鞋面、单一材质100%可循环运动服、弹性无缝粘合线、防水透气弹性复合膜",
+      "representative_brands": "Elastollan (巴斯夫), 万华TPU熔纺纤维",
+      "tech_status_2026": "配合单一材质闭环回收(Mono-material design)浪潮，全面替代传统化学溶剂干法氨纶鞋服配件",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PU",
+      "category_name_zh": "聚氨酯与弹性聚合物纤维",
+      "category_name_en": "Polyurethane & Elastic Fibers",
+      "aliases": [
+        {
+          "alias": "TPU纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "熔纺氨纶",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 54101-2017",
+          "title": "热塑性聚氨酯弹性长丝"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "category_id": 206,
+      "code": "PVA-F",
+      "name_zh": "聚乙烯醇缩甲醛纤维 (维纶/维尼纶)",
+      "name_en": "Vinylon / Polyvinyl Alcohol Formalized Fiber",
+      "chemical_name": "聚乙烯醇缩甲醛化共聚物",
+      "chemical_formula": "[-CH2-CH(OH)-]x-[-CH2-CH(O-CH2-O)CH-]y",
+      "cas_number": "25067-34-9",
+      "generation": "第1代大宗合成纤维",
+      "discovery_year": "1939",
+      "commercial_year": "1950",
+      "pioneering_entity": "李升基 (中国/朝鲜科学家) / 樱田一郎 (日本可乐丽 Kuraray)",
+      "spinning_method": "湿法或干法纺丝 (PVA水溶液芒硝硫酸钠盐浴凝固，甲醛缩醛化固化交联)",
+      "density_g_cm3": 1.29,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 0.58,
+      "tensile_modulus_gpa": 8.0,
+      "elongation_at_break_pct": 20.0,
+      "moisture_regain_pct": 5.0,
+      "loi_pct": 20.0,
+      "melting_point_c": 230.0,
+      "max_service_temp_c": 115.0,
+      "typical_applications": "高强帆布篷布、橡胶输送带骨架、耐磨军用背包帐篷、无石棉水泥增强材料",
+      "representative_brands": "Kuralon (可乐丽), Vinylon, 皖维维纶",
+      "tech_status_2026": "作为环保代石棉增强纤维在建筑纤维水泥板(FRC)中具有刚性不可替代全球市场",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PVA",
+      "category_name_zh": "聚乙烯醇系纤维 (维纶)",
+      "category_name_en": "Polyvinyl Alcohol Fibers",
+      "aliases": [
+        {
+          "alias": "维纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "维尼纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Kuralon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PVA",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚乙烯醇纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Vinylal"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "category_id": 206,
+      "code": "W-PVA",
+      "name_zh": "水溶性聚乙烯醇纤维 (水溶维纶)",
+      "name_en": "Water-Soluble PVA Fiber",
+      "chemical_name": "未经缩醛化改性高纯聚乙烯醇",
+      "chemical_formula": "[-CH2-CH(OH)-]n",
+      "cas_number": "9002-89-5",
+      "generation": "第2代功能差别化纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1970s",
+      "pioneering_entity": "Kuraray (日本可乐丽) / 皖维高新",
+      "spinning_method": "湿法纺丝或冻胶纺丝 (水相凝固，不经甲醛缩醛化，精准调控醇解度)",
+      "density_g_cm3": 1.28,
+      "tensile_strength_cn_dtex": 3.8,
+      "tensile_strength_gpa": 0.48,
+      "tensile_modulus_gpa": 6.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 5.5,
+      "loi_pct": 19.5,
+      "melting_point_c": 220.0,
+      "max_service_temp_c": 80.0,
+      "typical_applications": "无捻毛巾骨架纱(水洗后脱除造就超蓬松触感)、水溶无纺绣花基布、医用防感染自溶隔离袋",
+      "representative_brands": "Kuralon K-II, 皖维水溶纤维",
+      "tech_status_2026": "低温20℃速溶且无残毒生物可降解型在高端绿色纺织与绣花耗材全面普及",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "SYN_PVA",
+      "category_name_zh": "聚乙烯醇系纤维 (维纶)",
+      "category_name_en": "Polyvinyl Alcohol Fibers",
+      "aliases": [
+        {
+          "alias": "水溶维纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "水溶纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52005-2014",
+          "title": "水溶性聚乙烯醇短纤维"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "category_id": 206,
+      "code": "HM-PVA",
+      "name_zh": "高强高模聚乙烯醇纤维",
+      "name_en": "High-Strength High-Modulus PVA Fiber",
+      "chemical_name": "超高聚合度全等规/间规聚乙烯醇",
+      "chemical_formula": "[-CH2-CH(OH)-]n (DP > 3500)",
+      "cas_number": "9002-89-5",
+      "generation": "第3代高性能特种聚合物纤维",
+      "discovery_year": "1980s",
+      "commercial_year": "1990s",
+      "pioneering_entity": "Kuraray (可乐丽) / 中国石化四川维纶",
+      "spinning_method": "凝胶冻胶纺丝-超高倍热拉伸 (DMSO或有机溶剂体系)",
+      "density_g_cm3": 1.3,
+      "tensile_strength_cn_dtex": 11.5,
+      "tensile_strength_gpa": 1.5,
+      "tensile_modulus_gpa": 35.0,
+      "elongation_at_break_pct": 6.5,
+      "moisture_regain_pct": 3.0,
+      "loi_pct": 21.0,
+      "melting_point_c": 245.0,
+      "max_service_temp_c": 140.0,
+      "typical_applications": "水利水电超高强工程水泥防裂筋、深海缆绳、轻量化防弹复合材料、特种高压绝缘纸",
+      "representative_brands": "Kuralon II, 川维高强高模PVA",
+      "tech_status_2026": "我国完全掌握万吨级高端干湿法凝胶拉伸核心技术，出口全球数十个国家基建工程",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "SYN_PVA",
+      "category_name_zh": "聚乙烯醇系纤维 (维纶)",
+      "category_name_en": "Polyvinyl Alcohol Fibers",
+      "aliases": [
+        {
+          "alias": "高强高模维纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "高模PVA",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 21120-2018",
+          "title": "水泥混凝土和砂浆用高强高模聚乙烯醇纤维"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "category_id": 207,
+      "code": "PVC-F",
+      "name_zh": "聚氯乙烯纤维 (氯纶)",
+      "name_en": "Polyvinyl Chloride Fiber (Chlorofibre)",
+      "chemical_name": "聚氯乙烯",
+      "chemical_formula": "[-CH2-CHCl-]n",
+      "cas_number": "9002-86-2",
+      "generation": "第1代合成纤维 (早期与德国人造丝并驾齐驱)",
+      "discovery_year": "1913",
+      "commercial_year": "1934",
+      "pioneering_entity": "Fritz Klatte / 德国 IG Farben (PeCe 纤维)",
+      "spinning_method": "干法或湿法纺丝 (丙酮/苯溶剂)",
+      "density_g_cm3": 1.4,
+      "tensile_strength_cn_dtex": 2.5,
+      "tensile_strength_gpa": 0.35,
+      "tensile_modulus_gpa": 3.5,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 38.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 70.0,
+      "typical_applications": "极度耐酸碱耐腐蚀工业滤布、理疗静电保健内衣被褥、影剧院舞台阻燃幕布",
+      "representative_brands": "Rhovyl (法国罗维尔), PeCe, 氯纶",
+      "tech_status_2026": "虽然耐热性差，但利用其独特的高负摩擦静电发生性在医疗静电理疗纺织品领域持续独占鳌头",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_HALO",
+      "category_name_zh": "含卤素通用纤维",
+      "category_name_en": "Halogenated Vinyl Fibers",
+      "aliases": [
+        {
+          "alias": "氯纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Rhovyl",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PVC纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "CLF",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "含氯纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Chlorofibre"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "category_id": 207,
+      "code": "PVDC-F",
+      "name_zh": "聚偏二氯乙烯纤维 (偏氯纶/莎纶)",
+      "name_en": "Polyvinylidene Chloride Fiber (Saran)",
+      "chemical_name": "偏二氯乙烯-氯乙烯共聚物",
+      "chemical_formula": "[-CH2-CCl2-]x-[-CH2-CHCl-]y",
+      "cas_number": "9002-85-1",
+      "generation": "第1代耐候耐化合成纤维",
+      "discovery_year": "1933",
+      "commercial_year": "1940",
+      "pioneering_entity": "Ralph Wiley (陶氏化学 Dow Chemical)",
+      "spinning_method": "熔融挤出快速水冷淬火及冷拉伸单丝",
+      "density_g_cm3": 1.7,
+      "tensile_strength_cn_dtex": 2.0,
+      "tensile_strength_gpa": 0.34,
+      "tensile_modulus_gpa": 2.2,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 60.0,
+      "melting_point_c": 170.0,
+      "max_service_temp_c": 85.0,
+      "typical_applications": "耐日光露天沙滩椅面料、汽车阻燃座套、高档仿真发丝、强酸强碱腐蚀环境工业滤网",
+      "representative_brands": "Saran (莎纶 / 陶氏)",
+      "tech_status_2026": "以其卓越的超低透氧透湿性与耐候耐光老化性能，在特种户外工业织物中保持稳健需求",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_HALO",
+      "category_name_zh": "含卤素通用纤维",
+      "category_name_en": "Halogenated Vinyl Fibers",
+      "aliases": [
+        {
+          "alias": "偏氯纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "莎纶",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Saran",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Saran definition"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "category_id": 301,
+      "code": "PLA",
+      "name_zh": "聚乳酸纤维 (PLA/玉米纤维)",
+      "name_en": "Polylactic Acid Fiber (PLA)",
+      "chemical_name": "聚L-乳酸",
+      "chemical_formula": "[-CH(CH3)-COO-]n",
+      "cas_number": "26100-51-6",
+      "generation": "第3代生物基全降解合成纤维",
+      "discovery_year": "1932",
+      "commercial_year": "1997",
+      "pioneering_entity": "Carothers / Cargill Dow (NatureWorks Ingeo) / 海正生物",
+      "spinning_method": "熔融纺丝 (高纯左旋丙交酯开环聚合，熔体挤出牵伸)",
+      "density_g_cm3": 1.25,
+      "tensile_strength_cn_dtex": 4.2,
+      "tensile_strength_gpa": 0.53,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 30.0,
+      "moisture_regain_pct": 0.6,
+      "loi_pct": 26.0,
+      "melting_point_c": 175.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "环保茶包袋、一次性卫生巾面层无纺布、绿色运动时装、可堆肥包装布、汽车内饰顶棚",
+      "representative_brands": "Ingeo (NatureWorks), 海正PLA, 丰原生物玉米纤维",
+      "tech_status_2026": "百万吨级全产业链贯通，立体复合PDLA/PLLA高耐温(耐热超130℃)技术全面打破传统PLA耐温瓶颈",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "玉米纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PLA纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Ingeo",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PLA",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 33614-2017",
+          "title": "聚乳酸(PLA)牵伸丝"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "PLA generic name"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "category_id": 301,
+      "code": "PHA",
+      "name_zh": "聚羟基脂肪酸酯纤维 (PHA/PHBV/P34HB)",
+      "name_en": "Polyhydroxyalkanoates Fiber",
+      "chemical_name": "微生物发酵合成聚羟基脂肪酸酯",
+      "chemical_formula": "[-O-CH(R)-(CH2)x-CO-]n",
+      "cas_number": "29434-13-7",
+      "generation": "第4代全自然环境降解生物纤维",
+      "discovery_year": "1926",
+      "commercial_year": "2015",
+      "pioneering_entity": "Lemoigne / 蓝晶微生物 (Bluepha) / 微构工场",
+      "spinning_method": "熔融纺丝或湿法静电纺 (嗜盐微生物非粮碳源发酵提取聚合物)",
+      "density_g_cm3": 1.25,
+      "tensile_strength_cn_dtex": 3.0,
+      "tensile_strength_gpa": 0.38,
+      "tensile_modulus_gpa": 3.5,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.8,
+      "loi_pct": 24.0,
+      "melting_point_c": 170.0,
+      "max_service_temp_c": 100.0,
+      "typical_applications": "海洋水体与土壤无痕降解渔网、农用可降解防草地膜、高端医美缝合线、可冲散湿巾",
+      "representative_brands": "Bluepha PHA, Kaneka Green Planet, Danimer Nodax",
+      "tech_status_2026": "在常温海水环境中几个月内完全降解为水和CO2，成为攻克全球海洋微塑料危机的终极纤维材料",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PHA纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "PHBV",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "P34HB",
+          "type": "chemical_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D6691",
+          "title": "Determining Aerobic Biodegradation of Plastic Materials in the Marine Environment"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "category_id": 301,
+      "code": "PCL",
+      "name_zh": "聚己内酯纤维 (PCL纤维)",
+      "name_en": "Polycaprolactone Fiber",
+      "chemical_name": "聚ε-己内酯",
+      "chemical_formula": "[-O-(CH2)5-CO-]n",
+      "cas_number": "24980-41-4",
+      "generation": "第3代生物医用降解纤维",
+      "discovery_year": "1930s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Union Carbide (Tone PCL)",
+      "spinning_method": "低温熔融纺丝、溶液静电纺丝",
+      "density_g_cm3": 1.15,
+      "tensile_strength_cn_dtex": 2.6,
+      "tensile_strength_gpa": 0.3,
+      "tensile_modulus_gpa": 0.5,
+      "elongation_at_break_pct": 80.0,
+      "moisture_regain_pct": 0.4,
+      "loi_pct": 20.0,
+      "melting_point_c": 60.0,
+      "max_service_temp_c": 45.0,
+      "typical_applications": "微创低温定型医用矫形支架、缓释药物纳米纤维载体、3D组织工程细胞再生脚手架",
+      "representative_brands": "Capa (Ingevity), Monocryl 组分",
+      "tech_status_2026": "在组织工程骨软骨再生微支架、神经修复微导管等高端医疗领域形成系列临床标准",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PCL",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚己内酯",
+          "type": "chemical_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM F1925",
+          "title": "Standard Specification for Virgin Poly(caprolactone) for Surgical Implants"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "category_id": 301,
+      "code": "PGA",
+      "name_zh": "聚乙醇酸纤维 (PGA/聚交酯)",
+      "name_en": "Polyglycolic Acid Fiber",
+      "chemical_name": "聚羟基乙酸",
+      "chemical_formula": "[-O-CH2-CO-]n",
+      "cas_number": "26009-03-0",
+      "generation": "第3代高强超快吸收生物纤维",
+      "discovery_year": "1954",
+      "commercial_year": "1970",
+      "pioneering_entity": "American Cyanamid (Dexon 德克松外科缝线)",
+      "spinning_method": "高真空熔融纺丝与多级热牵伸",
+      "density_g_cm3": 1.53,
+      "tensile_strength_cn_dtex": 8.0,
+      "tensile_strength_gpa": 1.22,
+      "tensile_modulus_gpa": 7.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 0.5,
+      "loi_pct": 28.0,
+      "melting_point_c": 225.0,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "外科可吸收手术缝合线(Dexon)、页岩油气深井可溶压裂暂堵球与桥塞工具、可降解血管支架",
+      "representative_brands": "Dexon, Kureha PGA, 国能神华包头煤制PGA",
+      "tech_status_2026": "万吨级煤化工草酸二甲酯路线PGA规模投产，石油工程深井完井工具与高端医疗缝合线实现全面替代",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PGA",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚羟基乙酸",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Dexon",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "YY",
+          "code": "YY 1116-2020",
+          "title": "可吸收外科缝线"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "category_id": 301,
+      "code": "PLGA",
+      "name_zh": "聚(L-丙交酯-共-乙交酯)纤维 (PLGA)",
+      "name_en": "Poly(L-lactide-co-glycolide) Fiber",
+      "chemical_name": "L-丙交酯与乙交酯无规/嵌段共聚物",
+      "chemical_formula": "[-CH(CH3)COO-]x-[-CH2COO-]y",
+      "cas_number": "26780-50-7",
+      "generation": "第3代精准调控医用降解纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1974",
+      "pioneering_entity": "Ethicon (强生 Vicryl / 薇乔线)",
+      "spinning_method": "精密熔融纺丝或静电纺丝",
+      "density_g_cm3": 1.35,
+      "tensile_strength_cn_dtex": 6.8,
+      "tensile_strength_gpa": 0.92,
+      "tensile_modulus_gpa": 6.0,
+      "elongation_at_break_pct": 22.0,
+      "moisture_regain_pct": 0.5,
+      "loi_pct": 26.0,
+      "melting_point_c": 200.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "强生Vicryl可吸收缝合线、可控体内吸收组织补片、靶向长效抗癌药物纳米缓释微纤",
+      "representative_brands": "Vicryl (薇乔), Polyglactin 910",
+      "tech_status_2026": "通过调控单体比例可精准设定体内降解周期(2周至6个月)，保持临床外科缝线全球金标准",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PLGA",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Vicryl",
+          "type": "trade_name"
+        },
+        {
+          "alias": "薇乔",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM F1926",
+          "title": "Standard Test Method for Dissolution of Biodegradable Polymeric Materials"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "category_id": 301,
+      "code": "PDO",
+      "name_zh": "聚对二氧环己酮纤维 (PDS/PDO线)",
+      "name_en": "Polydioxanone Fiber",
+      "chemical_name": "聚(1,4-二氧杂环己烷-2-酮)",
+      "chemical_formula": "[-O-(CH2)2-O-CH2-CO-]n",
+      "cas_number": "29964-84-9",
+      "generation": "第3代单丝高韧医用生物纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1981",
+      "pioneering_entity": "Ethicon (DuPont/强生 PDS)",
+      "spinning_method": "熔融纺丝与连续固相退火单丝挤出",
+      "density_g_cm3": 1.38,
+      "tensile_strength_cn_dtex": 5.2,
+      "tensile_strength_gpa": 0.72,
+      "tensile_modulus_gpa": 2.2,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 0.4,
+      "loi_pct": 22.0,
+      "melting_point_c": 110.0,
+      "max_service_temp_c": 75.0,
+      "typical_applications": "医美微创面部抗衰倒刺提升线(大V线)、小儿心血管长效可吸收手术单丝、防粘连疝气修补网",
+      "representative_brands": "PDS II (强生), 恒生PPDO提拉线",
+      "tech_status_2026": "在医疗美容微创埋线提升与儿童心胸外科手术中为无可争议的刚性标杆单丝材料",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PDS",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PDO",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "PPDO",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "快翎线",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "YY",
+          "code": "YY 1116-2020",
+          "title": "可吸收单丝外科缝线标准"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "category_id": 301,
+      "code": "PBS",
+      "name_zh": "聚丁二酸丁二醇酯纤维 (PBS/PBAT共聚酯纤维)",
+      "name_en": "Poly(butylene succinate) & PBAT Fibers",
+      "chemical_name": "聚丁二酸-1,4-丁二醇酯",
+      "chemical_formula": "[-O-(CH2)4-O-CO-(CH2)2-CO-]n",
+      "cas_number": "25777-14-4",
+      "generation": "第3代热塑性降解共聚酯纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2000s",
+      "pioneering_entity": "昭和高分子 (Bionolle) / 金发科技",
+      "spinning_method": "熔融纺丝 (常规熔纺与纺粘无纺布工艺)",
+      "density_g_cm3": 1.26,
+      "tensile_strength_cn_dtex": 3.2,
+      "tensile_strength_gpa": 0.4,
+      "tensile_modulus_gpa": 2.0,
+      "elongation_at_break_pct": 45.0,
+      "moisture_regain_pct": 0.7,
+      "loi_pct": 21.0,
+      "melting_point_c": 115.0,
+      "max_service_temp_c": 85.0,
+      "typical_applications": "农业全生物降解育苗钵、水土保持绿化防护网、一次性酒店日用品织物、包装填充棉",
+      "representative_brands": "Bionolle, Ecoflex (BASF), 金发PBS",
+      "tech_status_2026": "柔韧性大幅优于纯PLA，与PLA共混复合熔融纺丝制备兼具刚韧性能的全降解无纺布",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "BIO_ALIPH",
+      "category_name_zh": "脂肪族可降解聚酯纤维",
+      "category_name_en": "Aliphatic Biodegradable Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "PBS纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "PBAT纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Bionolle",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 32366-2015",
+          "title": "生物降解聚丁二酸丁二醇酯(PBS)"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "category_id": 302,
+      "code": "PEF",
+      "name_zh": "聚呋喃二甲酸乙二醇酯纤维 (PEF/全生物基芳香族聚酯)",
+      "name_en": "Polyethylene Furanoate Fiber (PEF)",
+      "chemical_name": "聚2,5-呋喃二甲酸乙二醇酯",
+      "chemical_formula": "[-CO-(C4H2O)-CO-O-(CH2)2-O-]n",
+      "cas_number": "28728-19-0",
+      "generation": "第4代全生物基划时代聚酯",
+      "discovery_year": "2009",
+      "commercial_year": "2024",
+      "pioneering_entity": "Avantium (荷商阿凡提亚) / 中科院宁波材料所",
+      "spinning_method": "熔体缩聚-固相增粘-高速熔融纺丝",
+      "density_g_cm3": 1.43,
+      "tensile_strength_cn_dtex": 5.8,
+      "tensile_strength_gpa": 0.83,
+      "tensile_modulus_gpa": 14.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 0.7,
+      "loi_pct": 24.0,
+      "melting_point_c": 215.0,
+      "max_service_temp_c": 140.0,
+      "typical_applications": "高阻隔绿色工业滤布、全生物基耐蠕变轮胎帘线、高性能防紫外防风运动风衣、阻气特种织物",
+      "representative_brands": "Releaf, Avantium PEF",
+      "tech_status_2026": "万吨级工业化旗舰装置平稳运行，阻气性较PET提升10倍，碳足迹减少70%以上，被誉为‘绿色PET杀手’",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "BIO_FDCA",
+      "category_name_zh": "新型生物基呋喃与芳杂聚酯纤维",
+      "category_name_en": "Bio-based Furanic & Co-polyesters",
+      "aliases": [
+        {
+          "alias": "PEF",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "呋喃聚酯",
+          "type": "colloquial"
+        },
+        {
+          "alias": "生物基PEF",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D6866",
+          "title": "Standard Test Methods for Determining Biobased Content"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "category_id": 401,
+      "code": "PPTA",
+      "name_zh": "对位芳纶 (芳纶1414/凯夫拉)",
+      "name_en": "Para-Aramid Fiber (PPTA)",
+      "chemical_name": "聚对苯二甲酰对苯二胺",
+      "chemical_formula": "[-NH-C6H4-NH-CO-C6H4-CO-]n",
+      "cas_number": "26125-61-1",
+      "generation": "第3代战略高性能特种纤维",
+      "discovery_year": "1965",
+      "commercial_year": "1971",
+      "pioneering_entity": "Stephanie Kwolek (斯蒂芬妮·克沃勒克 / 杜邦 DuPont Kevlar)",
+      "spinning_method": "液晶干喷湿纺 (浓硫酸发烟液晶相溶液喷丝，水浴骤冷牵伸热定型)",
+      "density_g_cm3": 1.44,
+      "tensile_strength_cn_dtex": 22.0,
+      "tensile_strength_gpa": 3.16,
+      "tensile_modulus_gpa": 110.0,
+      "elongation_at_break_pct": 3.5,
+      "moisture_regain_pct": 4.5,
+      "loi_pct": 29.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 260.0,
+      "typical_applications": "军警防弹衣与战术头盔、光纤中心加强芯抗拉纱、航天发动机防碎弹道护罩、高端防刺防割手套",
+      "representative_brands": "Kevlar (杜邦凯夫拉), Twaron (帝人芳纶), 泰和新材泰普龙",
+      "tech_status_2026": "超高强高模型(Kevlar 129/Twaron 2200)全国产化完全自主可控，年产能破3万吨位居全球前列",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ARAMID",
+      "category_name_zh": "芳香族聚酰胺类纤维 (芳纶家族)",
+      "category_name_en": "Aramid Fibers",
+      "aliases": [
+        {
+          "alias": "芳纶1414",
+          "type": "colloquial"
+        },
+        {
+          "alias": "对位芳纶",
+          "type": "standard_name"
+        },
+        {
+          "alias": "Kevlar",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Twaron",
+          "type": "trade_name"
+        },
+        {
+          "alias": "凯夫拉",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PPTA",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 31888-2015",
+          "title": "对位芳香族聚酰胺长丝"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Aramid"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "category_id": 401,
+      "code": "PMIA",
+      "name_zh": "间位芳纶 (芳纶1313/诺梅克斯)",
+      "name_en": "Meta-Aramid Fiber (PMIA)",
+      "chemical_name": "聚间苯二甲酰间苯二胺",
+      "chemical_formula": "[-NH-C6H4-NH-CO-C6H4-CO-]n",
+      "cas_number": "25765-47-3",
+      "generation": "第3代耐高温耐火焰特种纤维",
+      "discovery_year": "1961",
+      "commercial_year": "1967",
+      "pioneering_entity": "DuPont (杜邦 Nomex / 诺梅克斯)",
+      "spinning_method": "低温溶液湿法纺丝或干法纺丝 (DMAc-LiCl溶剂体系)",
+      "density_g_cm3": 1.38,
+      "tensile_strength_cn_dtex": 4.8,
+      "tensile_strength_gpa": 0.66,
+      "tensile_modulus_gpa": 12.0,
+      "elongation_at_break_pct": 30.0,
+      "moisture_regain_pct": 5.5,
+      "loi_pct": 32.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 220.0,
+      "typical_applications": "特勤消防战斗服、赛车手抗火服、飞机客舱内饰阻燃壁板、特高压变压器芳纶绝缘纸(Nomex纸)",
+      "representative_brands": "Nomex (诺梅克斯), Conex (帝人), 美士达 (泰和新材)",
+      "tech_status_2026": "原液着色耐光老化间位芳纶与航空级芳纶蜂窝芯材纸基材料彻底实现自主技术全覆盖",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ARAMID",
+      "category_name_zh": "芳香族聚酰胺类纤维 (芳纶家族)",
+      "category_name_en": "Aramid Fibers",
+      "aliases": [
+        {
+          "alias": "芳纶1313",
+          "type": "colloquial"
+        },
+        {
+          "alias": "间位芳纶",
+          "type": "standard_name"
+        },
+        {
+          "alias": "Nomex",
+          "type": "trade_name"
+        },
+        {
+          "alias": "诺梅克斯",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PMIA",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 31889-2015",
+          "title": "间位芳香族聚酰胺短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Aramid"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "category_id": 401,
+      "code": "ARAMID-III",
+      "name_zh": "杂环芳纶 (芳纶III / Armos / Rusar)",
+      "name_en": "Heterocyclic Aramid Fiber (Aramid III)",
+      "chemical_name": "共聚苯并咪唑芳香族聚酰胺",
+      "chemical_formula": "Copoly(diaminophenyl-benzimidazole-terephthalamide)",
+      "cas_number": null,
+      "generation": "第4代超高强抗弹特种纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1985",
+      "pioneering_entity": "俄罗斯前苏联全俄人造纤维研究院 (VNIISV / Armos, Rusar) / 中蓝晨光",
+      "spinning_method": "干喷湿纺或湿法纺丝 (含苯并咪唑刚性单体共聚，液晶相纺丝)",
+      "density_g_cm3": 1.45,
+      "tensile_strength_cn_dtex": 28.0,
+      "tensile_strength_gpa": 4.1,
+      "tensile_modulus_gpa": 135.0,
+      "elongation_at_break_pct": 3.0,
+      "moisture_regain_pct": 3.8,
+      "loi_pct": 38.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 300.0,
+      "typical_applications": "战略导弹固体火箭发动机缠绕壳体、高超音速飞行器结构件、重型顶级防弹装甲、极端宇航缆绳",
+      "representative_brands": "Rusar-S, Armos, 中蓝晨光芳纶III",
+      "tech_status_2026": "我国在杂环单体合成及连续干喷湿纺工程化取得重大突破，实现宇航主承力结构批量列装",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ARAMID",
+      "category_name_zh": "芳香族聚酰胺类纤维 (芳纶家族)",
+      "category_name_en": "Aramid Fibers",
+      "aliases": [
+        {
+          "alias": "芳纶III",
+          "type": "colloquial"
+        },
+        {
+          "alias": "杂环芳香聚酰胺",
+          "type": "standard_name"
+        },
+        {
+          "alias": "Armos",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Rusar",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 36768-2018",
+          "title": "超高分子量杂环芳香族聚酰胺长丝"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "category_id": 401,
+      "code": "PSA",
+      "name_zh": "聚砜酰胺纤维 (芳砜纶 / PSA纤维)",
+      "name_en": "Polysulfonamide Fiber (PSA)",
+      "chemical_name": "聚对苯二甲酰-3,3'-二氨基二苯砜",
+      "chemical_formula": "[-NH-C6H4-SO2-C6H4-NH-CO-C6H4-CO-]n",
+      "cas_number": "31843-05-9",
+      "generation": "第3代中国独创耐温阻燃芳香纤维",
+      "discovery_year": "1972",
+      "commercial_year": "1980s",
+      "pioneering_entity": "上海合成纤维研究所 (中国原创重大突破)",
+      "spinning_method": "低温溶液湿法纺丝",
+      "density_g_cm3": 1.4,
+      "tensile_strength_cn_dtex": 3.8,
+      "tensile_strength_gpa": 0.53,
+      "tensile_modulus_gpa": 9.5,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 4.5,
+      "loi_pct": 33.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 250.0,
+      "typical_applications": "250℃工业袋式除尘滤料、冶炼焊接防飞溅工服、特种电机H级电气绝缘纸、防火隔热毡",
+      "representative_brands": "Tanlon (芳砜纶 / 上纤所)",
+      "tech_status_2026": "具有完全自主知识产权，在电力绝缘、钢铁水泥高温尾气治理滤袋保持长期竞争优势",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ARAMID",
+      "category_name_zh": "芳香族聚酰胺类纤维 (芳纶家族)",
+      "category_name_en": "Aramid Fibers",
+      "aliases": [
+        {
+          "alias": "芳砜纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PSA纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Tanlon",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52011-2019",
+          "title": "聚砜酰胺短纤维"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "category_id": 401,
+      "code": "TECHNORA",
+      "name_zh": "共聚对位芳纶纤维 (Technora / 泰诺拉)",
+      "name_en": "Co-Polyparaphenylene Terephthalamide (Technora)",
+      "chemical_name": "对苯二甲酰氯与对苯二胺/3,4'-二氨基二苯醚三元共聚物",
+      "chemical_formula": "PPTA-co-ODA copolymer",
+      "cas_number": "63428-84-2",
+      "generation": "第3代高韧共聚芳香纤维",
+      "discovery_year": "1974",
+      "commercial_year": "1987",
+      "pioneering_entity": "Teijin (日本帝人)",
+      "spinning_method": "各向同性溶液干喷湿纺及超高倍热拉伸 (热拉伸比可达10倍)",
+      "density_g_cm3": 1.39,
+      "tensile_strength_cn_dtex": 24.5,
+      "tensile_strength_gpa": 3.4,
+      "tensile_modulus_gpa": 74.0,
+      "elongation_at_break_pct": 4.6,
+      "moisture_regain_pct": 2.2,
+      "loi_pct": 25.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 210.0,
+      "typical_applications": "深海系泊缆绳、汽车高应力正时皮带骨架、耐屈挠输送带、航空降落伞吊绳",
+      "representative_brands": "Technora (泰诺拉 / Teijin)",
+      "tech_status_2026": "在反复屈折耐疲劳寿命上超越标准Kevlar数倍，为重载动负荷绳缆首选特种芳纶",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ARAMID",
+      "category_name_zh": "芳香族聚酰胺类纤维 (芳纶家族)",
+      "category_name_en": "Aramid Fibers",
+      "aliases": [
+        {
+          "alias": "Technora",
+          "type": "trade_name"
+        },
+        {
+          "alias": "泰诺拉",
+          "type": "trade_name"
+        },
+        {
+          "alias": "共聚芳纶",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Aramid"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "category_id": 402,
+      "code": "UHMWPE",
+      "name_zh": "超高分子量聚乙烯纤维 (迪尼玛/大力马/防弹纤维)",
+      "name_en": "Ultra-High Molecular Weight Polyethylene Fiber",
+      "chemical_name": "超高分子量聚乙烯 (重均分子量>300万-500万)",
+      "chemical_formula": "[-CH2-CH2-]n (MW > 3,000,000)",
+      "cas_number": "9002-88-4",
+      "generation": "第3代世界三大高性能纤维之一",
+      "discovery_year": "1963",
+      "commercial_year": "1979",
+      "pioneering_entity": "Piet Lemstra (帝斯曼 DSM Dyneema) / AlliedSignal (Spectra)",
+      "spinning_method": "冻胶凝胶纺丝-超高倍热拉伸 (十氢萘或白油溶剂制备超缠结解聚冻胶，拉伸比>30-50倍)",
+      "density_g_cm3": 0.97,
+      "tensile_strength_cn_dtex": 36.0,
+      "tensile_strength_gpa": 3.5,
+      "tensile_modulus_gpa": 120.0,
+      "elongation_at_break_pct": 3.2,
+      "moisture_regain_pct": 0.01,
+      "loi_pct": 17.0,
+      "melting_point_c": 150.0,
+      "max_service_temp_c": 80.0,
+      "typical_applications": "超轻防弹插板、防切割五级手套、深海拖缆系泊巨绳、超轻高端鱼线、雷达天线罩",
+      "representative_brands": "Dyneema (迪尼玛 / Avient), Spectra (霍尼韦尔), 同益中, 九九久",
+      "tech_status_2026": "低蠕变超耐磨改性(耐蠕变提升300%)及环保水相干法冻胶纺丝技术彻底工业化，中国产能占全球70%以上",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_UHMWPE",
+      "category_name_zh": "超高分子量聚乙烯纤维",
+      "category_name_en": "Ultra-High Molecular Weight Polyethylene Fibers",
+      "aliases": [
+        {
+          "alias": "UHMWPE",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "大力马",
+          "type": "colloquial"
+        },
+        {
+          "alias": "迪尼玛",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Dyneema",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Spectra",
+          "type": "trade_name"
+        },
+        {
+          "alias": "高强PE",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 19975-2015",
+          "title": "超高分子量聚乙烯长丝"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyethylene high tenacity"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "category_id": 403,
+      "code": "PBO",
+      "name_zh": "聚苯并双恶唑纤维 (PBO纤维/柴隆)",
+      "name_en": "Poly-p-phenylenebenzobisoxazole Fiber (PBO)",
+      "chemical_name": "聚(对亚苯基苯并二恶唑)",
+      "chemical_formula": "[-C14H6N2O2-]n",
+      "cas_number": "62061-07-2",
+      "generation": "第4代‘21世纪超级纤维’",
+      "discovery_year": "1980s",
+      "commercial_year": "1998",
+      "pioneering_entity": "美国空军材料实验室 (AFML) / 日本东洋纺 (Toyobo Zylon)",
+      "spinning_method": "液晶相干喷湿纺 (多聚磷酸PPA溶液中合成液晶，骤冷凝固水洗热处理)",
+      "density_g_cm3": 1.56,
+      "tensile_strength_cn_dtex": 42.0,
+      "tensile_strength_gpa": 5.8,
+      "tensile_modulus_gpa": 280.0,
+      "elongation_at_break_pct": 2.5,
+      "moisture_regain_pct": 0.6,
+      "loi_pct": 68.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 350.0,
+      "typical_applications": "航天隔热层遮阳网、F1赛车驾驶舱防护、火星着陆器减速伞牵引索、高端防暴头盔盾牌",
+      "representative_brands": "Zylon (柴隆 / 东洋纺 Toyobo), 中蓝晨光PBO",
+      "tech_status_2026": "攻克其固有光紫外老化痛点（纳米表面涂层改性与共聚改性），千吨级高纯连续丝束自主量产稳定供货",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_HETERO",
+      "category_name_zh": "刚性链杂环与热致液晶聚合物纤维",
+      "category_name_en": "Rigid-rod Heterocyclic & Liquid Crystalline Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "PBO",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Zylon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "柴隆",
+          "type": "trade_name"
+        },
+        {
+          "alias": "超级纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 36767-2018",
+          "title": "聚苯并双噁唑长丝"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "category_id": 403,
+      "code": "PBI",
+      "name_zh": "聚苯并咪唑纤维 (PBI纤维)",
+      "name_en": "Polybenzimidazole Fiber (PBI)",
+      "chemical_name": "聚-2,2'-(间亚苯基)-5,5'-联苯并咪唑",
+      "chemical_formula": "[-C20H12N4-]n",
+      "cas_number": "25734-65-0",
+      "generation": "第3代极限耐火阻燃特种纤维",
+      "discovery_year": "1961",
+      "commercial_year": "1983",
+      "pioneering_entity": "Carl Marvel / Celanese (塞拉尼斯 PBI Products)",
+      "spinning_method": "干法纺丝 (DMAc高压溶解挤入高温甬道，随后高温高倍拉伸并磺化稳定)",
+      "density_g_cm3": 1.43,
+      "tensile_strength_cn_dtex": 3.5,
+      "tensile_strength_gpa": 0.5,
+      "tensile_modulus_gpa": 6.5,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 15.0,
+      "loi_pct": 42.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 350.0,
+      "typical_applications": "NASA航天服外层耐火面料、高级重型特勤消防外勤战斗服、石化火灾避险防爆服",
+      "representative_brands": "PBI (Celazole / PBI Performance Products)",
+      "tech_status_2026": "国际最高级别热防护服装不可替代标配；与对位芳纶按比例混纺织物占据全球高端消防核心地位",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_HETERO",
+      "category_name_zh": "刚性链杂环与热致液晶聚合物纤维",
+      "category_name_en": "Rigid-rod Heterocyclic & Liquid Crystalline Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "PBI",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚苯并咪唑",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Celazole",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polybenzimidazole generic name"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "category_id": 403,
+      "code": "PIPD",
+      "name_zh": "聚二咪唑并吡啶撑二羟基亚苯基纤维 (M5纤维)",
+      "name_en": "Poly(2,6-diimidazo[4,5-b:4',5'-e]pyridinylene-1,4-(2,5-dihydroxy)phenylene) (M5)",
+      "chemical_name": "双羟基吡啶并二咪唑聚合物 (具有网状双分子内氢键刚性棒状分子)",
+      "chemical_formula": "PIPD Polymer",
+      "cas_number": null,
+      "generation": "第4代超高压缩强度刚性链纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2000s",
+      "pioneering_entity": "Akzo Nobel / Magellan Systems International",
+      "spinning_method": "液晶相干喷湿纺 (浓PPA溶剂水解凝胶，多重分子链间双氢键致密排列)",
+      "density_g_cm3": 1.7,
+      "tensile_strength_cn_dtex": 35.0,
+      "tensile_strength_gpa": 5.0,
+      "tensile_modulus_gpa": 330.0,
+      "elongation_at_break_pct": 1.5,
+      "moisture_regain_pct": 1.0,
+      "loi_pct": 50.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 320.0,
+      "typical_applications": "航空航天机翼复合材料桁条、高抗冲击弹道护板、超高压缩复合支架(克服传统碳纤维易脆断压屈痛点)",
+      "representative_brands": "M5 Fiber",
+      "tech_status_2026": "其轴向抗压缩强度达1.6 GPa（为对位芳纶的3倍），在解决复合材料压缩破坏关键技术中发挥核心作用",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_HETERO",
+      "category_name_zh": "刚性链杂环与热致液晶聚合物纤维",
+      "category_name_en": "Rigid-rod Heterocyclic & Liquid Crystalline Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "M5纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PIPD",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "DoD",
+          "code": "MIL-STD Advanced Composite Fibers",
+          "title": "DoD Material Specification"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "category_id": 403,
+      "code": "TLCP",
+      "name_zh": "聚芳酯纤维 (热致液晶高分子纤维 / Vectran)",
+      "name_en": "Polyarylate Fiber (Thermotropic Liquid Crystal Polymer / Vectran)",
+      "chemical_name": "对羟基苯甲酸与6-羟基-2-萘甲酸无规共聚酯",
+      "chemical_formula": "[-O-C6H4-CO-]x-[-O-C10H6-CO-]y",
+      "cas_number": "81843-52-9",
+      "generation": "第3代热致液晶高性能纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1990",
+      "pioneering_entity": "Celanese (塞拉尼斯) / Kuraray (日本可乐丽 Vectran)",
+      "spinning_method": "熔融纺丝及固相高真空长时后热处理 (熔体直接展现各向异性向列液晶相)",
+      "density_g_cm3": 1.4,
+      "tensile_strength_cn_dtex": 26.0,
+      "tensile_strength_gpa": 3.2,
+      "tensile_modulus_gpa": 85.0,
+      "elongation_at_break_pct": 3.8,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 28.0,
+      "melting_point_c": 330.0,
+      "max_service_temp_c": 160.0,
+      "typical_applications": "NASA火星探测器气囊(勇气号/机遇号)、深海超高耐切割系泊绳、羽毛球拍网线、高保真音响振膜",
+      "representative_brands": "Vectran (威克特纶 / Kuraray)",
+      "tech_status_2026": "在超低温极寒宇航环境下保持超强韧性，且耐弯折疲劳性显著超越碳纤维和芳纶",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_HETERO",
+      "category_name_zh": "刚性链杂环与热致液晶聚合物纤维",
+      "category_name_en": "Rigid-rod Heterocyclic & Liquid Crystalline Polymer Fibers",
+      "aliases": [
+        {
+          "alias": "Vectran",
+          "type": "trade_name"
+        },
+        {
+          "alias": "聚芳酯",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "威克特纶",
+          "type": "trade_name"
+        },
+        {
+          "alias": "TLCP",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 36766-2018",
+          "title": "聚芳酯长丝"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "category_id": 404,
+      "code": "PPS",
+      "name_zh": "聚苯硫醚纤维 (PPS纤维)",
+      "name_en": "Polyphenylene Sulfide Fiber (PPS)",
+      "chemical_name": "聚(对苯硫醚)",
+      "chemical_formula": "[-C6H4-S-]n",
+      "cas_number": "25212-74-2",
+      "generation": "第3代特种耐酸碱耐温工程纤维",
+      "discovery_year": "1967",
+      "commercial_year": "1983",
+      "pioneering_entity": "Phillips Petroleum (菲利普斯石油 Ryton) / 帝人 / 浙江新和成",
+      "spinning_method": "高温熔融纺丝与高倍热牵伸 (熔融温度310℃)",
+      "density_g_cm3": 1.35,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 0.6,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.2,
+      "loi_pct": 34.0,
+      "melting_point_c": 285.0,
+      "max_service_temp_c": 190.0,
+      "typical_applications": "燃煤火电厂与垃圾焚烧锅炉烟气脱硫除尘高温耐腐蚀滤袋、造纸工业干燥成型网、特种电绝缘织物",
+      "representative_brands": "Ryton, Toray PPS, 新和成PPS短纤",
+      "tech_status_2026": "在190℃含酸性二氧化硫湿热烟气环境下服役寿命超3年，为我国超低排放环保滤料支柱品种",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ENG",
+      "category_name_zh": "特种工程热塑性与耐高温纤维",
+      "category_name_en": "High-Performance Engineering Thermoplastic Fibers",
+      "aliases": [
+        {
+          "alias": "PPS",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚苯硫醚",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Ryton",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 31890-2015",
+          "title": "聚苯硫醚短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyphenylene sulphide"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "category_id": 404,
+      "code": "PEEK",
+      "name_zh": "聚醚醚酮纤维 (PEEK纤维)",
+      "name_en": "Polyetheretherketone Fiber (PEEK)",
+      "chemical_name": "聚芳醚醚酮",
+      "chemical_formula": "[-O-C6H4-O-C6H4-CO-C6H4-]n",
+      "cas_number": "29658-26-2",
+      "generation": "第3代超耐热宇航工程特种纤维",
+      "discovery_year": "1977",
+      "commercial_year": "1980s",
+      "pioneering_entity": "ICI (英国帝国化学 / Victrex 威格斯) / 中研股份",
+      "spinning_method": "超高温熔融纺丝 (熔体温度达380-400℃，需特种抗氧化喷丝组件)",
+      "density_g_cm3": 1.3,
+      "tensile_strength_cn_dtex": 6.5,
+      "tensile_strength_gpa": 0.85,
+      "tensile_modulus_gpa": 8.0,
+      "elongation_at_break_pct": 20.0,
+      "moisture_regain_pct": 0.2,
+      "loi_pct": 35.0,
+      "melting_point_c": 343.0,
+      "max_service_temp_c": 250.0,
+      "typical_applications": "航空航天热塑性热熔预浸料基体、网状植入医用脱垂修补片、半导体晶圆烘烤清洗载具网、油井电缆铠装护套",
+      "representative_brands": "Zyex (Victrex), PEEK filament, 吉大特塑",
+      "tech_status_2026": "热塑性碳纤维/PEEK共混编织预浸料在下一代宽体客机机身壁板制造中进入规模化适航认证",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ENG",
+      "category_name_zh": "特种工程热塑性与耐高温纤维",
+      "category_name_en": "High-Performance Engineering Thermoplastic Fibers",
+      "aliases": [
+        {
+          "alias": "PEEK",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚醚醚酮",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Zyex",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 33616-2017",
+          "title": "聚醚醚酮(PEEK)牵伸丝"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "category_id": 404,
+      "code": "PI-F",
+      "name_zh": "聚酰亚胺纤维 (PI纤维)",
+      "name_en": "Polyimide Fiber",
+      "chemical_name": "聚均苯四甲酰亚胺 / 聚联苯型共聚聚酰亚胺",
+      "chemical_formula": "[-N(CO)2C6H2(CO)2N-R-]n",
+      "cas_number": "25038-81-7",
+      "generation": "第3代全能型耐高温特种纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Evonik (P84 奥地利赢创) / 长春应化所 / 江苏奥神",
+      "spinning_method": "湿法或干法两步法纺丝 (聚酰胺酸PAA溶液纺丝后高温化学或热亚胺化)",
+      "density_g_cm3": 1.41,
+      "tensile_strength_cn_dtex": 5.5,
+      "tensile_strength_gpa": 0.8,
+      "tensile_modulus_gpa": 12.0,
+      "elongation_at_break_pct": 16.0,
+      "moisture_regain_pct": 2.5,
+      "loi_pct": 38.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 260.0,
+      "typical_applications": "260℃耐温微细异形截面高温除尘滤袋(P84叶裂形)、航天器多层隔热组件(MLI)、航天服阻燃内衬",
+      "representative_brands": "P84 (赢创 Evonik), 奥神PI短纤, 惠生PI长丝",
+      "tech_status_2026": "高强高模型聚酰亚胺长丝在深空探测器耐辐照绳索和柔性太阳翼薄膜基底增强中实现不可替代应用",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_ENG",
+      "category_name_zh": "特种工程热塑性与耐高温纤维",
+      "category_name_en": "High-Performance Engineering Thermoplastic Fibers",
+      "aliases": [
+        {
+          "alias": "PI纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "P84",
+          "type": "trade_name"
+        },
+        {
+          "alias": "聚酰亚胺",
+          "type": "chemical_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 31891-2015",
+          "title": "聚酰亚胺短纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Polyimide"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "category_id": 405,
+      "code": "PTFE-F",
+      "name_zh": "聚四氟乙烯纤维 (PTFE纤维/氟纶)",
+      "name_en": "Polytetrafluoroethylene Fiber (Fluorofibre)",
+      "chemical_name": "聚四氟乙烯 (塑料王纤维化)",
+      "chemical_formula": "[-CF2-CF2-]n",
+      "cas_number": "9002-84-0",
+      "generation": "第3代极限耐化学腐蚀特种纤维",
+      "discovery_year": "1938",
+      "commercial_year": "1953",
+      "pioneering_entity": "Roy Plunkett (杜邦 DuPont Teflon / 特氟龙)",
+      "spinning_method": "糊状挤出膜裂纺丝法、乳液载体湿纺法 (与纤维素共混烧结炭化载体)",
+      "density_g_cm3": 2.15,
+      "tensile_strength_cn_dtex": 2.5,
+      "tensile_strength_gpa": 0.54,
+      "tensile_modulus_gpa": 3.0,
+      "elongation_at_break_pct": 25.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 95.0,
+      "melting_point_c": 327.0,
+      "max_service_temp_c": 260.0,
+      "typical_applications": "王水及全溶剂耐极端腐蚀工业密封填料盘根、化工苛刻高温酸洗脱硫滤布、人造心血管微孔移植物(ePTFE)",
+      "representative_brands": "Teflon (特氟龙), Gore-Tex (戈尔), Profilen",
+      "tech_status_2026": "膜裂纤维及超细微孔膨体ePTFE技术高度成熟，在严苛湿化学催化过滤与人工脏器中持续占据霸主地位",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_FLUORO",
+      "category_name_zh": "含氟特种聚合物纤维",
+      "category_name_en": "Fluoropolymer Specialty Fibers",
+      "aliases": [
+        {
+          "alias": "PTFE纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "特氟龙纤维",
+          "type": "trade_name"
+        },
+        {
+          "alias": "氟纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Teflon",
+          "type": "trade_name"
+        },
+        {
+          "alias": "FLR",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 31892-2015",
+          "title": "聚四氟乙烯长丝"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Fluorofibre"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "category_id": 405,
+      "code": "PVDF-F",
+      "name_zh": "聚偏二氟乙烯纤维 (PVDF纤维)",
+      "name_en": "Polyvinylidene Fluoride Fiber",
+      "chemical_name": "聚偏氟乙烯 (具有特异电活性β相偶极排列)",
+      "chemical_formula": "[-CH2-CF2-]n",
+      "cas_number": "24937-79-9",
+      "generation": "第3代压电与耐候功能纤维",
+      "discovery_year": "1940s",
+      "commercial_year": "1970s",
+      "pioneering_entity": "Pennwalt (Kynar) / 阿科玛 (Arkema)",
+      "spinning_method": "熔融纺丝高倍电场牵伸，或静电纺丝直接原位极化取向诱导β相",
+      "density_g_cm3": 1.78,
+      "tensile_strength_cn_dtex": 3.5,
+      "tensile_strength_gpa": 0.62,
+      "tensile_modulus_gpa": 2.5,
+      "elongation_at_break_pct": 30.0,
+      "moisture_regain_pct": 0.04,
+      "loi_pct": 44.0,
+      "melting_point_c": 175.0,
+      "max_service_temp_c": 140.0,
+      "typical_applications": "自供电压电织物传感器、深海隐蔽水听器声学敏感织物、海水淡化微滤中空纤维膜、耐高光耐候特种渔线",
+      "representative_brands": "Kynar (阿科玛), Solef (索尔维), 氟碳鱼线",
+      "tech_status_2026": "原位极化纳米纤维微纳阵列实现足底与关节运动微能量高效收集，成为柔性可穿戴自驱动主流能量捕获元件",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_FLUORO",
+      "category_name_zh": "含氟特种聚合物纤维",
+      "category_name_en": "Fluoropolymer Specialty Fibers",
+      "aliases": [
+        {
+          "alias": "PVDF",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "聚偏氟乙烯",
+          "type": "chemical_name"
+        },
+        {
+          "alias": "Kynar",
+          "type": "trade_name"
+        },
+        {
+          "alias": "氟碳线",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D3222",
+          "title": "Standard Specification for Unmodified PVDF"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "category_id": 406,
+      "code": "NOV",
+      "name_zh": "酚醛纤维 (诺沃洛伊德/Kynol)",
+      "name_en": "Novoloid Fiber (Phenol-Formaldehyde Fiber)",
+      "chemical_name": "热固性交联线型酚醛树脂纤维",
+      "chemical_formula": "Cross-linked Novolac network",
+      "cas_number": "26023-27-8",
+      "generation": "第2代特种三维交联耐火耐炭化纤维",
+      "discovery_year": "1969",
+      "commercial_year": "1972",
+      "pioneering_entity": "Carborundum (卡波伦登) / 日本群荣化学 (Gun Ei Chemical)",
+      "spinning_method": "热塑性线型酚醛树脂熔融纺丝后，在甲醛与盐酸水溶液中加热固化深度交联",
+      "density_g_cm3": 1.27,
+      "tensile_strength_cn_dtex": 1.8,
+      "tensile_strength_gpa": 0.23,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 30.0,
+      "moisture_regain_pct": 6.0,
+      "loi_pct": 34.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 160.0,
+      "typical_applications": "高温密封烧蚀无石棉盘根、航天耐热碳前驱体、阻燃赛车服衬垫、化学品防护毯",
+      "representative_brands": "Kynol (群荣化学), Novoloid",
+      "tech_status_2026": "遇火碳化转化率极高且不收缩，常与碳纤维、芳纶混纺用于严苛火灾阻隔层与高端活性碳纤维前驱体",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_THERMO",
+      "category_name_zh": "耐高温交联热固性树脂纤维",
+      "category_name_en": "Cross-linked Thermoset Specialty Fibers",
+      "aliases": [
+        {
+          "alias": "酚醛纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Kynol",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Novoloid",
+          "type": "trade_name"
+        },
+        {
+          "alias": "NOV",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Novoloid"
+        },
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "酚醛纤维命名"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "category_id": 406,
+      "code": "MEL",
+      "name_zh": "三聚氰胺甲醛纤维 (美耐皿纤维/Basofil)",
+      "name_en": "Melamine Fiber",
+      "chemical_name": "三聚氰胺与甲醛交联缩聚高分子",
+      "chemical_formula": "Cross-linked Melamine-Formaldehyde",
+      "cas_number": "25036-13-9",
+      "generation": "第3代高效隔热阻燃无机/有机杂化感纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "1997",
+      "pioneering_entity": "BASF (巴斯夫 Basofil / 现属 Basofil LLC)",
+      "spinning_method": "水溶液离心旋转熔体/溶液挤出纺丝后热风固化交联",
+      "density_g_cm3": 1.4,
+      "tensile_strength_cn_dtex": 2.0,
+      "tensile_strength_gpa": 0.28,
+      "tensile_modulus_gpa": 7.0,
+      "elongation_at_break_pct": 12.0,
+      "moisture_regain_pct": 5.5,
+      "loi_pct": 32.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 200.0,
+      "typical_applications": "高铁与民航客机座椅防火阻隔衬垫、消防隔热手套耐热毡、工业炉窑阻火屏障",
+      "representative_brands": "Basofil (巴斯夫), 密胺纤维",
+      "tech_status_2026": "低游离甲醛绿色缩聚工艺达到欧标极高环保级别，在高端公共交通工具阻燃防火安全领域应用稳固",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "HP_THERMO",
+      "category_name_zh": "耐高温交联热固性树脂纤维",
+      "category_name_en": "Cross-linked Thermoset Specialty Fibers",
+      "aliases": [
+        {
+          "alias": "密胺纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "三聚氰胺纤维",
+          "type": "standard_name"
+        },
+        {
+          "alias": "Basofil",
+          "type": "trade_name"
+        },
+        {
+          "alias": "MEL",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "三聚氰胺纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Melamine"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "category_id": 501,
+      "code": "PAN-CF-HS",
+      "name_zh": "聚丙烯腈基高强型碳纤维 (T300/T700/T800/T1000/T1100)",
+      "name_en": "PAN-based High-Strength Carbon Fiber",
+      "chemical_name": "聚丙烯腈热解乱层石墨微晶连续纤维",
+      "chemical_formula": "C (Carbon content > 93-95%)",
+      "cas_number": "7440-44-0",
+      "generation": "第3代现代工业黑色黄金",
+      "discovery_year": "1959",
+      "commercial_year": "1971",
+      "pioneering_entity": "Akio Shindo (进藤昭男 / 日本产总研) / 日本东丽 (Toray Torayca)",
+      "spinning_method": "湿法或干喷湿纺制备高纯原丝，经预氧化(200-300℃)、高温炭化(1000-1500℃)惰性气氛热解",
+      "density_g_cm3": 1.79,
+      "tensile_strength_cn_dtex": 31.0,
+      "tensile_strength_gpa": 5.5,
+      "tensile_modulus_gpa": 290.0,
+      "elongation_at_break_pct": 1.9,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 65.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 500.0,
+      "typical_applications": "军用民用先进大飞机机身(波音787/空客A350/C929)、风力发电超长叶片碳梁、氢气瓶III/IV型缠绕层、高端体育器材",
+      "representative_brands": "Torayca T700/T800/T1100, 中复神鹰 SYT55S, 光威复材, 恒神",
+      "tech_status_2026": "我国T700/T800万吨级工程化全面成熟并占领全球主导，高强高模兼备高延伸T1100G/T1200级在尖端国防批量装备",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_PAN",
+      "category_name_zh": "聚丙烯腈基碳纤维",
+      "category_name_en": "PAN-based Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "T700",
+          "type": "trade_name"
+        },
+        {
+          "alias": "T800",
+          "type": "trade_name"
+        },
+        {
+          "alias": "T1000",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Torayca",
+          "type": "trade_name"
+        },
+        {
+          "alias": "CF",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 26752-2020",
+          "title": "聚丙烯腈基碳纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 13002",
+          "title": "Carbon fibre - Determination of filament diameter"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "category_id": 501,
+      "code": "PAN-CF-HM",
+      "name_zh": "聚丙烯腈基高模/超高模型碳纤维 (M40/M55/M60/M65J)",
+      "name_en": "PAN-based High-Modulus Carbon Fiber",
+      "chemical_name": "超高温石墨化微晶规整排布碳纤维",
+      "chemical_formula": "C (Carbon content > 99%)",
+      "cas_number": "7440-44-0",
+      "generation": "第4代超刚性宇航级石墨纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Toray (日本东丽) / Hexcel (美国赫氏)",
+      "spinning_method": "经超高温石墨化炉(2000-3000℃)超高温热处理，诱导微晶高度三维石墨化生长取向",
+      "density_g_cm3": 1.93,
+      "tensile_strength_cn_dtex": 19.5,
+      "tensile_strength_gpa": 3.8,
+      "tensile_modulus_gpa": 588.0,
+      "elongation_at_break_pct": 0.6,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 70.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 500.0,
+      "typical_applications": "天宫空间站柔性太阳翼支撑桁架、高精度对地遥感卫星相机镜头筒、洲际弹道导弹控制舵面、离子发动机栅极",
+      "representative_brands": "Torayca M40J / M55J / M60J, 光威复材QM40/QM55",
+      "tech_status_2026": "实现M55J与M60J百吨级完全自主供应链，突破极低线膨胀系数控制，保障国家天基光学与深空探测关键指标",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_PAN",
+      "category_name_zh": "聚丙烯腈基碳纤维",
+      "category_name_en": "PAN-based Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "高模碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "石墨纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "M55J",
+          "type": "trade_name"
+        },
+        {
+          "alias": "M60J",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 30019-2013",
+          "title": "碳纤维 密度的测定"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 10119",
+          "title": "Carbon fibre - Determination of density"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "category_id": 502,
+      "code": "PITCH-CF",
+      "name_zh": "沥青基碳纤维 (中间相超高模/各向同性级)",
+      "name_en": "Pitch-based Carbon Fiber (Mesophase & Isotropic)",
+      "chemical_name": "中间相沥青缩聚石墨化碳纤维",
+      "chemical_formula": "C (Carbon content > 99.5%)",
+      "cas_number": "7440-44-0",
+      "generation": "第3代超高导热超高刚度特种碳纤维",
+      "discovery_year": "1963",
+      "commercial_year": "1970s",
+      "pioneering_entity": "Otani (大谷杉郎) / Union Carbide / 日本三菱化学 (DIALEAD)",
+      "spinning_method": "煤或石油沥青经精制形成向列型中间相液晶沥青，熔融微孔纺丝、不熔化预氧化及超高温石墨化",
+      "density_g_cm3": 2.2,
+      "tensile_strength_cn_dtex": 16.0,
+      "tensile_strength_gpa": 3.4,
+      "tensile_modulus_gpa": 900.0,
+      "elongation_at_break_pct": 0.4,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 75.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 550.0,
+      "typical_applications": "高功率卫星电子芯片超高导热散热基板、宇航飞行器主结构、极端超高刚性空间天线反射器",
+      "representative_brands": "DIALEAD (三菱化学), Granoc (日本新日铁), 湖南大学沥青基CF",
+      "tech_status_2026": "超高导热中间相沥青基碳纤维全面打破国际技术封锁，实现百吨级高纯连续丝稳定生产",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_PITCH",
+      "category_name_zh": "沥青基碳纤维",
+      "category_name_en": "Pitch-based Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "沥青基碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "中间相碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "DIALEAD",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 36769-2018",
+          "title": "沥青基碳纤维"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "category_id": 503,
+      "code": "RAYON-CF",
+      "name_zh": "粘胶基碳纤维 (宇航防热烧蚀碳纤维)",
+      "name_en": "Rayon-based Carbon Fiber",
+      "chemical_name": "人造纤维素裂解无定形多孔微晶碳纤维",
+      "chemical_formula": "C (Carbon content 90~98%)",
+      "cas_number": "7440-44-0",
+      "generation": "第1代航天特种碳纤维",
+      "discovery_year": "1879",
+      "commercial_year": "1950s",
+      "pioneering_entity": "Thomas Edison (爱迪生竹丝/人造丝炭化) / 联合碳化物 (Union Carbide UCC)",
+      "spinning_method": "高品质粘胶平纹布/长丝经阻燃浸渍催化、阶梯式慢速脱水预氧化及1200℃热解炭化",
+      "density_g_cm3": 1.45,
+      "tensile_strength_cn_dtex": 5.5,
+      "tensile_strength_gpa": 0.8,
+      "tensile_modulus_gpa": 45.0,
+      "elongation_at_break_pct": 2.0,
+      "moisture_regain_pct": 1.0,
+      "loi_pct": 60.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 600.0,
+      "typical_applications": "洲际导弹再入弹头端头防热帽、固体火箭发动机喷管喉衬喉栓、高超音速飞行器防热大底烧蚀部件",
+      "representative_brands": "AvCarb, UCC Thornel-25, 航天材料及工艺研究所粘胶基CF",
+      "tech_status_2026": "作为国家级不可替代的极端耐烧蚀隔热特种战略物资，连续化催化低温预氧化技术大幅提高成品率",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_RAYON",
+      "category_name_zh": "纤维素与生物基前驱体碳纤维",
+      "category_name_en": "Cellulose & Bio-based Precursor Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "粘胶基碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "烧蚀防热碳纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GJB",
+          "code": "GJB 7234-2011",
+          "title": "固体火箭发动机喷管用粘胶基碳布规范"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "category_id": 505,
+      "code": "ACF",
+      "name_zh": "活性碳纤维 (ACF/微孔吸附纤维)",
+      "name_en": "Activated Carbon Fiber",
+      "chemical_name": "富微孔高比表面积石墨化交联碳纤维",
+      "chemical_formula": "C (Micro-porous Carbon)",
+      "cas_number": "7440-44-0",
+      "generation": "第2代吸附分离功能纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1970s",
+      "pioneering_entity": "Brimer / 日本可乐丽 (Kuraray) / 东洋纺",
+      "spinning_method": "粘胶、酚醛或PAN纤维碳化后，在800-1000℃经水蒸气或CO2高温物理/化学活化造孔",
+      "density_g_cm3": 0.85,
+      "tensile_strength_cn_dtex": 2.5,
+      "tensile_strength_gpa": 0.25,
+      "tensile_modulus_gpa": 15.0,
+      "elongation_at_break_pct": 2.5,
+      "moisture_regain_pct": 3.0,
+      "loi_pct": 50.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 350.0,
+      "typical_applications": "化生核防毒面具滤芯、半导体超纯VOC有机废气脱附回收装置、血液透析吸附净化滤柱、超级电容器电极",
+      "representative_brands": "Kynol ACF, Kuractive, 赛普乐斯ACF",
+      "tech_status_2026": "微孔比表面积突破2500 m²/g且孔径分布在1-2 nm均匀调控，吸脱附速率较传统颗粒活性炭快数十倍",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_ACT",
+      "category_name_zh": "活性碳纤维材料",
+      "category_name_en": "Activated Carbon Fibers (ACF)",
+      "aliases": [
+        {
+          "alias": "活性碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "ACF",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "碳吸附纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 32993-2016",
+          "title": "活性碳纤维微孔孔径分布测定"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "category_id": 504,
+      "code": "CNT-F",
+      "name_zh": "碳纳米管宏观连续纤维 (CNT纤维)",
+      "name_en": "Carbon Nanotube Fiber (CNT Fiber)",
+      "chemical_name": "高度取向密排单壁/双壁碳纳米管宏观聚集体长丝",
+      "chemical_formula": "C (Single/Few-walled CNT arrays)",
+      "cas_number": "308068-56-6",
+      "generation": "第4代纳米尺度宏观组装尖端纤维",
+      "discovery_year": "2000",
+      "commercial_year": "2015",
+      "pioneering_entity": "Poulin (湿法纺丝) / Windle (剑桥大学浮动催化CVD) / 魏飞 (清华) / 中科院物理所",
+      "spinning_method": "浮动催化化学气相沉积(FCCVD)气相直接牵伸卷绕纺丝，或超强酸液晶湿法纺丝",
+      "density_g_cm3": 1.4,
+      "tensile_strength_cn_dtex": 32.0,
+      "tensile_strength_gpa": 4.5,
+      "tensile_modulus_gpa": 250.0,
+      "elongation_at_break_pct": 4.5,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 60.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 450.0,
+      "typical_applications": "卫星微波同轴电缆轻量化屏蔽网织物(减重80%)、宇航航天抗雷击网、微型智能肌肉驱动线、可穿戴电热防除冰",
+      "representative_brands": "Tortech Nano, Nanocomp DexMat Galvorn, 碳纳米管连续纺丝",
+      "tech_status_2026": "千米级连续原位纺丝速率突破100 m/min，导电率逼近金属铜(>10^7 S/m)，在航空航天线束轻量化大规模替代铜网",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_NANO",
+      "category_name_zh": "先进低维碳连续纤维",
+      "category_name_en": "Advanced Low-Dimensional Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "CNT纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "碳纳米管长丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Galvorn",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO/TS 10798",
+          "title": "Nanotechnologies - Characterization of single-wall carbon nanotubes using SEM and EDX"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "category_id": 504,
+      "code": "GF-NANO",
+      "name_zh": "石墨烯宏观连续纤维 (石墨烯长丝)",
+      "name_en": "Graphene Fiber",
+      "chemical_name": "二维石墨烯片层高度沿轴向排列组装宏观长丝",
+      "chemical_formula": "C (Reduced Graphene Oxide / Neat Graphene)",
+      "cas_number": "1034343-98-0",
+      "generation": "第4代纳米材料宏观有序构筑纤维",
+      "discovery_year": "2011",
+      "commercial_year": "2020",
+      "pioneering_entity": "高超 (浙江大学高分子系团队原创发明)",
+      "spinning_method": "氧化石墨烯高浓度液晶溶液湿法纺丝，经化学还原/高温热还原深度石墨化缺陷修复",
+      "density_g_cm3": 1.65,
+      "tensile_strength_cn_dtex": 22.0,
+      "tensile_strength_gpa": 3.6,
+      "tensile_modulus_gpa": 400.0,
+      "elongation_at_break_pct": 2.0,
+      "moisture_regain_pct": 0.2,
+      "loi_pct": 65.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 500.0,
+      "typical_applications": "极端高导热热沉织物、柔性超级电容器电极核心丝、高灵敏智能生理信号传感纤维、抗辐射特种导线",
+      "representative_brands": "高超团队石墨烯长丝, 杭州高烯科技",
+      "tech_status_2026": "实现百吨级多孔高强石墨烯导电导热纤维量产，热导率达1500 W/m·K，在下一代大功率柔性可穿戴热管理商业化落地",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "CF_NANO",
+      "category_name_zh": "先进低维碳连续纤维",
+      "category_name_en": "Advanced Low-Dimensional Carbon Fibers",
+      "aliases": [
+        {
+          "alias": "石墨烯纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "GF",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 30544.13-2018",
+          "title": "纳米科技 术语 第13部分：石墨烯及相关二维材料"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "category_id": 601,
+      "code": "E-GLASS",
+      "name_zh": "无碱玻璃纤维 (E-玻纤)",
+      "name_en": "Alkali-free Glass Fiber (E-Glass)",
+      "chemical_name": "铝硼硅酸盐玻璃 (碱金属氧化物<0.8%)",
+      "chemical_formula": "SiO2-Al2O3-B2O3-CaO-MgO",
+      "cas_number": "65997-17-3",
+      "generation": "第1代无机基础复合增强纤维",
+      "discovery_year": "1930s",
+      "commercial_year": "1938",
+      "pioneering_entity": "Owens-Corning (欧文斯科宁) / 中国巨石",
+      "spinning_method": "单元池窑拉丝法 (玻璃配合料1580℃高温熔融，铂铑合金多孔漏板高速下拉卷绕)",
+      "density_g_cm3": 2.58,
+      "tensile_strength_cn_dtex": 13.5,
+      "tensile_strength_gpa": 3.4,
+      "tensile_modulus_gpa": 76.0,
+      "elongation_at_break_pct": 4.5,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1200.0,
+      "max_service_temp_c": 550.0,
+      "typical_applications": "风电叶片、覆铜板PCB基板增强布、汽车轻量化SMC/BMC模塑料、玻璃钢游艇、建筑防腐管道",
+      "representative_brands": "Advantex, 中国巨石E6/E7/E8, 泰山玻纤, 重庆国际",
+      "tech_status_2026": "中国产能占全球75%以上；高模低能耗无硼无氟配方（模量破90 GPa）成为大型化百米风电叶片标配",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "INORG_GLASS",
+      "category_name_zh": "高性能玻璃纤维系列",
+      "category_name_en": "Glass Fiber Series",
+      "aliases": [
+        {
+          "alias": "E玻纤",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "无碱玻纤",
+          "type": "colloquial"
+        },
+        {
+          "alias": "玻璃纤维",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 18369-2008",
+          "title": "玻璃纤维无捻粗纱"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Glass generic name"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "category_id": 601,
+      "code": "S-GLASS",
+      "name_zh": "高强高模玻璃纤维 (S-Glass / S-2 Glass)",
+      "name_en": "High-Strength Glass Fiber (S-Glass)",
+      "chemical_name": "无硼镁铝硅酸盐玻璃",
+      "chemical_formula": "SiO2-Al2O3-MgO ternary system",
+      "cas_number": "65997-17-3",
+      "generation": "第2代特种军工级高强玻纤",
+      "discovery_year": "1960s",
+      "commercial_year": "1968",
+      "pioneering_entity": "Owens-Corning (S-2 Glass) / 南京玻璃纤维研究设计院 (中材科技)",
+      "spinning_method": "超高温池窑/贵金属坩埚拉丝 (熔化温度>1650℃)",
+      "density_g_cm3": 2.48,
+      "tensile_strength_cn_dtex": 18.5,
+      "tensile_strength_gpa": 4.6,
+      "tensile_modulus_gpa": 89.0,
+      "elongation_at_break_pct": 5.2,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1450.0,
+      "max_service_temp_c": 750.0,
+      "typical_applications": "武装直升机防弹装甲座舱板、大型火箭复合材料压力容器、步兵战车轻量化防破片衬层、高抗冲机翼天线罩",
+      "representative_brands": "S-2 Glass, HS4/HS6 (中材科技南玻院)",
+      "tech_status_2026": "国内新一代模量达100 GPa超高强玻纤打破国际垄断，在深潜器耐压球壳与重型装备结构件广泛装配",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_GLASS",
+      "category_name_zh": "高性能玻璃纤维系列",
+      "category_name_en": "Glass Fiber Series",
+      "aliases": [
+        {
+          "alias": "S玻纤",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "S-2玻纤",
+          "type": "trade_name"
+        },
+        {
+          "alias": "高强玻璃纤维",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 30022-2013",
+          "title": "高强玻璃纤维无捻粗纱"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "category_id": 601,
+      "code": "QUARTZ-F",
+      "name_zh": "高纯石英纤维 (石英玻璃纤维)",
+      "name_en": "Quartz Fiber (High Purity Fused Silica Fiber)",
+      "chemical_name": "超纯熔融二氧化硅 (SiO2纯度>99.95%)",
+      "chemical_formula": "SiO2 (>99.95%)",
+      "cas_number": "60676-86-0",
+      "generation": "第3代极限耐高温低介电特种无机纤维",
+      "discovery_year": "1950s",
+      "commercial_year": "1960s",
+      "pioneering_entity": "Saint-Gobain (圣戈班 Quartzel) / 菲利华 (Feilihua)",
+      "spinning_method": "天然高纯水晶棒经氢氧焰或等离子焰高温熔化拉丝",
+      "density_g_cm3": 2.2,
+      "tensile_strength_cn_dtex": 16.0,
+      "tensile_strength_gpa": 3.6,
+      "tensile_modulus_gpa": 78.0,
+      "elongation_at_break_pct": 4.6,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1700.0,
+      "max_service_temp_c": 1050.0,
+      "typical_applications": "超高音速战机/导弹雷达透波天线罩(极低介电常数Dk=3.74, 损耗Df=0.0002)、航天飞机防热瓦隔热层、半导体石英织物",
+      "representative_brands": "Quartzel (圣戈班), 菲利华石英纤维",
+      "tech_status_2026": "掌握超纯合成二氧化硅棒材气相沉积拉丝新工艺，纯度达99.999%且耐辐照无色心，全面装备国家重点航天型号",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_GLASS",
+      "category_name_zh": "高性能玻璃纤维系列",
+      "category_name_en": "Glass Fiber Series",
+      "aliases": [
+        {
+          "alias": "石英纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Quartzel",
+          "type": "trade_name"
+        },
+        {
+          "alias": "二氧化硅纤维",
+          "type": "chemical_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "JC",
+          "code": "JC/T 584-2016",
+          "title": "石英玻璃纤维"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "category_id": 601,
+      "code": "LOW-DK-G",
+      "name_zh": "低介电超薄玻璃纤维 (Low-Dk玻纤)",
+      "name_en": "Low Dielectric Glass Fiber (Low-Dk / Low-Df)",
+      "chemical_name": "低介电硼硅酸盐特种玻璃",
+      "chemical_formula": "SiO2-B2O3-Al2O3 Low-loss Glass",
+      "cas_number": "65997-17-3",
+      "generation": "第4代高频高速通信电子特种纤维",
+      "discovery_year": "2000s",
+      "commercial_year": "2018",
+      "pioneering_entity": "AGC (旭硝子) / 宏和科技 / 中国巨石",
+      "spinning_method": "超精细单元窑多孔拉丝制备单丝直径4-5微米开纤电子纱",
+      "density_g_cm3": 2.36,
+      "tensile_strength_cn_dtex": 11.5,
+      "tensile_strength_gpa": 2.7,
+      "tensile_modulus_gpa": 65.0,
+      "elongation_at_break_pct": 3.8,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1250.0,
+      "max_service_temp_c": 600.0,
+      "typical_applications": "AI算力GPU服务器主板、5G-A/6G毫米波基站天线PCB板、自动驾驶毫米波雷达高频高速印制电路布",
+      "representative_brands": "Low-Dk Glass, 巨石高频印制板基布",
+      "tech_status_2026": "10 GHz下介电常数降至4.0以下且介质损耗角切正值<0.002，全面满足百Tbps吞吐算力集群极端低延迟信号传输",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_GLASS",
+      "category_name_zh": "高性能玻璃纤维系列",
+      "category_name_en": "Glass Fiber Series",
+      "aliases": [
+        {
+          "alias": "Low-Dk玻纤",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "低介电玻璃纤维",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 18374-2008",
+          "title": "印制板用E玻璃纤维布"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "category_id": 601,
+      "code": "AR-GLASS",
+      "name_zh": "耐碱玻璃纤维 (AR-玻纤/抗裂水泥抗碱纤维)",
+      "name_en": "Alkali-Resistant Glass Fiber (AR-Glass)",
+      "chemical_name": "含高浓度氧化锆耐碱硅酸盐玻璃 (ZrO2含量>16.7%)",
+      "chemical_formula": "SiO2-ZrO2-Na2O system",
+      "cas_number": "65997-17-3",
+      "generation": "第2代建筑特种工程纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1971",
+      "pioneering_entity": "BRE / Pilkington (皮尔金顿 Cem-FIL)",
+      "spinning_method": "铂金坩埚或耐高温特种池窑拉丝",
+      "density_g_cm3": 2.74,
+      "tensile_strength_cn_dtex": 11.0,
+      "tensile_strength_gpa": 3.0,
+      "tensile_modulus_gpa": 72.0,
+      "elongation_at_break_pct": 3.6,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1250.0,
+      "max_service_temp_c": 600.0,
+      "typical_applications": "玻璃纤维增强水泥外墙异形挂板(GRC幕墙)、公路桥梁防撞栏混凝土抗裂防渗筋、高耐久预制构件",
+      "representative_brands": "Cem-FIL, 泰山耐碱玻纤",
+      "tech_status_2026": "高含量氧化锆钝化膜技术在强碱性(pH>13)水泥水化环境下耐受寿命超50年，GRC建筑立面艺术造型全球标准材料",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "INORG_GLASS",
+      "category_name_zh": "高性能玻璃纤维系列",
+      "category_name_en": "Glass Fiber Series",
+      "aliases": [
+        {
+          "alias": "AR玻纤",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "耐碱玻纤",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Cem-FIL",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 34676-2017",
+          "title": "耐碱玻璃纤维无捻粗纱"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "category_id": 602,
+      "code": "CBF",
+      "name_zh": "玄武岩连续纤维 (CBF/天然火山岩纤维)",
+      "name_en": "Continuous Basalt Fiber (CBF)",
+      "chemical_name": "天然均质辉绿玄武岩矿石熔融铝硅铁钙无机聚合物",
+      "chemical_formula": "SiO2-Al2O3-Fe2O3-FeO-CaO-MgO",
+      "cas_number": "65997-17-3",
+      "generation": "第3代天然无机绿色高性能纤维",
+      "discovery_year": "1923",
+      "commercial_year": "1985",
+      "pioneering_entity": "前苏联乌克兰材料问题研究所 / 东南大学 / 四川航天拓鑫",
+      "spinning_method": "天然火山玄武岩矿石破碎清洗后，经1450-1500℃纯熔融直接由铂铑合金漏板高速拉丝 (全过程无工业废水三废)",
+      "density_g_cm3": 2.75,
+      "tensile_strength_cn_dtex": 13.0,
+      "tensile_strength_gpa": 3.6,
+      "tensile_modulus_gpa": 95.0,
+      "elongation_at_break_pct": 3.1,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 100.0,
+      "melting_point_c": 1450.0,
+      "max_service_temp_c": 650.0,
+      "typical_applications": "海洋重腐蚀跨海大桥无锈耐腐蚀筋材(替代传统钢筋)、防火消防逃生毯与防火幕帘、沥青道路抗车辙网格布、高铁吸音屏障",
+      "representative_brands": "Kamenny Vek, 四川拓鑫玄武岩纤维, 江苏天龙",
+      "tech_status_2026": "百孔至千孔大型多排漏板自动化均质拉丝技术彻底攻克，能耗大幅下降，中国产能位居全球榜首",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_MINERAL",
+      "category_name_zh": "天然玄武岩熔融矿物纤维",
+      "category_name_en": "Basalt Continuous Fibers",
+      "aliases": [
+        {
+          "alias": "玄武岩纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "火山岩纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "CBF",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 25045-2010",
+          "title": "玄武岩纤维无捻粗纱"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Basalt generic name"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "category_id": 603,
+      "code": "SIC-F",
+      "name_zh": "连续碳化硅纤维 (SiC纤维 1代/2代/3代)",
+      "name_en": "Continuous Silicon Carbide Fiber (SiC Fiber)",
+      "chemical_name": "近化学计量比致密微晶碳化硅",
+      "chemical_formula": "SiC (微量游离碳与氧化硅)",
+      "cas_number": "409-21-2",
+      "generation": "第4代超高温战略热结构陶瓷纤维",
+      "discovery_year": "1975",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Seishi Yajima (矢岛圣使 / 日本东北大学) / 日本碳素 (Nippon Carbon) / 国防科大",
+      "spinning_method": "聚碳硅烷(PCS)前驱体熔融纺丝，经不熔化空气/电子束辐照交联后，在惰性气氛经1200-1800℃高温热解烧结",
+      "density_g_cm3": 3.1,
+      "tensile_strength_cn_dtex": 10.0,
+      "tensile_strength_gpa": 3.0,
+      "tensile_modulus_gpa": 400.0,
+      "elongation_at_break_pct": 0.8,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 2700.0,
+      "max_service_temp_c": 1400.0,
+      "typical_applications": "新一代军民用航空涡轮发动机热端陶瓷基复合材料(CMC-SiC)导向叶片与转子、高超音速飞行器燃烧室喉道壁、核反应堆包壳管",
+      "representative_brands": "Nicalon (1代), Hi-Nicalon (2代), Hi-Nicalon Type S (3代), Tyranno, 湖南赛菲",
+      "tech_status_2026": "第3代耐温超1450℃超低氧耐蠕变近化学计量比SiC长丝百吨级产线稳定交付，支撑我国国产先进航空发动机商用试车",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "碳化硅纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "SiC纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Nicalon",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 36765-2018",
+          "title": "碳化硅长丝"
+        },
+        {
+          "org": "ASTM",
+          "code": "ASTM C1557",
+          "title": "Standard Test Method for Tensile Strength of Ceramic Fibers"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "category_id": 603,
+      "code": "AL2O3-F",
+      "name_zh": "连续氧化铝微晶纤维 (Nextel 610/720)",
+      "name_en": "Continuous Alumina Ceramic Fiber",
+      "chemical_name": "超细纳米晶α-Al2O3 / 莫来石复合多晶陶瓷",
+      "chemical_formula": "Al2O3-SiO2 (>99% or Mullite composite)",
+      "cas_number": "1344-28-1",
+      "generation": "第4代超高温抗氧化陶瓷纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1990s",
+      "pioneering_entity": "3M 公司 (Nextel 610 / 720) / 山东硅苑 / 浙江拓盛",
+      "spinning_method": "溶胶-凝胶法 (Sol-Gel): 铝氧烷/铝盐水溶胶与微量助剂配置纺丝胶体，干法挤出纺丝并经1300℃受控快速烧结",
+      "density_g_cm3": 3.9,
+      "tensile_strength_cn_dtex": 8.0,
+      "tensile_strength_gpa": 3.1,
+      "tensile_modulus_gpa": 380.0,
+      "elongation_at_break_pct": 0.8,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 2050.0,
+      "max_service_temp_c": 1200.0,
+      "typical_applications": "航空发动机排气尾喷管高温隔热毯、特种高温陶瓷基刹车盘、空间碎片微流星体超高速撞击防护屏蔽网、金属基复合材料强化丝",
+      "representative_brands": "Nextel 610, Nextel 720 (3M)",
+      "tech_status_2026": "彻底解决微晶晶粒在1200℃以上长时服役晶粒粗化痛点，实现金属基/氧化物陶瓷基复合材料关键强化件量产",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "氧化铝纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Nextel",
+          "type": "trade_name"
+        },
+        {
+          "alias": "刚玉纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM C1557",
+          "title": "Tensile Strength of Ambient Ceramic Fibers"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "category_id": 603,
+      "code": "SI3N4-F",
+      "name_zh": "连续氮化硅纤维 (Si3N4纤维)",
+      "name_en": "Continuous Silicon Nitride Fiber",
+      "chemical_name": "多晶氮化硅结构陶瓷长丝",
+      "chemical_formula": "Si3N4",
+      "cas_number": "12033-89-5",
+      "generation": "第4代超高温耐磨特种陶瓷纤维",
+      "discovery_year": "1980s",
+      "commercial_year": "2000s",
+      "pioneering_entity": "Dow Corning / 日本东燃 (Tonen) / 中科院化学所",
+      "spinning_method": "聚硅氮烷(Polysilazane)前驱体聚合熔融纺丝，氨气气氛下脱碳交联高温热解",
+      "density_g_cm3": 2.5,
+      "tensile_strength_cn_dtex": 10.5,
+      "tensile_strength_gpa": 2.6,
+      "tensile_modulus_gpa": 250.0,
+      "elongation_at_break_pct": 1.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1900.0,
+      "max_service_temp_c": 1300.0,
+      "typical_applications": "超高超音速导弹天线罩耐冲刷透波复合材料、耐熔融金属浸润坩埚内衬、耐磨高温轴承增强件",
+      "representative_brands": "Tonen Si3N4, 聚硅氮烷基氮化硅纤维",
+      "tech_status_2026": "具有优于SiC的微波透波率与极佳抗熔融铝液铁水腐蚀性，在电磁窗口与特种冶金中实现列装应用",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "氮化硅纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Si3N4",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO 19634",
+          "title": "Fine ceramics - Ceramic composites at high temperature"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "category_id": 603,
+      "code": "BORON-F",
+      "name_zh": "连续硼纤维 (Boron Fiber)",
+      "name_en": "Continuous Boron Fiber",
+      "chemical_name": "微晶元素硼在钨丝/碳丝基底上气相沉积包覆物",
+      "chemical_formula": "B on W core / C core",
+      "cas_number": "14798-12-0",
+      "generation": "第2代超高刚度结构增强纤维",
+      "discovery_year": "1959",
+      "commercial_year": "1966",
+      "pioneering_entity": "Claude Talley (Texaco / 特士古) / Specialty Materials Inc",
+      "spinning_method": "化学气相沉积法 (CVD): 以12微米极细钨丝或碳丝为芯材通电红热(1200℃)，三氯化硼与氢气在反应室还原沉积硼",
+      "density_g_cm3": 2.55,
+      "tensile_strength_cn_dtex": 14.0,
+      "tensile_strength_gpa": 3.6,
+      "tensile_modulus_gpa": 400.0,
+      "elongation_at_break_pct": 0.9,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 2070.0,
+      "max_service_temp_c": 500.0,
+      "typical_applications": "F-15/F-14战机水平平尾主承力结构、B-1轰炸机机翼后梁、核反应堆中子吸收屏蔽网、顶级钓竿中段加劲丝",
+      "representative_brands": "Specialty Materials Boron, Textron Boron",
+      "tech_status_2026": "凭借超粗单丝直径带来的超强抗压缩与轴向承载力，在战斗机受损机体碳/硼复合补片微创原位修复中持续独占关键地位",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "硼纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "CVD硼纤维",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D3379",
+          "title": "Tensile Strength and Young's Modulus for High-Modulus Single-Filament Materials"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "category_id": 604,
+      "code": "SS-F",
+      "name_zh": "不锈钢超细微丝纤维 (金属纤维)",
+      "name_en": "Stainless Steel Microfiber (Metal Fiber)",
+      "chemical_name": "奥氏体316L微合金不锈钢",
+      "chemical_formula": "Fe-Cr-Ni-Mo (316L)",
+      "cas_number": "65997-19-5",
+      "generation": "第2代特种多功能导电纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1970s",
+      "pioneering_entity": "Bekaert (比利时贝卡尔特 Bekinox) / 西部材料",
+      "spinning_method": "集束拉拔法 (Bundle Drawing): 上千根不锈钢丝包覆于软钢基体中多道次冷拉拔减径至1-8微米后酸洗溶去基体",
+      "density_g_cm3": 7.9,
+      "tensile_strength_cn_dtex": 1.5,
+      "tensile_strength_gpa": 1.2,
+      "tensile_modulus_gpa": 200.0,
+      "elongation_at_break_pct": 2.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1400.0,
+      "max_service_temp_c": 600.0,
+      "typical_applications": "军工防电磁辐射服织物、触摸屏手套导电指尖指头纱、汽车挡风玻璃热弯耐高温缓冲织物、防静电洁净室工装",
+      "representative_brands": "Bekinox (贝卡尔特), Bekaert Beki-sheld, 西部材料金属纤维",
+      "tech_status_2026": "单丝直径突破1微米极限并能与棉、涤纶等任意混纺成高支纱线，成为智能穿戴柔性电极不可磨损的高可靠金属导体",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_METAL",
+      "category_name_zh": "微细金属与智能液态金属纤维",
+      "category_name_en": "Metallic & Liquid Metal Fibers",
+      "aliases": [
+        {
+          "alias": "不锈钢纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "金属纤维",
+          "type": "standard_name"
+        },
+        {
+          "alias": "Bekinox",
+          "type": "trade_name"
+        },
+        {
+          "alias": "ME",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "金属纤维"
+        },
+        {
+          "org": "ISO",
+          "code": "ISO 2076:2021",
+          "title": "Metal fibre"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "category_id": 604,
+      "code": "LM-F",
+      "name_zh": "镓铟液态合金柔性同轴拉伸纤维 (液态金属纤维)",
+      "name_en": "Liquid Metal Coaxial Stretchable Fiber (EGaIn Fiber)",
+      "chemical_name": "共晶镓铟合金核/弹性硅胶-聚氨酯壳层",
+      "chemical_formula": "EGaIn core (75.5% Ga, 24.5% In) / Elastomer shell",
+      "cas_number": null,
+      "generation": "第4代室温流态高导电智能纤维",
+      "discovery_year": "2010s",
+      "commercial_year": "2022",
+      "pioneering_entity": "Dickey (北卡州立大学) / 刘静 (清华大学/理化所)",
+      "spinning_method": "同轴微流控共挤出纺丝 (外层聚合弹性体原位光固化，内芯连续注入室温液态金属)",
+      "density_g_cm3": 2.1,
+      "tensile_strength_cn_dtex": 0.8,
+      "tensile_strength_gpa": 0.08,
+      "tensile_modulus_gpa": 0.02,
+      "elongation_at_break_pct": 700.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 28.0,
+      "melting_point_c": 15.5,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "大幅拉伸变形下电阻近乎零变化的超弹柔性天线、可水洗智能织物心电ECG传感导线、软体机器人人工肌肉驱动线",
+      "representative_brands": "LiquidConduct, EGaIn Fiber",
+      "tech_status_2026": "解决严苛剪切破裂下自愈合封装难题，在万次700%超大拉伸循环下电阻变化率小于5%，进入智能运动医疗量产",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_METAL",
+      "category_name_zh": "微细金属与智能液态金属纤维",
+      "category_name_en": "Metallic & Liquid Metal Fibers",
+      "aliases": [
+        {
+          "alias": "液态金属纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "镓铟合金丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "EGaIn",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "IEEE",
+          "code": "IEEE P2844",
+          "title": "Standard for Recommended Practice of Flexible and Stretchable Electronics"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "category_id": 701,
+      "code": "SPIDER-F",
+      "name_zh": "重组基因工程蜘蛛丝纤维 (人造蜘蛛丝)",
+      "name_en": "Recombinant Spider Silk Protein Fiber",
+      "chemical_name": "基因工程大肠杆菌/酵母重组大壶状腺蛛丝蛋白 (MaSp1/MaSp2)",
+      "chemical_formula": "Recombinant Spidroin Polypeptide",
+      "cas_number": null,
+      "generation": "第4代合成生物学革命性仿生纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2019",
+      "pioneering_entity": "Spiber (日本) / AMSilk (德国) / 聚维元创 / 态创生物",
+      "spinning_method": "发酵工程菌超高密度发酵合成重组蛛丝蛋白，微流控模拟蜘蛛纺丝管进行水相剪切拉伸结晶成纤",
+      "density_g_cm3": 1.32,
+      "tensile_strength_cn_dtex": 8.5,
+      "tensile_strength_gpa": 1.15,
+      "tensile_modulus_gpa": 15.0,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 10.0,
+      "loi_pct": 24.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 150.0,
+      "typical_applications": "奢华户外极地探索冲锋衣(Moon Parka)、可吸收无异物感神经外科精密缝线、环保超韧防震汽车保险杠复合增强织物",
+      "representative_brands": "Brewed Protein (Spiber), Biosteel (AMSilk), QMONOS",
+      "tech_status_2026": "百吨级工业化生物合成发酵工厂满产，成本由每公斤上万美元大幅降至百美元区间，全生物相容完全降解",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "EMG_BIOENG",
+      "category_name_zh": "合成生物工程与仿生结构蛋白纤维",
+      "category_name_en": "Synthetic Biology & Structural Protein Fibers",
+      "aliases": [
+        {
+          "alias": "人造蜘蛛丝",
+          "type": "colloquial"
+        },
+        {
+          "alias": "蜘蛛丝纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Brewed Protein",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Biosteel",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM F3160",
+          "title": "Characterization of Recombinant Structural Proteins"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "category_id": 704,
+      "code": "AERO-F",
+      "name_zh": "仿北极熊毛纳微多孔气凝胶超保暖纤维",
+      "name_en": "Biomimetic Aerogel Textile Fiber",
+      "chemical_name": "仿北极熊毛芯-壳结构微孔二氧化硅-高分子纳米气凝胶复合长丝",
+      "chemical_formula": "Silica/Polymer Core-Sheath Nanoporous Network",
+      "cas_number": null,
+      "generation": "第4代极端热防护仿生织物纤维",
+      "discovery_year": "2018",
+      "commercial_year": "2023",
+      "pioneering_entity": "柏浩 (浙江大学化工学院团队原创发明)",
+      "spinning_method": "定向冻结冷冻纺丝结合超临界CO2干燥，并在外层原位共挤包覆坚韧透明聚酯/聚氨酯保护鞘层",
+      "density_g_cm3": 0.25,
+      "tensile_strength_cn_dtex": 3.8,
+      "tensile_strength_gpa": 0.1,
+      "tensile_modulus_gpa": 1.2,
+      "elongation_at_break_pct": 16.0,
+      "moisture_regain_pct": 1.5,
+      "loi_pct": 32.0,
+      "melting_point_c": 220.0,
+      "max_service_temp_c": 160.0,
+      "typical_applications": "零下40℃极地超薄羽绒替代保暖服、航天员出舱服保暖层、冷链物流超薄隔热垫、红外热隐身伪装迷彩服",
+      "representative_brands": "PolarAerogel, 仿生极地绒",
+      "tech_status_2026": "完全解决传统气凝胶易脆碎掉粉难题，仅数毫米厚度即可达到传统厚重羽绒服同等保暖效果，耐洗涤超50次",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "EMG_AERO",
+      "category_name_zh": "仿生纳微多孔气凝胶超绝热纤维",
+      "category_name_en": "Biomimetic Aerogel Ultra-Insulating Fibers",
+      "aliases": [
+        {
+          "alias": "气凝胶纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "北极熊毛纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "极寒纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 39548-2020",
+          "title": "气凝胶绝热材料技术条件"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "category_id": 705,
+      "code": "MXENE-F",
+      "name_zh": "MXene二维过渡金属碳化物智能导电纤维",
+      "name_en": "MXene Multifunctional Smart Fiber",
+      "chemical_name": "二维碳化钛 (Ti3C2Tx) 纳米多层叠合长丝",
+      "chemical_formula": "Ti3C2Tx (Tx = -OH, -F, =O)",
+      "cas_number": "12363-89-2",
+      "generation": "第4代超高电导率二维晶体纳米纤维",
+      "discovery_year": "2011",
+      "commercial_year": "2022",
+      "pioneering_entity": "Yury Gogotsi / 德雷塞尔大学 / 北京化工大学 / 复旦大学",
+      "spinning_method": "无表面活性剂大单片无缺陷Ti3C2Tx液晶相水溶液直接湿法挤出微流控纺丝",
+      "density_g_cm3": 3.2,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 0.65,
+      "tensile_modulus_gpa": 55.0,
+      "elongation_at_break_pct": 3.0,
+      "moisture_regain_pct": 0.5,
+      "loi_pct": 35.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 200.0,
+      "typical_applications": "超薄轻量化宽频电磁屏蔽织物(屏蔽效能>80 dB)、高灵敏呼气微湿度探测纤维、极端快速电热变温服、超级电容器储能电极",
+      "representative_brands": "MXeneFil, 钛碳烯纤维",
+      "tech_status_2026": "通过化学配位与表面聚合物分子级抗氧化包覆，彻底攻克水氧环境下易氧化降解难题，电导率稳定在1.2×10^6 S/m",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "EMG_2D",
+      "category_name_zh": "二维晶体材料复合功能纤维",
+      "category_name_en": "2D Crystal Materials Functional Fibers",
+      "aliases": [
+        {
+          "alias": "MXene纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "碳化钛纤维",
+          "type": "chemical_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "IEEE",
+          "code": "IEEE Std 2844.1",
+          "title": "Standard for 2D Materials Characterization in Wearables"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "category_id": 703,
+      "code": "FIBER-LIB",
+      "name_zh": "全柔性纤维状锂离子储能电池",
+      "name_en": "Fiber-shaped Lithium-ion Battery (Fiber-LIB)",
+      "chemical_name": "同轴准固态正负极活性材料与凝胶电解质同轴连续纤维",
+      "chemical_formula": "LiFePO4/Gel-Polymer/LTO-CNT coaxial assembly",
+      "cas_number": null,
+      "generation": "第4代穿戴式本体储能革命性器件",
+      "discovery_year": "2014",
+      "commercial_year": "2023",
+      "pioneering_entity": "彭慧胜 (复旦大学高分子科学系院士团队原创发明)",
+      "spinning_method": "连续多层流挤出包覆同轴纺丝工艺，原位紫外光固化高离子电导率凝胶聚合物电解质",
+      "density_g_cm3": 1.85,
+      "tensile_strength_cn_dtex": 1.2,
+      "tensile_strength_gpa": 0.15,
+      "tensile_modulus_gpa": 2.5,
+      "elongation_at_break_pct": 15.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 30.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 80.0,
+      "typical_applications": "织物级隐形储能电源(一件普通编织发热衣可连续为手机无线充电4小时)、消防智能搜救服中枢能源、植入微型医疗设备供电",
+      "representative_brands": "FiberBatt, 彭慧胜团队纤维电池",
+      "tech_status_2026": "实现百米级全自动连续编织与工业织机无损走纱，能量密度突破100 Wh/kg，经受万次弯折与强力水洗容量保持率>90%",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "EMG_ENERGY",
+      "category_name_zh": "纤维状储能、发电与光电探测器件",
+      "category_name_en": "Fiber Electronics, Energy Harvesters & Sensors",
+      "aliases": [
+        {
+          "alias": "纤维电池",
+          "type": "colloquial"
+        },
+        {
+          "alias": "电池纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "储能纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 38331-2019",
+          "title": "可穿戴电子产品 软质储能器件通用要求"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "category_id": 703,
+      "code": "TENG-F",
+      "name_zh": "织物摩擦纳米发电机纤维 (TENG人体动能捕获纤维)",
+      "name_en": "Triboelectric Nanogenerator Fiber",
+      "chemical_name": "微结构全氟乙丙烯/硅橡胶/银导电微核共挤弹性纤维",
+      "chemical_formula": "FEP-PDMS/Ag-conductive core",
+      "cas_number": null,
+      "generation": "第4代环境自驱动能源纤维",
+      "discovery_year": "2012",
+      "commercial_year": "2022",
+      "pioneering_entity": "王中林 (佐治亚理工 / 中科院纳米能源所)",
+      "spinning_method": "微纳复合成型与同轴熔融纺丝，表面激光微纳阵列织构化处理增大接触带电面积",
+      "density_g_cm3": 1.35,
+      "tensile_strength_cn_dtex": 2.2,
+      "tensile_strength_gpa": 0.25,
+      "tensile_modulus_gpa": 1.5,
+      "elongation_at_break_pct": 40.0,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 32.0,
+      "melting_point_c": 190.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "自供电运动鞋垫与步态监测衣、落雨水滴能量收集伞面、无需外接电池的永久免充电无线SOS定位发报夹克",
+      "representative_brands": "NanoTENG Fiber, 纳米能源所自驱动织物",
+      "tech_status_2026": "瞬时输出功率密度达到50 W/m²，日常行走摆臂产生的电能可直接点亮数百颗LED并持续驱动蓝牙数据传输芯片",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "EMG_ENERGY",
+      "category_name_zh": "纤维状储能、发电与光电探测器件",
+      "category_name_en": "Fiber Electronics, Energy Harvesters & Sensors",
+      "aliases": [
+        {
+          "alias": "TENG纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "摩擦发电纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "自驱动纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "IEEE",
+          "code": "IEEE 3105",
+          "title": "Standard for Triboelectric Nanogenerators"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "category_id": 702,
+      "code": "PCM-F",
+      "name_zh": "微胶囊相变智能调温纤维 (Outlast双向恒温纤维)",
+      "name_en": "Phase Change Material Fiber (PCM Fiber)",
+      "chemical_name": "包覆高级烷烃微胶囊共混聚酯或腈纶",
+      "chemical_formula": "Polymer matrix with n-octadecane microcapsules",
+      "cas_number": null,
+      "generation": "第3代自适应智能恒温舒适纤维",
+      "discovery_year": "1980s",
+      "commercial_year": "1997",
+      "pioneering_entity": "NASA 宇航服宇航温控研究 / Outlast Technologies",
+      "spinning_method": "湿法或熔融纺丝 (将高焓值相变石蜡微胶囊高度分散均匀注入高聚物基体中)",
+      "density_g_cm3": 1.25,
+      "tensile_strength_cn_dtex": 3.0,
+      "tensile_strength_gpa": 0.36,
+      "tensile_modulus_gpa": 4.5,
+      "elongation_at_break_pct": 28.0,
+      "moisture_regain_pct": 1.2,
+      "loi_pct": 21.0,
+      "melting_point_c": 220.0,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "宇航员宇航服手套内衬、高级四季恒温羽绒被、高热负荷电竞椅垫、户外骤冷骤热运动冲锋衣中层",
+      "representative_brands": "Outlast (奥特莱斯), 恒温天丝, 溢达PCM微胶囊纤维",
+      "tech_status_2026": "纳米无缝二氧化硅壁材微胶囊实现耐受普通机洗100次无渗漏，相变潜热焓值突破80 J/g，实现人体体表微气候±2℃动态自稳定",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "EMG_SMART",
+      "category_name_zh": "智能响应与自适应调温变色纤维",
+      "category_name_en": "Intelligent Responsive & Adaptive Fibers",
+      "aliases": [
+        {
+          "alias": "相变纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "恒温纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "Outlast",
+          "type": "trade_name"
+        },
+        {
+          "alias": "PCM纤维",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52044-2017",
+          "title": "相变调温粘胶短纤维"
+        },
+        {
+          "org": "ASTM",
+          "code": "ASTM D7024",
+          "title": "Steady State and Dynamic Thermal Performance of Textiles"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "category_id": 702,
+      "code": "SMP-F",
+      "name_zh": "温敏与力敏形状记忆聚合物自适应透气纤维",
+      "name_en": "Shape Memory Polymer Adaptive Fiber",
+      "chemical_name": "热致/湿致形状记忆嵌段共聚聚氨酯",
+      "chemical_formula": "Segmented Polyurethane with reversible crystalline switches",
+      "cas_number": null,
+      "generation": "第4代仿生动态呼吸智能纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2015",
+      "pioneering_entity": "Mitsubishi Heavy Industries (三菱重工 DiAPLEX) / 香港理工大学",
+      "spinning_method": "干湿法微孔纺丝，精确调控聚合物微相分离可逆相转变温度(Tg/Tm设定在体温34-37℃)",
+      "density_g_cm3": 1.19,
+      "tensile_strength_cn_dtex": 2.8,
+      "tensile_strength_gpa": 0.32,
+      "tensile_modulus_gpa": 1.8,
+      "elongation_at_break_pct": 200.0,
+      "moisture_regain_pct": 2.0,
+      "loi_pct": 22.0,
+      "melting_point_c": 180.0,
+      "max_service_temp_c": 110.0,
+      "typical_applications": "出汗发热时微孔自动扩张‘呼气’排热、降温静止时微孔自动收缩‘吸气’保暖的智能变孔隙运动织物、防烫伤自膨胀防护服",
+      "representative_brands": "DiAPLEX (透湿记忆薄膜与纤维), MemoryTex",
+      "tech_status_2026": "响应时间缩短至秒级，可逆孔隙开合率提升至40%，成为高端滑雪服与特种极限战备服自适应环境调控核心黑科技",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "EMG_SMART",
+      "category_name_zh": "智能响应与自适应调温变色纤维",
+      "category_name_en": "Intelligent Responsive & Adaptive Fibers",
+      "aliases": [
+        {
+          "alias": "形状记忆纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "呼吸纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "SMP纤维",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 39547-2020",
+          "title": "形状记忆高分子材料性能测试方法"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "category_id": 702,
+      "code": "FIBER-DISP",
+      "name_zh": "大面积全柔性纤维电致发光与显示器件",
+      "name_en": "Electro-luminescent Display & Light-Emitting Fiber",
+      "chemical_name": "同轴发光层(发光高分子/钙钛矿)/透明导电聚合物电极织物纤维",
+      "chemical_formula": "Conductive Core / PLED or Perovskite / Transparent Sheath",
+      "cas_number": null,
+      "generation": "第4代信息交互概念级发光显示纤维",
+      "discovery_year": "2015",
+      "commercial_year": "2024",
+      "pioneering_entity": "彭慧胜 (复旦大学团队发光织物) / 韩国科学技术院 (KAIST)",
+      "spinning_method": "同轴复合溶液精密涂覆与微流控挤出，形成经纬交织发光微像素点阵",
+      "density_g_cm3": 1.45,
+      "tensile_strength_cn_dtex": 2.0,
+      "tensile_strength_gpa": 0.26,
+      "tensile_modulus_gpa": 3.0,
+      "elongation_at_break_pct": 20.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 24.0,
+      "melting_point_c": 200.0,
+      "max_service_temp_c": 90.0,
+      "typical_applications": "衣服表面全彩动态地图导航显示、聋哑人士手势手套触控发光转文字衣、夜间交警及施工人员全自发光安全警示服",
+      "representative_brands": "LumiTextile, DisplayFiber",
+      "tech_status_2026": "发光亮度突破1000 cd/m²，功耗小于瓦特级，耐折叠耐水洗达30次，实现衣物与智能手机蓝牙连接直接推送显示即时通知",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "EMG_SMART",
+      "category_name_zh": "智能响应与自适应调温变色纤维",
+      "category_name_en": "Intelligent Responsive & Adaptive Fibers",
+      "aliases": [
+        {
+          "alias": "发光纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "显示纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "发光织物",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "IEC",
+          "code": "IEC 63203-204-1",
+          "title": "Wearable electronic devices and technologies - Electronic textile display"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "category_id": 101,
+      "code": "BAMBOO",
+      "name_zh": "竹浆纤维 (竹粘胶纤维/竹素纤维)",
+      "name_en": "Bamboo Pulp Viscose Fiber",
+      "chemical_name": "竹子纤维素经黄原酸酯法再生聚合物",
+      "chemical_formula": "(C6H10O5)n",
+      "cas_number": "68442-85-3",
+      "generation": "第2代特色天然生物质人造纤维",
+      "discovery_year": "1990s",
+      "commercial_year": "2002",
+      "pioneering_entity": "吉林化纤 (天竹纤维)",
+      "spinning_method": "湿法纺丝 (竹材粉碎蒸煮制浆、黄化溶解后湿法成形)",
+      "density_g_cm3": 1.5,
+      "tensile_strength_cn_dtex": 2.3,
+      "tensile_strength_gpa": 0.34,
+      "tensile_modulus_gpa": 5.8,
+      "elongation_at_break_pct": 21.0,
+      "moisture_regain_pct": 13.5,
+      "loi_pct": 19.5,
+      "melting_point_c": null,
+      "max_service_temp_c": 120.0,
+      "typical_applications": "天然抑菌毛巾、亲肤凉爽夏季凉席面料、竹纤维袜子内衣、卫生擦拭无纺布",
+      "representative_brands": "Tanboocel (天竹 / 吉林化纤)",
+      "tech_status_2026": "绿色循环闭环清洁制浆技术全面升级，天然多孔横截面赋予其优异的透气排湿与抑菌防臭特性",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "竹纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "天竹",
+          "type": "trade_name"
+        },
+        {
+          "alias": "Tanboocel",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 22705-2008",
+          "title": "竹浆粕"
+        },
+        {
+          "org": "GB",
+          "code": "FZ/T 52010-2014",
+          "title": "竹浆粘胶短纤维"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "category_id": 201,
+      "code": "LMPET",
+      "name_zh": "低熔点聚酯复合纤维 (LMPET热熔粘结纤维)",
+      "name_en": "Low-Melting Polyester Fiber (LMPET)",
+      "chemical_name": "PET芯层 / 间苯二甲酸/己二酸改性共聚酯外皮层",
+      "chemical_formula": "PET Core / Co-PET Sheath",
+      "cas_number": "25038-59-9",
+      "generation": "第2代环保功能热熔粘合纤维",
+      "discovery_year": "1980s",
+      "commercial_year": "1990s",
+      "pioneering_entity": "Huvis (韩国汇维仕) / 远东新世纪 / 恒逸石化",
+      "spinning_method": "双组分皮芯复合熔融纺丝 (皮层熔点精确控制在110-160℃，芯层PET熔点255℃)",
+      "density_g_cm3": 1.36,
+      "tensile_strength_cn_dtex": 3.6,
+      "tensile_strength_gpa": 0.49,
+      "tensile_modulus_gpa": 9.0,
+      "elongation_at_break_pct": 35.0,
+      "moisture_regain_pct": 0.4,
+      "loi_pct": 20.5,
+      "melting_point_c": 110.0,
+      "max_service_temp_c": 100.0,
+      "typical_applications": "替代传统有毒胶水制作床垫热风棉、汽车内饰顶棚隔音棉、无胶热轧水刺无纺布、环保过滤棉",
+      "representative_brands": "Huvis LMF, 远东新世纪LMPET",
+      "tech_status_2026": "彻底取缔脲醛树脂化学粘合剂，成为万亿级家居软装与汽车NVH降噪隔热棉绿色升级第一大材料",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PET",
+      "category_name_zh": "聚酯系纤维",
+      "category_name_en": "Polyester Fibers",
+      "aliases": [
+        {
+          "alias": "低熔点涤纶",
+          "type": "colloquial"
+        },
+        {
+          "alias": "LMPET",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "皮芯热熔丝",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 33617-2017",
+          "title": "低熔点聚酯(LMPET)复合短纤维"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "category_id": 204,
+      "code": "ES-F",
+      "name_zh": "双组分聚烯烃复合纤维 (ES纤维 / 热风粘合纤维)",
+      "name_en": "Bicomponent Polyolefin Composite Fiber (ES Fiber)",
+      "chemical_name": "PE外皮 / PP或PET内芯双组分复合聚合物",
+      "chemical_formula": "PE Sheath (Tm 130℃) / PP Core (Tm 165℃)",
+      "cas_number": null,
+      "generation": "第2代高蓬松亲水复合纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "Chisso (日本捷索 / JNC) / 广州纤维",
+      "spinning_method": "复合熔融纺丝 (双组分同轴挤出复合，受热时PE皮层软化粘接而PP芯层保持挺括)",
+      "density_g_cm3": 0.93,
+      "tensile_strength_cn_dtex": 3.0,
+      "tensile_strength_gpa": 0.28,
+      "tensile_modulus_gpa": 3.0,
+      "elongation_at_break_pct": 50.0,
+      "moisture_regain_pct": 0.1,
+      "loi_pct": 18.0,
+      "melting_point_c": 130.0,
+      "max_service_temp_c": 90.0,
+      "typical_applications": "婴儿高端极软纸尿裤面层热风无纺布、女性卫生巾亲肤表层、高透气KN95口罩支撑层",
+      "representative_brands": "ES Fiber (JNC), 恒天江南高纤ES",
+      "tech_status_2026": "超细旦(0.8-1.2 dtex)高蓬松弱酸性表层改性ES纤维全面普及，触感如蚕丝般丝滑亲肤",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PO",
+      "category_name_zh": "聚烯烃系纤维",
+      "category_name_en": "Polyolefin Fibers",
+      "aliases": [
+        {
+          "alias": "ES纤维",
+          "type": "trade_name"
+        },
+        {
+          "alias": "热风纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "皮芯复合纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "FZ/T 52028-2014",
+          "title": "聚乙烯/聚丙烯复合短纤维(PE/PP)"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "category_id": 202,
+      "code": "PPA-F",
+      "name_zh": "半芳香族高温聚酰胺纤维 (PPA / PA9T / PA10T纤维)",
+      "name_en": "Polyphthalamide High-Temperature Fiber (PPA / PA9T)",
+      "chemical_name": "对苯二甲酸与1,9-壬二胺/1,10-癸二胺半芳香族聚酰胺",
+      "chemical_formula": "[-NH-(CH2)9-NH-CO-C6H4-CO-]n",
+      "cas_number": "165848-52-8",
+      "generation": "第3代耐回流焊高温特种尼龙",
+      "discovery_year": "1980s",
+      "commercial_year": "1998",
+      "pioneering_entity": "Kuraray (日本可乐丽 Genestar) / 金发科技",
+      "spinning_method": "高温熔融纺丝与高倍热牵伸 (熔体温度达320℃)",
+      "density_g_cm3": 1.17,
+      "tensile_strength_cn_dtex": 7.5,
+      "tensile_strength_gpa": 0.88,
+      "tensile_modulus_gpa": 6.8,
+      "elongation_at_break_pct": 18.0,
+      "moisture_regain_pct": 0.9,
+      "loi_pct": 26.0,
+      "melting_point_c": 306.0,
+      "max_service_temp_c": 170.0,
+      "typical_applications": "SMT无铅回流焊耐热电子元器件包装织物、高耐温汽车燃油蒸汽管路增强套管、高温酸碱工业过滤布",
+      "representative_brands": "Genestar (可乐丽 PA9T), Vicnyl (金发科技 PA10T)",
+      "tech_status_2026": "生物基癸二胺合成PA10T纤维全面产业化，耐水解与耐热蠕变性能在汽车动力总成管路实现关键替代",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "PPA纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "高温尼龙纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PA9T",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "PA10T",
+          "type": "abbreviation"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ASTM",
+          "code": "ASTM D5336",
+          "title": "Standard Specification for Polyphthalamide (PPA) Materials"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "category_id": 202,
+      "code": "PA1010",
+      "name_zh": "聚酰胺1010纤维 (锦纶1010/全生物基长碳链尼龙)",
+      "name_en": "Polyamide 1010 Fiber (Nylon 1010)",
+      "chemical_name": "聚癸二酰癸二胺 (100%全蓖麻油来源)",
+      "chemical_formula": "[-NH-(CH2)10-NH-CO-(CH2)8-CO-]n",
+      "cas_number": "28774-87-0",
+      "generation": "第2代中国独创全生物基长碳链尼龙",
+      "discovery_year": "1958",
+      "commercial_year": "1960s",
+      "pioneering_entity": "中科院化学所 / 上海赛科 / 山东东宝",
+      "spinning_method": "熔体纺丝 (蓖麻油深加工制备癸二胺与癸二酸缩聚物)",
+      "density_g_cm3": 1.05,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 0.47,
+      "tensile_modulus_gpa": 2.8,
+      "elongation_at_break_pct": 36.0,
+      "moisture_regain_pct": 1.5,
+      "loi_pct": 21.5,
+      "melting_point_c": 205.0,
+      "max_service_temp_c": 115.0,
+      "typical_applications": "海洋抗附着耐盐雾特种绳缆、高级工业毛刷丝、精密光纤被覆层、汽车刹车气动管路强化网",
+      "representative_brands": "Rilsan D, 东宝锦纶1010",
+      "tech_status_2026": "具有100%生物基碳含量认证，耐高低温冲击与耐油耐溶剂性优异，出口欧洲高端机械管路与轻量化绳缆",
+      "is_bio_based": 1,
+      "is_biodegradable": 0,
+      "is_high_performance": 0,
+      "category_code": "SYN_PA",
+      "category_name_zh": "脂肪族与半芳香族聚酰胺纤维",
+      "category_name_en": "Polyamide (Nylon) Fibers",
+      "aliases": [
+        {
+          "alias": "锦纶1010",
+          "type": "colloquial"
+        },
+        {
+          "alias": "尼龙1010",
+          "type": "colloquial"
+        },
+        {
+          "alias": "PA1010",
+          "type": "iso_code"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 4146.1-2020",
+          "title": "聚酰胺纤维"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "category_id": 302,
+      "code": "PPC-F",
+      "name_zh": "聚碳酸亚丙酯纤维 (PPC/二氧化碳共聚纤维)",
+      "name_en": "Polypropylene Carbonate Fiber (CO2-derived PPC)",
+      "chemical_name": "二氧化碳与环氧丙烷无规交替共聚物",
+      "chemical_formula": "[-O-CH(CH3)-CH2-O-CO-]n",
+      "cas_number": "25511-85-7",
+      "generation": "第4代碳中和负碳固碳新型纤维",
+      "discovery_year": "1969",
+      "commercial_year": "2021",
+      "pioneering_entity": "Shohei Inoue (井上祥平) / 中科院长春应化所 (王献红团队)",
+      "spinning_method": "熔融纺丝或湿纺 (高活性双金属催化二氧化碳固定缩聚)",
+      "density_g_cm3": 1.3,
+      "tensile_strength_cn_dtex": 2.8,
+      "tensile_strength_gpa": 0.36,
+      "tensile_modulus_gpa": 2.2,
+      "elongation_at_break_pct": 60.0,
+      "moisture_regain_pct": 0.8,
+      "loi_pct": 22.0,
+      "melting_point_c": 115.0,
+      "max_service_temp_c": 80.0,
+      "typical_applications": "负碳环保可堆肥包装布、农用可控降解防尘网、医用一次性敷料无纺布",
+      "representative_brands": "PPC Fiber, 中科院负碳纤维",
+      "tech_status_2026": "纤维中固定工业捕集废气CO2质量占比超40%，高热稳定性嵌段改性技术打通工业级高速熔纺瓶颈",
+      "is_bio_based": 0,
+      "is_biodegradable": 1,
+      "is_high_performance": 0,
+      "category_code": "BIO_FDCA",
+      "category_name_zh": "新型生物基呋喃与芳杂聚酯纤维",
+      "category_name_en": "Bio-based Furanic & Co-polyesters",
+      "aliases": [
+        {
+          "alias": "PPC纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "二氧化碳纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "固碳纤维",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 32367-2015",
+          "title": "聚碳酸亚丙酯(PPC)树脂"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "category_id": 101,
+      "code": "CNF-MACRO",
+      "name_zh": "微纳原纤化纳米纤维素宏观连续纤维 (CNF长丝)",
+      "name_en": "Cellulose Nanofiber Macrofilament (CNF Fiber)",
+      "chemical_name": "纯植物源一维纤维素纳米原纤高度定向聚集体",
+      "chemical_formula": "(C6H10O5)n Nanocrystal",
+      "cas_number": "9004-34-6",
+      "generation": "第4代全天然超高强纳米组装长丝",
+      "discovery_year": "2010s",
+      "commercial_year": "2023",
+      "pioneering_entity": "KTH 皇家理工学院 (Söderberg团队) / 华南理工 / 中科大",
+      "spinning_method": "流体动力学微流控对准剪切自组装湿法纺丝 (无需任何衍生化化学试剂，纯物理纳米微纤对齐)",
+      "density_g_cm3": 1.52,
+      "tensile_strength_cn_dtex": 12.0,
+      "tensile_strength_gpa": 1.6,
+      "tensile_modulus_gpa": 45.0,
+      "elongation_at_break_pct": 7.5,
+      "moisture_regain_pct": 8.5,
+      "loi_pct": 21.0,
+      "melting_point_c": null,
+      "max_service_temp_c": 160.0,
+      "typical_applications": "生物基全降解高刚度绿色汽车轻量化车身复合材料、环保可降解绿色防弹纤维、人造肌腱修复软组织",
+      "representative_brands": "NanocellFil, 华南理工纳米纤维素长丝",
+      "tech_status_2026": "宏观连续拉丝速度达到50 m/min，比强度超越普通轻质合金，成为最具潜力的全生物源结构增强长丝",
+      "is_bio_based": 1,
+      "is_biodegradable": 1,
+      "is_high_performance": 1,
+      "category_code": "REG_CELL",
+      "category_name_zh": "再生纤维素纤维",
+      "category_name_en": "Regenerated Cellulose Fibers",
+      "aliases": [
+        {
+          "alias": "CNF纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "纳米纤维素丝",
+          "type": "colloquial"
+        }
+      ],
+      "standards": [
+        {
+          "org": "ISO",
+          "code": "ISO/TS 20477",
+          "title": "Nanotechnologies - Standard terms and definitions for cellulose nanomaterial"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "category_id": 603,
+      "code": "MULLITE-F",
+      "name_zh": "连续莫来石陶瓷纤维 (Mullite Fiber)",
+      "name_en": "Continuous Mullite Ceramic Fiber",
+      "chemical_name": "化学计量比多晶莫来石 (3Al2O3·2SiO2)",
+      "chemical_formula": "3Al2O3·2SiO2 (72% Al2O3, 28% SiO2)",
+      "cas_number": "1302-93-8",
+      "generation": "第3代超高温抗蠕变陶瓷纤维",
+      "discovery_year": "1970s",
+      "commercial_year": "1980s",
+      "pioneering_entity": "3M (Nextel 440) / 蔚蓝材料",
+      "spinning_method": "溶胶-凝胶干法纺丝与1350℃精密相变热处理",
+      "density_g_cm3": 3.05,
+      "tensile_strength_cn_dtex": 7.0,
+      "tensile_strength_gpa": 2.1,
+      "tensile_modulus_gpa": 220.0,
+      "elongation_at_break_pct": 1.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 1850.0,
+      "max_service_temp_c": 1300.0,
+      "typical_applications": "航天飞机隔热瓦缝隙耐冲刷密封编织绳、高温工业燃烧炉微波加热衬套、航天防热微流星防护屏",
+      "representative_brands": "Nextel 440 (3M), 莫来石连续丝",
+      "tech_status_2026": "极低热导率与极高热震稳定性，在1200℃以上连续服役抗蠕变性能保持世界领先",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "莫来石纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "硅酸铝陶瓷纤维",
+          "type": "standard_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 3003-2017",
+          "title": "耐火材料 陶瓷纤维及制品"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "category_id": 603,
+      "code": "ZRO2-F",
+      "name_zh": "连续氧化锆耐火陶瓷纤维 (ZrO2纤维)",
+      "name_en": "Continuous Zirconia Ceramic Fiber",
+      "chemical_name": "钇稳定四方晶相多晶氧化锆 (YSZ)",
+      "chemical_formula": "ZrO2-Y2O3 (8 mol% Y2O3)",
+      "cas_number": "1314-23-4",
+      "generation": "第3代耐极限超高温无机纤维",
+      "discovery_year": "1960s",
+      "commercial_year": "1974",
+      "pioneering_entity": "Union Carbide (Zircar) / 中科院上海硅酸盐所",
+      "spinning_method": "先驱体浸渍热解法(粘胶布载体浸渍锆盐烧结)或溶胶凝胶拉丝法",
+      "density_g_cm3": 5.68,
+      "tensile_strength_cn_dtex": 4.5,
+      "tensile_strength_gpa": 1.8,
+      "tensile_modulus_gpa": 180.0,
+      "elongation_at_break_pct": 1.0,
+      "moisture_regain_pct": 0.0,
+      "loi_pct": 100.0,
+      "melting_point_c": 2700.0,
+      "max_service_temp_c": 2200.0,
+      "typical_applications": "超高温晶体生长炉(蓝宝石/单晶硅长晶炉)2000℃隔热绝热屏、核聚变托卡马克内壁绝热衬里、火箭发动机喷管极端防热层",
+      "representative_brands": "Zircar Zirconia, 上硅所氧化锆纤维毡",
+      "tech_status_2026": "纳米氧化钇微相稳定技术防止晶型高温相变粉化，长期耐受2000℃超高温氧化环境且蒸气压极低",
+      "is_bio_based": 0,
+      "is_biodegradable": 0,
+      "is_high_performance": 1,
+      "category_code": "INORG_CERAMIC",
+      "category_name_zh": "先进连续陶瓷纤维",
+      "category_name_en": "Advanced Continuous Ceramic Fibers",
+      "aliases": [
+        {
+          "alias": "氧化锆纤维",
+          "type": "colloquial"
+        },
+        {
+          "alias": "ZrO2纤维",
+          "type": "abbreviation"
+        },
+        {
+          "alias": "Zircar",
+          "type": "trade_name"
+        }
+      ],
+      "standards": [
+        {
+          "org": "GB",
+          "code": "GB/T 3003-2017",
+          "title": "耐火材料 陶瓷纤维及制品"
+        }
+      ]
+    }
+  ]
+}
