@@ -13,19 +13,19 @@
 
 | 文件 / 目录路径 | 格式 / 类型 | 核心内容与技术说明 |
 | :--- | :---: | :--- |
-| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：著者署名 DonJone 与 Antigravity、大16开双面排版、Times New Roman、4幅投行级矢量图谱、学术出版档案与引用规范页、凡例换算表、三线表规范、标准文献库 |
-| [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **学术专著出版排版沙盒**：包含 `chemical_fibers_book.tex` (6689行) 与 4 幅高清矢量图表 `book/figures/`，隔离编译缓存保持根目录纯净 |
-| [`docs/`](file:///Users/don/Documents/化学纤维研究/docs/) | 文档资料库 | **系统百科与工程报告**：包含 [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) (5480+行大百科) 与 [`chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) (工程报告) |
+| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (257页) | **学术专著排版文档**：著者署名 DonJone 与 Antigravity，大16开双面排版，Times New Roman 字体，内含 4 幅材料性能矢量图谱、学术出版档案与引用规范页、凡例换算表、三线表规范与标准文献库 |
+| [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **专著排版构建目录**：包含 `chemical_fibers_book.tex` (6731行) 与 4 幅性能矢量图表 `book/figures/`，隔离编译缓存保持根目录整洁 |
+| [`docs/`](file:///Users/don/Documents/化学纤维研究/docs/) | 文档资料库 | **资料与报告目录**：包含 [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) (纤维参考文档) 与 [`chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) (工程报告) |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **核心物理数据库**：内置 5 张实体表（分类表、纤维主表、纺织工程档案表、经典混纺矩阵表、标准规范表）、1 个支持中英文分词的 FTS5 全文倒排虚拟表与 13 组高性能 B-Tree 索引 |
-| [`fiber_query.py`](file:///Users/don/Documents/化学纤维研究/fiber_query.py) | Python 3 CLI | **智能检索工具**：支持全文模糊检索、单品种白皮书、专项纺织技术卡、混纺配伍方案反查、多维纺织属性过滤与全景统计大盘 |
-| [`chemical_fibers_dataset.json`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_dataset.json) | JSON | **全量结构化数据集**：全量 117 种纤维对象内置完整 `textile_profile` 嵌套字段与根级经典混纺矩阵，直接支持 RESTful API 及前端可视化 |
-| [`chemical_fibers_catalog.csv`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_catalog.csv) | CSV (UTF-8 BOM) | **全量纺织编目数据表**：新增 11 列核心纺织工程指标，可直接在 Excel、Numbers 或 Pandas 中进行数据分析 |
+| [`fiber_query.py`](file:///Users/don/Documents/化学纤维研究/fiber_query.py) | Python 3 CLI | **终端检索工具**：支持全文检索、单品种技术指标、纺织工程档案、混纺方案反查、多维属性过滤与全景统计 |
+| [`chemical_fibers_dataset.json`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_dataset.json) | JSON | **全量结构化数据集**：全量 117 种纤维对象内置完整 `textile_profile` 嵌套字段与根级混纺矩阵，支持程序调用 |
+| [`chemical_fibers_catalog.csv`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_catalog.csv) | CSV (UTF-8 BOM) | **纺织编目数据表**：新增 11 列核心纺织工程指标，兼容 Excel、Numbers 或 Pandas 数据处理 |
 | [`schema.sql`](file:///Users/don/Documents/化学纤维研究/schema.sql) | SQL DDL | 数据库物理建表、双向外键、B-Tree 索引与 FTS5 全文倒排检索引擎 DDL 定义脚本 |
 | [`build_all.py`](file:///Users/don/Documents/化学纤维研究/build_all.py) | Python 3 | 数据库自动化构建、清洗、多维纺织字段组装与全量导出管线脚本 |
-| [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵照 `/texpdf` 美学规范，去除上右边框、极简浅灰网格、学术色系，生成 4 幅 Ashby 图与分布图谱至 `book/figures/` |
-| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `book/` 专著排版体系 |
-| [`generate_encyclopedia.py`](file:///Users/don/Documents/化学纤维研究/generate_encyclopedia.py) | Python 3 | 纺织大百科全书自动化渲染生成脚本，输出至 `docs/` 目录 |
-| [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译与发布工作流**：每日定时执行 Python 管线重建数据库、生成矢量图、渲染 TeX 源码并在 `book/` 中容器编译 PDF 发布 Release |
+| [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **材料性能矢量图表生成器**：遵照学术制图规范，生成 4 幅材料性能 Ashby 图与分布图谱至 `book/figures/` |
+| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **LaTeX 专著生成脚本**：实现孤行控制 (10000)、黄金行距 (1.35)、三线表规范，输出至 `book/` 专著排版体系 |
+| [`generate_encyclopedia.py`](file:///Users/don/Documents/化学纤维研究/generate_encyclopedia.py) | Python 3 | 纤维大百科 Markdown 文档生成脚本，输出至 `docs/` 目录 |
+| [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **自动化编译与发布流水线**：定时执行 Python 构建管线、渲染矢量图、编译专著 PDF 并发布 Release |
 
 ### 🌲 仓库组织架构 (Repository Layout)
 
@@ -299,11 +299,11 @@ CREATE VIRTUAL TABLE fibers_fts USING fts5(
 
 ---
 
-## 📖 学术出版级 LaTeX 专著与 GitHub Actions 每日自动编译体系
+## 📖 LaTeX 专著与 GitHub Actions 自动编译流水线
 
-本项目不仅提供数据文件与 CLI 查询工具，还严格参照 **`/texpdf` 高级学术排版技能规范**，配备了**全自动化的学术级专著出版流水线**，能够将整个数据库自动编译为符合国家标准的学术专著书籍（`.tex` 与 `.pdf`）。
+本项目除数据文件与 CLI 工具外，配备了自动化的 LaTeX 编译流水线，将数据库内容系统排版编译为专著文档（`.tex` 与 `.pdf`）。
 
-### 1. 专著学术排版规范与技术特征 (严格遵循 `/texpdf` 准则)
+### 1. 专著排版规范与技术特征
 - **文档体系与版式**：采用 `\documentclass[11pt,openright,twoside,UTF8]{ctexbook}`，标准大16开（A4开本），页边距 `2.8cm`，双面印刷（twoside），正文字号 11pt。
 - **页面密度与孤行控制 (Widow/Orphan Penalties)**：
   ```latex
@@ -312,14 +312,14 @@ CREATE VIRTUAL TABLE fibers_fts USING fts5(
   \displaywidowpenalty=10000
   \linespread{1.35}
   ```
-  锁定顶底断行惩罚，黄金 1.35 倍行距，彻底杜绝单行孤行与大空白裂隙。
-- **英文字体与西文排版**：全面加载 `fontspec`，自动探测并启用经典学术字体 `Times New Roman`（Linux 容器回退 `TeX Gyre Termes`），无衬线体 `Arial`，等宽字体 `Menlo`（Linux 容器回退 `TeX Gyre Cursor`）。
-- **学术出版级前言结构 (Frontmatter)**：
-  - **庄重扉页与严谨学术出版档案页**：清晰著录著者（DonJone, Antigravity）、开源仓库规范、中图分类参考（TQ34, TS102）、标准 GB/T 7714 与 BibTeX 引用范式、开源许可协议（绝不杜撰虚构的商业 ISBN 与虚假 CIP）。
-  - **编审委员会与研发说明**：收录主著 DonJone、排版工程 Antigravity 及所严格对标的国际/国家权威标准组织（ISO, GB/T, FZ/T, BISFA, ASTM, OEKO-TEX）。
-  - **凡例与工程计量单位规范表**：详尽三线表对比 $\mathrm{tex, dtex, D, Nm, Ne, cN/dtex, GPa, LOI, W\%}$ 之定义与换算关系。
+  锁定顶底断行惩罚，黄金 1.35 倍行距，避免单行孤行与大空白裂隙。
+- **英文字体与西文排版**：加载 `fontspec`，自动检测并启用经典学术字体 `Times New Roman`（Linux 容器回退 `TeX Gyre Termes`），无衬线体 `Arial`，等宽字体 `Menlo`（Linux 容器回退 `TeX Gyre Cursor`）。
+- **前言结构 (Frontmatter)**：
+  - **扉页与学术出版档案页**：清晰著录著者（DonJone, Antigravity）、开源仓库规范、中图分类参考（TQ34, TS102）、标准 GB/T 7714 与 BibTeX 引用范式、开源许可协议（实事求是，绝不杜撰商业 ISBN 与虚假 CIP）。
+  - **编审团队与研发说明**：收录主著 DonJone、排版工程 Antigravity 及所参考对标的国际/国家权威标准组织（ISO, GB/T, FZ/T, BISFA, ASTM, OEKO-TEX）。
+  - **凡例与工程计量单位规范表**：三线表对比 $\mathrm{tex, dtex, D, Nm, Ne, cN/dtex, GPa, LOI, W\%}$ 之定义与换算关系。
   - **完整目录体系**：全书目录（TOC）、插图清单（List of Figures）、表格清单（List of Tables）。
-- **高端咨询/投行级矢量图表嵌入 (`generate_academic_charts.py`)**：
+- **材料性能与分布矢量图谱 (`generate_academic_charts.py`)**：
   - 图 1-1：现代化学纤维数据库门类全景构成分布图
   - 图 1-2：化学纤维拉伸强度与初始模量 Ashby 材料性能双对数图谱
   - 图 1-3：化学纤维公定回潮率 (舒适度) 与极限氧指数 LOI (阻燃安全性) 四象限定位图

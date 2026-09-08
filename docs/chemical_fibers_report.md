@@ -138,7 +138,7 @@
    - **编审团队与研发说明**：收录主著 DonJone、排版工程 Antigravity 及所严格对标的国际/国家权威标准组织（ISO, GB/T, FZ/T, BISFA, ASTM, OEKO-TEX）。
    - **凡例与工程计量单位规范表**：详尽对比 $\mathrm{tex, dtex, D, Nm, Ne, cN/dtex, GPa, LOI, W\%}$ 之定义与换算关系。
    - **全量目录与双清单**：自动生成目录（TOC）、插图清单（List of Figures）与表格清单（List of Tables）。
-4. **高端咨询/投行级矢量图表系统 (`generate_academic_charts.py`)**：
+4. **材料性能矢量图表系统 (`generate_academic_charts.py`)**：
    - 遵照 `/texpdf` 视觉规范，去除 Matplotlib 默认的顶部与右侧边框，配置极简浅灰浅色网格，采用牛津藏青（`#1A365D`）、墨水青（`#0D9488`）与常春藤绿（`#22543D`）等专业学术配色，输出 4 幅高分辨率矢量 PDF：
      - **图 1-1**：现代化学纤维数据库门类全景构成分布图
      - **图 1-2**：化学纤维拉伸强度与初始模量 Ashby 材料性能双对数图谱

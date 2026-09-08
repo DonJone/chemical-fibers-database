@@ -139,33 +139,32 @@ jobs:
         if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch' && inputs.publish_release) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
         with:
           tag_name: "nightly-book"
-          name: "《现代纺织化学纤维大典与工程全集》每日学术出版典藏版 (Continuous Release)"
+          name: "chemical-fibers-database (Nightly Build - ${{ steps.meta.outputs.date_tag }})"
           body: |
-            ## 📚 现代纺织化学纤维大典与工程全集 (Academic Monograph)
-            
-            > 本 Release 由 GitHub Actions 每日自动化学术工作流触发全量编译生成。著者署名 DonJone 与 Antigravity，严格遵循国家学术专著标准、/texpdf 排版准则与开放获取出版规范。
-            
-            ### 📊 核心指标与学术特色
-            - **📅 构建交付日期**：${{ steps.meta.outputs.date_str }}
-            - **🧬 收录化学纤维**：${{ steps.meta.outputs.fiber_count }} 种（涵盖常规合成、特种高性能、差别化改性、生物基、再生纤维素及前沿智能穿戴纤维）
-            - **🧵 纺织工程学术档案**：${{ steps.meta.outputs.fiber_count }} 套（微观截面几何工程、手感风格、热湿舒适机制、印染配伍与 2026 产业进展）
-            - **🎨 经典混纺协同矩阵**：12 组工业级混纺工艺协同全案
-            - **📖 专著书籍规格**：**257 页**（大16开双面排版、内含 4 幅咨询级矢量 PDF 图谱、学术出版档案引用页、编审说明、凡例规范、极限性能排行榜、规范标准文献库与标准缩写索引）
-            - **🔤 纯正学术排版**：严格遵循 `/texpdf` 规范，采用 Times New Roman + 孤行控制 (10000) + 绝对禁用彩色卡片框体 + 严格三线表规范。
-            
-            ### 📦 本次构建资产下载 (Assets)
-            | 文件名 | 格式 | 描述 |
+            ## 现代纺织化学纤维研究数据库与专著 (Nightly Build)
+
+            本构建产物由 GitHub Actions 流水线自动生成，汇编当前仓库的最新数据与排版成果。
+
+            ### 基本信息
+            - **项目名称**：现代纺织化学纤维研究数据库 (chemical-fibers-database)
+            - **著　　者**：DonJone, Antigravity
+            - **收录规模**：${{ steps.meta.outputs.fiber_count }} 种化学纤维，12 组经典混纺配伍方案
+            - **构建日期**：${{ steps.meta.outputs.date_str }}
+            - **提交版本**：`${{ github.sha }}`
+
+            ### 交付文件列表
+            | 文件名 | 类型 | 说明 |
             | :--- | :--- | :--- |
-            | **`chemical_fibers_book.pdf`** | PDF | **完整专著学术典藏书籍**（257页、全彩矢量图、学术出版档案、直接打印或离线精读） |
-            | **`book/chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`booktabs`、`longtable`） |
-            | **`docs/chemical_fibers_encyclopedia.md`** | Markdown | 完整知识库 Markdown 全景大百科全集（万行长文全景手册） |
-            | **`chemical_fibers.db`** | SQLite | 完整 SQLite 数据库（含 FTS5 全文倒排检索三元分词索引） |
-            | **`chemical_fibers_dataset.json`** | JSON | 机器友好全量结构化数据集 |
-            | **`chemical_fibers_catalog.csv`** | CSV | 核心物理与化学性能参数指标速查表 |
-            
-            ---
-            *自动化构建提交: `${{ github.sha }}`*  
-            *触发事件: `${{ github.event_name }}`*
+            | `chemical_fibers_book.pdf` | PDF | 专著排版文档（257页，标准大16开双面排版，含4幅性能图谱） |
+            | `book/chemical_fibers_book.tex` | LaTeX | 专著 TeX 完整源码（基于 ctexbook 与 booktabs 规范） |
+            | `docs/chemical_fibers_encyclopedia.md` | Markdown | 纤维资料参考文档 |
+            | `chemical_fibers.db` | SQLite 3 | SQLite 数据库文件（含 FTS5 全文检索） |
+            | `chemical_fibers_dataset.json` | JSON | 结构化数据导出文件 |
+            | `chemical_fibers_catalog.csv` | CSV | 纤维物理与化学性能参数指标表 |
+
+            ### 许可协议
+            - 数据与学术文本遵循 CC BY-NC-SA 4.0 国际许可协议。
+            - 源代码与构建管线遵循 MIT 许可协议。
           draft: false
           prerelease: false
           make_latest: true
