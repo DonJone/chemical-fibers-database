@@ -18,3 +18,22 @@ venv/
 .idea/
 *.swp
 *.swo
+
+# LaTeX Auxiliary Files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+*.vrb
+
+# Ignore intermediate build PDF in texlog
+texlog/*.pdf
+!texlog/figures/*.pdf

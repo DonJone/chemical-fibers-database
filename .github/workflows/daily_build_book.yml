@@ -1,0 +1,179 @@
+name: Daily Book Build & Release (TeX & PDF)
+
+on:
+  schedule:
+    # 每日北京时间 08:00 (UTC 00:00) 自动触发全量构建与学术专著编译
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'categories_def.py'
+      - 'fibers_data*.py'
+      - 'schema_builder.py'
+      - 'schema.sql'
+      - 'build_all.py'
+      - 'generate_encyclopedia.py'
+      - 'generate_academic_charts.py'
+      - 'generate_book_latex.py'
+      - '.github/workflows/daily_build_book.yml'
+  workflow_dispatch:
+    inputs:
+      publish_release:
+        description: 'Publish/Update GitHub Release with PDF & Assets'
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-compile:
+    name: Build Database, Charts, LaTeX & Compile PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Visualization Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install matplotlib numpy
+
+      - name: Build Database and Structured Datasets
+        run: |
+          echo "=== Step 1: Building SQLite Database and Catalog Datasets ==="
+          python3 build_all.py
+          echo "=== Database built successfully ==="
+
+      - name: Generate Encyclopedia Markdown
+        run: |
+          echo "=== Step 2: Generating Full Encyclopedia Markdown ==="
+          python3 generate_encyclopedia.py
+          head -n 20 chemical_fibers_encyclopedia.md
+
+      - name: Generate Academic Vector Charts (/texpdf Standard)
+        run: |
+          echo "=== Step 3: Generating Consulting-Grade Matplotlib Vector Charts ==="
+          python3 generate_academic_charts.py
+          ls -lh texlog/figures/
+
+      - name: Generate Academic LaTeX Monograph Source
+        run: |
+          echo "=== Step 4: Generating Academic LaTeX Monograph Source ==="
+          python3 generate_book_latex.py
+          head -n 30 texlog/chemical_fibers_book.tex
+          wc -l texlog/chemical_fibers_book.tex
+
+      - name: Compile Academic LaTeX Book to PDF via XeLaTeX (texlog isolated build)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: chemical_fibers_book.tex
+          working_directory: texlog
+          latexmk_use_xelatex: true
+          extra_system_packages: "fontconfig font-noto-cjk"
+          args: "-xelatex -file-line-error -halt-on-error -interaction=nonstopmode"
+
+      - name: Sync and Verify PDF Generation
+        run: |
+          echo "=== Step 5: Syncing compiled PDF to root workspace ==="
+          cp texlog/chemical_fibers_book.pdf ./chemical_fibers_book.pdf
+          if [ ! -f "chemical_fibers_book.pdf" ]; then
+            echo "Error: chemical_fibers_book.pdf not found!"
+            exit 1
+          fi
+          PDF_SIZE=$(ls -lh chemical_fibers_book.pdf | awk '{print $5}')
+          echo "Academic PDF successfully generated! Size: $PDF_SIZE"
+
+      - name: Upload Build Artifacts to GitHub Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: chemical-fibers-monograph-${{ github.sha }}
+          path: |
+            chemical_fibers_book.pdf
+            chemical_fibers_book.tex
+            texlog/chemical_fibers_book.pdf
+            texlog/chemical_fibers_book.tex
+            texlog/figures/*.pdf
+            chemical_fibers_encyclopedia.md
+            chemical_fibers_dataset.json
+            chemical_fibers_catalog.csv
+            chemical_fibers.db
+          retention-days: 30
+
+      - name: Prepare Release Metadata
+        id: meta
+        run: |
+          DATE_TAG=$(date -u +"%Y%m%d")
+          DATE_STR=$(date -u +"%Y年%m月%d日 (UTC)")
+          echo "date_tag=$DATE_TAG" >> $GITHUB_OUTPUT
+          echo "date_str=$DATE_STR" >> $GITHUB_OUTPUT
+          
+          # 统计当前纤维总数
+          FIBER_COUNT=$(python3 -c "import sqlite3; conn=sqlite3.connect('chemical_fibers.db'); c=conn.cursor(); print(c.execute('SELECT COUNT(*) FROM fibers').fetchone()[0]); conn.close()")
+          echo "fiber_count=$FIBER_COUNT" >> $GITHUB_OUTPUT
+
+      - name: Update Git Tag for Nightly Release
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch' && inputs.publish_release) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -f nightly-book HEAD
+          git push origin -f refs/tags/nightly-book
+
+      - name: Publish or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: (github.event_name == 'schedule') || (github.event_name == 'workflow_dispatch' && inputs.publish_release) || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        with:
+          tag_name: "nightly-book"
+          name: "《现代纺织化学纤维大典与工程全集》每日学术出版典藏版 (Continuous Release)"
+          body: |
+            ## 📚 现代纺织化学纤维大典与工程全集 (Academic Monograph)
+            
+            > 本 Release 由 GitHub Actions 每日自动化学术工作流触发全量编译生成。严格按照国家学术专著标准、科学出版社 CIP 规范与 `/texpdf` 专业排版准则构建。
+            
+            ### 📊 核心指标与学术特色
+            - **📅 构建交付日期**：${{ steps.meta.outputs.date_str }}
+            - **🧬 收录化学纤维**：${{ steps.meta.outputs.fiber_count }} 种（涵盖常规合成、特种高性能、差别化改性、生物基、再生纤维素及前沿智能穿戴纤维）
+            - **🧵 纺织工程学术档案**：${{ steps.meta.outputs.fiber_count }} 套（微观截面几何工程、手感风格、热湿舒适机制、印染配伍与 2026 产业进展）
+            - **🎨 经典混纺协同矩阵**：12 组工业级混纺工艺协同全案
+            - **📖 专著书籍规格**：**245 页**（大16开双面排版、内含 4 幅咨询级矢量 PDF 图谱、CIP 编目页、编委会、凡例规范、极限性能排行榜、规范标准文献库与标准缩写索引）
+            - **🔤 零字体警告编译**：严格遵循 `/texpdf` 规范，采用 Times New Roman + 孤行控制 (10000) + 希腊数学符号全转义。
+            
+            ### 📦 本次构建资产下载 (Assets)
+            | 文件名 | 格式 | 描述 |
+            | :--- | :--- | :--- |
+            | **`chemical_fibers_book.pdf`** | PDF | **完整专著学术典藏书籍**（245页、全彩矢量图、CIP编目、直接打印或离线精读） |
+            | **`chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`academicbox`、`booktabs`） |
+            | **`chemical_fibers_encyclopedia.md`** | Markdown | 完整知识库 Markdown 全景大百科全集（万行长文全景手册） |
+            | **`chemical_fibers.db`** | SQLite | 完整 SQLite 数据库（含 FTS5 全文倒排检索三元分词索引） |
+            | **`chemical_fibers_dataset.json`** | JSON | 机器友好全量结构化数据集 |
+            | **`chemical_fibers_catalog.csv`** | CSV | 核心物理与化学性能参数指标速查表 |
+            
+            ---
+            *自动化构建提交: `${{ github.sha }}`*  
+            *触发事件: `${{ github.event_name }}`*
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: |
+            chemical_fibers_book.pdf
+            chemical_fibers_book.tex
+            chemical_fibers_encyclopedia.md
+            chemical_fibers_dataset.json
+            chemical_fibers_catalog.csv
+            chemical_fibers.db

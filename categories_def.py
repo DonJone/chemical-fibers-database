@@ -26,6 +26,7 @@ CATEGORIES = [
     (101, "REG_CELL", "再生纤维素纤维", "Regenerated Cellulose Fibers", 1, "包括传统粘胶法、铜氨法、环保NMMO溶剂法(莱赛尔)、离子液体法及醋酸纤维素"),
     (102, "REG_PROT", "再生蛋白质纤维", "Regenerated Protein Fibers", 1, "包括酪蛋白(牛奶)、大豆蛋白复合、再生蚕丝蛋白、玉米醇溶蛋白等"),
     (103, "REG_POLY", "其他多糖与天然聚合物基纤维", "Other Polysaccharide & Natural Polymer Fibers", 1, "海藻酸钠纤维、甲壳素/壳聚糖纤维、玻尿酸复合纤维、天然胶乳弹性纤维等"),
+    (104, "REG_DIFF_CELL", "差别化与功能性再生纤维素纺织纤维", "Differentiated Regenerated Cellulose Textile Fibers", 1, "永久阻燃粘胶(Lenzing FR)、超细旦莫代尔(MicroModal)、低原纤化天丝(Lyocell LF/A100)及水刺无纺高纯短纤"),
 
     # Sub-categories for SYN_CONV
     (201, "SYN_PET", "聚酯系纤维", "Polyester Fibers", 2, "PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯"),
@@ -35,6 +36,8 @@ CATEGORIES = [
     (205, "SYN_PU", "聚氨酯与弹性聚合物纤维", "Polyurethane & Elastic Fibers", 2, "聚氨酯弹性纤维(氨纶Spandex/Elastane)、热塑性聚氨酯(TPU)弹性纤维"),
     (206, "SYN_PVA", "聚乙烯醇系纤维 (维纶)", "Polyvinyl Alcohol Fibers", 2, "聚乙烯醇缩甲醛纤维(维纶)、水溶性PVA纤维、高强高模PVA短纤与长丝"),
     (207, "SYN_HALO", "含卤素通用纤维", "Halogenated Vinyl Fibers", 2, "聚氯乙烯纤维(氯纶PVC)、聚偏二氯乙烯纤维(偏氯纶PVDC)"),
+    (208, "SYN_DIFF_PET", "差别化与功能性聚酯纺织纤维", "Differentiated & Functional Polyester Textile Fibers", 2, "吸湿排汗(Coolmax)、中空蓄热保暖(Thermolite)、循环再生rPET、原液着色色丝、永久阻燃聚酯及T400自卷曲双组分高弹聚酯"),
+    (209, "SYN_MICRO", "超细旦与双组分复合开纤纺织纤维", "Microfibers & Bi-component Conjugate Textile Fibers", 2, "定岛型海岛超细纤维(超纤皮革/麂皮绒)、橘瓣裂片型涤锦复合开纤超细纤维(高效洁净布)"),
 
     # Sub-categories for BIO_DEGR
     (301, "BIO_ALIPH", "脂肪族可降解聚酯纤维", "Aliphatic Biodegradable Polyester Fibers", 3, "聚乳酸(PLA)、聚羟基脂肪酸酯(PHA/PHBV/P34HB)、聚己内酯(PCL)、聚乙醇酸(PGA)、PBS/PBAT"),
@@ -66,7 +69,8 @@ CATEGORIES = [
     (702, "EMG_SMART", "智能响应与自适应调温变色纤维", "Intelligent Responsive & Adaptive Fibers", 7, "微胶囊相变储能纤维、力致变色/温致变色纤维、形状记忆聚合物纤维"),
     (703, "EMG_ENERGY", "纤维状储能、发电与光电探测器件", "Fiber Electronics, Energy Harvesters & Sensors", 7, "纤维锂离子电池、纤维摩擦纳米发电机(TENG)、纤维钙钛矿太阳能电池、发光纤维显示器件"),
     (704, "EMG_AERO", "仿生纳微多孔气凝胶超绝热纤维", "Biomimetic Aerogel Ultra-Insulating Fibers", 7, "仿北极熊毛发中空超绝热气凝胶纤维、凯夫拉气凝胶纤维"),
-    (705, "EMG_2D", "二维晶体材料复合功能纤维", "2D Crystal Materials Functional Fibers", 7, "MXene基导电屏蔽纤维、石墨炔微纳光催化纤维")
+    (705, "EMG_2D", "二维晶体材料复合功能纤维", "2D Crystal Materials Functional Fibers", 7, "MXene基导电屏蔽纤维、石墨炔微纳光催化纤维"),
+    (706, "EMG_TEXTILE_FUNC", "现代健康舒适与防护功能性纺织纤维", "Functional Health, Comfort & Protective Textile Fibers", 7, "石墨烯多功能纺织纤维、纳米银离子长效广谱抗菌纤维、高导热瞬凉UHMWPE纺织纤维、芳纶防电弧热防护纺织特种纱")
 ]
 
 print(f"Total categories defined: {len(CATEGORIES)}")
