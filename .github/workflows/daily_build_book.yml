@@ -16,6 +16,7 @@ on:
       - 'generate_encyclopedia.py'
       - 'generate_academic_charts.py'
       - 'generate_book_latex.py'
+      - 'requirements.txt'
       - '.github/workflows/daily_build_book.yml'
   workflow_dispatch:
     inputs:
@@ -52,7 +53,7 @@ jobs:
       - name: Install Visualization Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install matplotlib numpy
+          pip install -r requirements.txt
 
       - name: Build Database and Structured Datasets
         run: |
@@ -142,21 +143,21 @@ jobs:
           body: |
             ## 📚 现代纺织化学纤维大典与工程全集 (Academic Monograph)
             
-            > 本 Release 由 GitHub Actions 每日自动化学术工作流触发全量编译生成。严格按照国家学术专著标准、科学出版社 CIP 规范与 `/texpdf` 专业排版准则构建。
+            > 本 Release 由 GitHub Actions 每日自动化学术工作流触发全量编译生成。著者署名 DonJone 与 Antigravity，严格遵循国家学术专著标准、/texpdf 排版准则与开放获取出版规范。
             
             ### 📊 核心指标与学术特色
             - **📅 构建交付日期**：${{ steps.meta.outputs.date_str }}
             - **🧬 收录化学纤维**：${{ steps.meta.outputs.fiber_count }} 种（涵盖常规合成、特种高性能、差别化改性、生物基、再生纤维素及前沿智能穿戴纤维）
             - **🧵 纺织工程学术档案**：${{ steps.meta.outputs.fiber_count }} 套（微观截面几何工程、手感风格、热湿舒适机制、印染配伍与 2026 产业进展）
             - **🎨 经典混纺协同矩阵**：12 组工业级混纺工艺协同全案
-            - **📖 专著书籍规格**：**245 页**（大16开双面排版、内含 4 幅咨询级矢量 PDF 图谱、CIP 编目页、编委会、凡例规范、极限性能排行榜、规范标准文献库与标准缩写索引）
-            - **🔤 零字体警告编译**：严格遵循 `/texpdf` 规范，采用 Times New Roman + 孤行控制 (10000) + 希腊数学符号全转义。
+            - **📖 专著书籍规格**：**257 页**（大16开双面排版、内含 4 幅咨询级矢量 PDF 图谱、学术出版档案引用页、编审说明、凡例规范、极限性能排行榜、规范标准文献库与标准缩写索引）
+            - **🔤 纯正学术排版**：严格遵循 `/texpdf` 规范，采用 Times New Roman + 孤行控制 (10000) + 绝对禁用彩色卡片框体 + 严格三线表规范。
             
             ### 📦 本次构建资产下载 (Assets)
             | 文件名 | 格式 | 描述 |
             | :--- | :--- | :--- |
-            | **`chemical_fibers_book.pdf`** | PDF | **完整专著学术典藏书籍**（245页、全彩矢量图、CIP编目、直接打印或离线精读） |
-            | **`book/chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`academicbox`、`booktabs`） |
+            | **`chemical_fibers_book.pdf`** | PDF | **完整专著学术典藏书籍**（257页、全彩矢量图、学术出版档案、直接打印或离线精读） |
+            | **`book/chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`booktabs`、`longtable`） |
             | **`docs/chemical_fibers_encyclopedia.md`** | Markdown | 完整知识库 Markdown 全景大百科全集（万行长文全景手册） |
             | **`chemical_fibers.db`** | SQLite | 完整 SQLite 数据库（含 FTS5 全文倒排检索三元分词索引） |
             | **`chemical_fibers_dataset.json`** | JSON | 机器友好全量结构化数据集 |
