@@ -65,10 +65,10 @@
 
 | 文件物理路径 | 格式说明 | 规模与状态 |
 | :--- | :---: | :--- |
-| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：大16开全彩双面排版，Times New Roman、4幅投行级矢量图谱、CIP版权页、凡例换算表、纯正学术层级三线表、标准文献库 |
+| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：著者署名 DonJone 与 Antigravity，大16开全彩双面排版，Times New Roman、4幅投行级矢量图谱、学术出版档案与引用规范页、凡例换算表、纯正学术层级三线表、标准文献库 |
 | [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵循 `/texpdf` 美学规范，去除上右边框、极简浅灰网格，生成 4 幅 Ashby 图与分布图谱 |
-| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、绝对禁用彩色专栏卡片、输出至 `book/` 专著排版体系 |
-| [`book/chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/book/chemical_fibers_book.tex) | LaTeX (6689行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`booktabs`、`longtable` 构建，零缺失字符警告 |
+| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、绝对禁用彩色专栏卡片、真实著者与引用规范、输出至 `book/` 专著排版体系 |
+| [`book/chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/book/chemical_fibers_book.tex) | LaTeX (6731行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`booktabs`、`longtable` 构建，零缺失字符警告 |
 | [`book/figures/`](file:///Users/don/Documents/化学纤维研究/book/figures/) | PDF 矢量图 | 4幅学术矢量图谱（Ashby材料图谱、舒适阻燃象限、耐温梯队、分类分布） |
 | [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译发布流**：每日 00:00 UTC 自动重建数据库、渲染矢量图谱、容器编译 PDF 并发布 Release |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **117** 种纤维、**117** 份纺织工程档案、**12** 套混纺矩阵、**411** 条别名、**195** 项标准、**43** 个分类 |
@@ -134,8 +134,8 @@
 2. **专业英文字体与西文排版 (`fontspec`)**：
    - 彻底摒弃默认 LaTeX 计算机现代字体，显式加载 `fontspec`，自动检测并启用 `Times New Roman`（Linux 容器环境自动回退 `TeX Gyre Termes`）、无衬线体 `Arial` 与等宽代码字体 `Menlo`（容器回退 `TeX Gyre Cursor`）。
 3. **出版级前言规范体系 (Academic Frontmatter)**：
-   - **庄重扉页与科学出版社 CIP 版权页**：严格遵循中图法规范，列出 TQ34 (化学纤维工业) 与 TS102 (纺织材料学) 分类号、ISBN 预留位与版权归属声明。
-   - **编审委员会名单**：设立顾问委员会、主编、副主编、高分子材料组、微观截面工程组及 CI/CD 数据编译团队。
+   - **庄重扉页与学术出版档案页**：清晰著录主著 DonJone (GitHub: @DonJone) 与联合研发 Antigravity (Google DeepMind)、开源仓库规范、中图分类参考（TQ34, TS102）、标准 GB/T 7714 与 BibTeX 引用范式、开源许可协议（绝不杜撰虚假商业 ISBN 与编目号）。
+   - **编审团队与研发说明**：收录主著 DonJone、排版工程 Antigravity 及所严格对标的国际/国家权威标准组织（ISO, GB/T, FZ/T, BISFA, ASTM, OEKO-TEX）。
    - **凡例与工程计量单位规范表**：详尽对比 $\mathrm{tex, dtex, D, Nm, Ne, cN/dtex, GPa, LOI, W\%}$ 之定义与换算关系。
    - **全量目录与双清单**：自动生成目录（TOC）、插图清单（List of Figures）与表格清单（List of Tables）。
 4. **高端咨询/投行级矢量图表系统 (`generate_academic_charts.py`)**：
@@ -159,7 +159,7 @@
 | **专著总页数** | 179 页 | **257 页** (+78 页深度学术内容) |
 | **PDF 文件体积** | 1.7 MB | **2.0 MB** |
 | **学术矢量图表** | 0 幅 | **4 幅** (Ashby材料图谱/舒适阻燃象限/耐温梯队/分类分布) |
-| **出版级 Frontmatter** | 简易扉页 + 目录 | 扉页 + CIP编目 + 编委会 + 凡例换算表 + 目录 + 插图清单 + 表格清单 |
+| **出版级 Frontmatter** | 简易扉页 + 目录 | 扉页 + 学术出版档案引用页 + 编审研发说明 + 凡例换算表 + 目录 + 插图清单 + 表格清单 |
 | **排版字号与字体** | 10pt (默认西文字体) | **11pt** (Times New Roman / TeX Gyre Termes 学术英文字体) |
 | **页面密度控制** | 未设置断行惩罚 | 锁定 `clubpenalty=10000`, `widowpenalty=10000`, `linespread=1.35` |
 | **缺失字符警告** | 存在希腊字母/度数警告 | **100% 零缺失字符警告 (Zero Missing Character)** |

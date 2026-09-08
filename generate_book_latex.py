@@ -165,7 +165,7 @@ def generate_book():
     urlcolor=teal!70!black,
     bookmarksnumbered=true,
     pdfstartview=FitH,
-    pdfauthor={化学纤维与现代纺织工程学术编委会},
+    pdfauthor={DonJone, Antigravity},
     pdftitle={现代纺织化学纤维大典与工程全集},
     pdfsubject={化学纤维工业、纺织材料学与工程技术专著}
 ]{hyperref}
@@ -206,9 +206,9 @@ def generate_book():
 \vspace{{1.2cm}}
 {{\Large\scshape Comprehensive Compendium of Modern Textile \& Chemical Fibers\par}}
 \vspace{{0.4cm}}
-{{\large\itshape {year_str} Academic Reference Edition\par}}
+{{\large\itshape {year_str} Academic Open Reference Edition\par}}
 
-\vspace{{2.5cm}}
+\vspace{{2.2cm}}
 \rule{{0.75\textwidth}}{{0.8pt}}\par
 \vspace{{0.5cm}}
 {{\large\bfseries 以服装、家用与产业用纺织品为核心支撑的材料工程全景\par}}
@@ -218,66 +218,108 @@ def generate_book():
 \rule{{0.75\textwidth}}{{0.8pt}}\par
 
 \vfill
-{{\bfseries 化学纤维与现代纺织工程学术编委会\par}}
-\vspace{{0.3cm}}
-{{\normalsize 科学工程出版部 · 数字化每日持续编译版\par}}
+{{\Large\bfseries 著\quad 者：DonJone \quad Antigravity\par}}
+\vspace{{0.4cm}}
+{{\normalsize 开源数字化学术专著 · 每日持续集成构建版\par}}
 \vspace{{0.2cm}}
-{{\small 交付日期：{now_str}\par}}
+{{\small 开源项目：\url{{https://github.com/DonJone/chemical-fibers-database}}\par}}
+\vspace{{0.2cm}}
+{{\small 交付时间：{now_str}\par}}
 \vspace{{1.5cm}}
 \end{{titlepage}}
 
 \frontmatter
 
-% ==================== CIP 版权编目与学术出版信息页 ====================
+% ==================== 学术专著版权与出版档案页 (Copyright & Publication Profile) ====================
 \newpage
 \thispagestyle{{empty}}
+\vspace*{{1.2cm}}
+
 \begin{{center}}
-\vspace*{{2cm}}
-\textbf{{\Large 图书在版编目 (CIP) 数据}}\par
+{{\LARGE\bfseries 现代纺织化学纤维大典与工程全集}}\par
+\vspace{{0.2cm}}
+{{\small\scshape Comprehensive Compendium of Modern Textile \& Chemical Fibers}}
+\end{{center}}
+
 \vspace{{0.6cm}}
-\begin{{minipage}}{{0.85\textwidth}}
+
+\begin{{center}}
+\begin{{minipage}}{{0.88\textwidth}}
 \small
-\noindent 现代纺织化学纤维大典与工程全集 / 化学纤维与现代纺织工程学术编委会 编著. --- 北京 : 科学工程出版社, {year_str}.9\\
-\noindent ISBN 978-7-9999-8888-0\\[0.3cm]
-\noindent I. (1)现… \quad II. (1)化… \quad III. (1)化学纤维 - 纺织材料 - 专著 \quad IV. (1)TQ34 (2)TS102\\[0.3cm]
-\noindent 中国版本图书馆 CIP 数据核字 ({year_str}) 第 202688 号
+\noindent\rule{{\textwidth}}{{0.8pt}}\par
+\vspace{{0.3cm}}
+\noindent\textbf{{【开源学术专著出版与编目档案】}}\par
+\vspace{{0.2cm}}
+\noindent\textbf{{专著题名}}：现代纺织化学纤维大典与工程全集 ({year_str} 年学术开源第 1 版)\par
+\noindent\textbf{{主\quad\quad 著}}：DonJone (GitHub: \texttt{{@DonJone}}) · Antigravity (Google DeepMind)\par
+\noindent\textbf{{开源仓库}}：\url{{https://github.com/DonJone/chemical-fibers-database}}\par
+\noindent\textbf{{出版形态}}：开源数字化持续交付学术专著 (Continuous Delivery Open Access Monograph)\par
+\noindent\textbf{{中图分类}}：TQ34 (化学纤维工业)；TS102 (纺织材料学) [文献检索参考分类]\par
+\noindent\textbf{{书号说明}}：本项目为开源数字化工程研究专著，未申请商业纸质出版物 ISBN / CIP 编号，完全遵照开放获取 (Open Access) 与学术引用规范发布。\par
+\vspace{{0.2cm}}
+\noindent\rule{{\textwidth}}{{0.8pt}}
+\end{{minipage}}
+\end{{center}}
+
+\vspace{{0.5cm}}
+
+\begin{{center}}
+\begin{{minipage}}{{0.88\textwidth}}
+\small
+\noindent\textbf{{【规范学术引用格式 (Suggested Academic Citations)】}}\par
+\vspace{{0.2cm}}
+\noindent\textbf{{国标引用格式 (GB/T 7714-2015)}}：\par
+\noindent DonJone, Antigravity. 现代纺织化学纤维大典与工程全集[M/OL]. GitHub 开源项目, {year_str}: \url{{https://github.com/DonJone/chemical-fibers-database}}.\par
+\vspace{{0.3cm}}
+\noindent\textbf{{BibTeX 引用条目}}：\par
+\vspace{{0.1cm}}
+\noindent\texttt{{@book\{{donjone{year_str}chemicalfibers,}}\\
+\noindent\texttt{{\quad title\ \ \ \ = \{{现代纺织化学纤维大典与工程全集\}},}}\\
+\noindent\texttt{{\quad author\ \ \ = \{{DonJone and Antigravity\}},}}\\
+\noindent\texttt{{\quad year\ \ \ \ \ = \{{{year_str}\}},}}\\
+\noindent\texttt{{\quad url\ \ \ \ \ \ = \{{https://github.com/DonJone/chemical-fibers-database\}}}}\\
+\noindent\texttt{{\}}}}
 \end{{minipage}}
 \end{{center}}
 
 \vfill
-\begin{{minipage}}{{0.85\textwidth}}
+
+\begin{{center}}
+\begin{{minipage}}{{0.88\textwidth}}
 \small
-\textbf{{现代纺织化学纤维大典与工程全集}}\par
+\noindent\rule{{\textwidth}}{{0.5pt}}\par
 \vspace{{0.2cm}}
-\noindent 编\quad\quad 著：化学纤维与现代纺织工程学术编委会\\
-\noindent 出版发行：科学工程出版社 (Scientific Engineering Press)\\
-\noindent 责任编辑：数字化自动编撰管线 (GitHub Actions Automated Pipeline)\\
-\noindent 排版技术：XeLaTeX + ctexbook + fontspec + booktabs\\
-\noindent 开\quad\quad 本：880mm $\times$ 1230mm \quad 1/16 (标准大16开 / A4)\\
-\noindent 版\quad\quad 次：{year_str} 年 9 月第 1 版\\
-\noindent 印刷时间：{now_str} (每日自动化构建交付版)\\
-\noindent 版权声明：保留所有权利。本工程专著内容依托开源数据库构建，供学术研究与工程实践参考。
+\noindent\textbf{{【工程技术规格与版权许可】}}\par
+\vspace{{0.2cm}}
+\noindent 著\quad\quad 者：DonJone \quad Antigravity\\
+\noindent 数据架构：SQLite 3 关系数据库 + Trigram FTS5 全文倒排索引\\
+\noindent 排版技术：XeLaTeX + CTeX + fontspec + booktabs (严格遵循 /texpdf 规范)\\
+\noindent 持续集成：GitHub Actions Nightly CI/CD Continuous Delivery\\
+\noindent 构建时间：{now_str} (UTC+8 自动化生成)\\
+\noindent 许可协议：本专著数据与学术文本遵循 \textbf{{CC BY-NC-SA 4.0}} 国际开源协议 (署名-非商业性使用-相同方式共享)。底层构建脚本与数据引擎遵循 \textbf{{MIT}} 开源许可协议。
 \end{{minipage}}
-\vspace{{1.5cm}}
+\end{{center}}
+\vspace{{1.0cm}}
 
-% ==================== 编委会与顾问名单 ====================
-\chapter*{{学术编审委员会}}
-\addcontentsline{{toc}}{{chapter}}{{学术编审委员会}}
+% ==================== 编审团队与顾问说明 ====================
+\chapter*{{学术编审团队与研发说明}}
+\addcontentsline{{toc}}{{chapter}}{{学术编审团队与研发说明}}
 
-\noindent\textbf{{【顾问委员会】}}\par
-\noindent 院士专家组、国际人造与合成纤维标准化委员会 (BISFA)、中国纺织工业联合会标准化技术委员会专家组。
-
-\vspace{{0.4cm}}
-\noindent\textbf{{【编委会主任 / 主编】}}\par
-\noindent 现代化学纤维数据库课题组总负责人 (Chemical Fibers Consortium Principal Investigators)
+\noindent\textbf{{【专著主著与项目架构师】}}\par
+\noindent \textbf{{DonJone}} (GitHub: \texttt{{@DonJone}}) · 现代化学纤维全景数据库与纺织工程知识库总架构师。负责全量化学纤维分类体系设计、物化指标校验与混纺矩阵构建。
 
 \vspace{{0.4cm}}
-\noindent\textbf{{【学术副主编与核心编撰团队】}}\par
-\noindent 高分子物理与化学材料组、微观截面与热湿舒适性工程组、混纺配伍与印染染整技术组、特种高性能与战略防务纺织品研究室。
+\noindent\textbf{{【联合研发与智能排版工程】}}\par
+\noindent \textbf{{Antigravity}} (Google DeepMind) · 知识图谱工程架构、学术 LaTeX 排版引擎设计、矢量图表生成算法与 GitHub Actions CI/CD 流水线构建。
 
 \vspace{{0.4cm}}
-\noindent\textbf{{【数据架构与自动化编译工程组】}}\par
-\noindent SQLite 3 核心数据库架构师、Trigram FTS5 全文检索引擎工程师、GitHub Actions CI/CD 流水线构建团队。
+\noindent\textbf{{【标准文献与数据源规范】}}\par
+\noindent 本书所有数据严格对标国际与国家权威标准机构发布之现行规范：国际标准化组织 (ISO)、国家标准化管理委员会 (GB/T)、中国纺织工业联合会 (FZ/T)、国际人造与合成纤维标准化委员会 (BISFA)、美国材料与试验协会 (ASTM)、OEKO-TEX® 国际环保纺织协会、全球回收标准 (GRS)。
+
+\vspace{{0.4cm}}
+\noindent\textbf{{【开源社区协同与持续演进】}}\par
+\noindent 本项目为开放科研基础设施，热忱欢迎全球材料科学、纺织工程专家学者与产业技术人员通过 GitHub 提交 Pull Request 或 Issue 参与数据纠错与共建：\par
+\noindent \url{{https://github.com/DonJone/chemical-fibers-database}}
 
 % ==================== 出版说明与专著序言 ====================
 \chapter*{{出版说明与专著序言}}

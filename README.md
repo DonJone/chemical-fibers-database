@@ -13,7 +13,7 @@
 
 | 文件 / 目录路径 | 格式 / 类型 | 核心内容与技术说明 |
 | :--- | :---: | :--- |
-| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：大16开双面排版、Times New Roman英文字体、4幅投行级矢量图谱、CIP版权页、凡例换算表、三线表学术规范、标准文献库 |
+| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：著者署名 DonJone 与 Antigravity、大16开双面排版、Times New Roman、4幅投行级矢量图谱、学术出版档案与引用规范页、凡例换算表、三线表规范、标准文献库 |
 | [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **学术专著出版排版沙盒**：包含 `chemical_fibers_book.tex` (6689行) 与 4 幅高清矢量图表 `book/figures/`，隔离编译缓存保持根目录纯净 |
 | [`docs/`](file:///Users/don/Documents/化学纤维研究/docs/) | 文档资料库 | **系统百科与工程报告**：包含 [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) (5480+行大百科) 与 [`chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) (工程报告) |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **核心物理数据库**：内置 5 张实体表（分类表、纤维主表、纺织工程档案表、经典混纺矩阵表、标准规范表）、1 个支持中英文分词的 FTS5 全文倒排虚拟表与 13 组高性能 B-Tree 索引 |
@@ -315,8 +315,8 @@ CREATE VIRTUAL TABLE fibers_fts USING fts5(
   锁定顶底断行惩罚，黄金 1.35 倍行距，彻底杜绝单行孤行与大空白裂隙。
 - **英文字体与西文排版**：全面加载 `fontspec`，自动探测并启用经典学术字体 `Times New Roman`（Linux 容器回退 `TeX Gyre Termes`），无衬线体 `Arial`，等宽字体 `Menlo`（Linux 容器回退 `TeX Gyre Cursor`）。
 - **学术出版级前言结构 (Frontmatter)**：
-  - **庄重扉页与科学出版社 CIP 编目页**：含图书在版编目数据、中图分类号（TQ34, TS102）、责任编辑与出版版次。
-  - **编审委员会名单**：收录顾问、主编、副主编及数据架构工程组。
+  - **庄重扉页与严谨学术出版档案页**：清晰著录著者（DonJone, Antigravity）、开源仓库规范、中图分类参考（TQ34, TS102）、标准 GB/T 7714 与 BibTeX 引用范式、开源许可协议（绝不杜撰虚构的商业 ISBN 与虚假 CIP）。
+  - **编审委员会与研发说明**：收录主著 DonJone、排版工程 Antigravity 及所严格对标的国际/国家权威标准组织（ISO, GB/T, FZ/T, BISFA, ASTM, OEKO-TEX）。
   - **凡例与工程计量单位规范表**：详尽三线表对比 $\mathrm{tex, dtex, D, Nm, Ne, cN/dtex, GPa, LOI, W\%}$ 之定义与换算关系。
   - **完整目录体系**：全书目录（TOC）、插图清单（List of Figures）、表格清单（List of Tables）。
 - **高端咨询/投行级矢量图表嵌入 (`generate_academic_charts.py`)**：
