@@ -9,9 +9,9 @@ Academic LaTeX Monograph Generator for Chemical Fibers & Textile Engineering
 - 专业学术英文字体配置 (Times New Roman / TeX Gyre Termes, Arial, Menlo)
 - 规范出版物 Frontmatter (扉页、CIP 版权页、编委会、序言、凡例与计量单位换算表、插图清单、表格清单)
 - 嵌入咨询级投行美学 Matplotlib 矢量 PDF 图表
-- 严格三线表规范 (booktabs) 与学术级档案卡 (academicbox)
+- 严格三线表规范 (booktabs) 与学术层级规范 (绝对禁用任何彩色或圆角专栏卡片，确保严肃纯粹学术质感)
 - 标准文献库与术语缩写索引
-- 依据 /texpdf 目录规范：输出至 texlog/ 目录进行隔离编译，最终 PDF 交付至项目根目录
+- 依据目录规范：输出至 book/ 目录进行隔离编译，最终 PDF 交付至项目根目录
 """
 import sqlite3
 import os
@@ -121,7 +121,6 @@ def generate_book():
 \usepackage{booktabs,longtable,tabularx,array,multirow,makecell}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[skins,breakable]{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -189,44 +188,9 @@ def generate_book():
 \titleformat{\chapter}[hang]{\Huge\bfseries\color{themeblue}}{\chaptertitlename\ \thechapter}{1.2em}{}
 \titlespacing*{\chapter}{0pt}{10pt}{20pt}
 
-% 学术品牌主色调
-\definecolor{themeblue}{RGB}{20, 50, 100}      % 牛津藏青 (Oxford Navy)
-\definecolor{themegreen}{RGB}{30, 90, 60}       % 常春藤绿 (Ivy Green)
-\definecolor{themegray}{RGB}{248, 250, 252}     % 浅灰卡片底色
-\definecolor{cardborder}{RGB}{180, 195, 215}    % 档案卡细边框
+% 学术出版典雅色系
+\definecolor{themeblue}{RGB}{20, 50, 100}      % 牛津藏青 (Oxford Navy 用于章节标题)
 \definecolor{darkslate}{RGB}{45, 55, 72}        % 正文深灰
-
-% 学术档案专栏卡样式 (Academic Dossier Box)
-\newtcolorbox{academicbox}[1]{
-    enhanced,
-    breakable,
-    colback=themegray,
-    colframe=themeblue,
-    arc=1mm,
-    fonttitle=\bfseries\small\color{white},
-    title={#1},
-    boxrule=0.75pt,
-    left=9pt,
-    right=9pt,
-    top=7pt,
-    bottom=7pt
-}
-
-% 学术混纺方案专栏样式
-\newtcolorbox{academicblendbox}[1]{
-    enhanced,
-    breakable,
-    colback=green!2!white,
-    colframe=themegreen,
-    arc=1mm,
-    fonttitle=\bfseries\small\color{white},
-    title={#1},
-    boxrule=0.75pt,
-    left=9pt,
-    right=9pt,
-    top=7pt,
-    bottom=7pt
-}
 
 \begin{document}
 """)
@@ -288,7 +252,7 @@ def generate_book():
 \noindent 编\quad\quad 著：化学纤维与现代纺织工程学术编委会\\
 \noindent 出版发行：科学工程出版社 (Scientific Engineering Press)\\
 \noindent 责任编辑：数字化自动编撰管线 (GitHub Actions Automated Pipeline)\\
-\noindent 排版技术：XeLaTeX + ctexbook + tcolorbox + fontspec\\
+\noindent 排版技术：XeLaTeX + ctexbook + fontspec + booktabs\\
 \noindent 开\quad\quad 本：880mm $\times$ 1230mm \quad 1/16 (标准大16开 / A4)\\
 \noindent 版\quad\quad 次：{year_str} 年 9 月第 1 版\\
 \noindent 印刷时间：{now_str} (每日自动化构建交付版)\\
@@ -452,15 +416,16 @@ def generate_book():
     blends = cur.fetchall()
     for b in blends:
         lines.append(rf"""
-\begin{{academicblendbox}}{{配伍方案 {b['id']}：{tex_escape(b['blend_name'])}}}
-\begin{{itemize}} \setlength{{\itemsep}}{{2pt}}
+\section{{配伍方案 {b['id']}：{tex_escape(b['blend_name'])}}}
+
+\begin{{itemize}} \setlength{{\itemsep}}{{2.5pt}}
     \item \textbf{{纤维组分构成}}：{tex_escape(b['fiber_components'])}
     \item \textbf{{经典黄金配比}}：\texttt{{{tex_escape(b['classic_ratio'])}}}
     \item \textbf{{协同互补优势}}：{tex_escape(b['synergy_advantages'])}
     \item \textbf{{典型面料服饰}}：{tex_escape(b['typical_fabrics'])}
     \item \textbf{{染整关键与工艺策略}}：{tex_escape(b['dyeing_finishing_notes'])}
 \end{{itemize}}
-\end{{academicblendbox}}
+\vspace{{0.3cm}}
 """)
 
     lines.append(r"""
@@ -559,9 +524,8 @@ def generate_book():
 
                 if tp:
                     lines.append(rf"""
-\begin{{academicbox}}{{现代纺织工程技术与面料应用学术档案}}
-\small
-\begin{{itemize}} \setlength{{\itemsep}}{{2.5pt}}
+\subsubsection*{{现代纺织工程技术与面料应用规范}}
+\begin{{itemize}} \setlength{{\itemsep}}{{2pt}}
     \item \textbf{{微观截面几何形态}}：\texttt{{{tex_escape(tp['cross_section_shape'])}}}
     \item \textbf{{纺织细度指标范围}}：{tex_escape(tp['fineness_dtex_range'])}
     \item \textbf{{纱线加工技术规格}}：{tex_escape(tp['yarn_processing_types'])}
@@ -576,7 +540,7 @@ def generate_book():
     \item \textbf{{洗涤保养与熨烫要点}}：{tex_escape(tp['care_and_washing'])}
     \item \textbf{{国际生态纺织认证}}：\texttt{{{tex_escape(tp['eco_certifications'])}}}
 \end{{itemize}}
-\end{{academicbox}}
+\vspace{{0.2cm}}
 """)
 
                 lines.append(rf"""

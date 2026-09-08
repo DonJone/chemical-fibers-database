@@ -13,8 +13,8 @@
 
 | 文件 / 目录路径 | 格式 / 类型 | 核心内容与技术说明 |
 | :--- | :---: | :--- |
-| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**245页**) | **国家学术出版典藏级专著 PDF**：大16开双面排版、Times New Roman英文字体、4幅投行级矢量图谱、CIP版权页、凡例换算表、学术档案专栏、标准文献库 |
-| [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **学术专著出版排版沙盒**：包含 `chemical_fibers_book.tex` (6830行) 与 4 幅高清矢量图表 `book/figures/`，隔离编译缓存保持根目录纯净 |
+| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：大16开双面排版、Times New Roman英文字体、4幅投行级矢量图谱、CIP版权页、凡例换算表、三线表学术规范、标准文献库 |
+| [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **学术专著出版排版沙盒**：包含 `chemical_fibers_book.tex` (6689行) 与 4 幅高清矢量图表 `book/figures/`，隔离编译缓存保持根目录纯净 |
 | [`docs/`](file:///Users/don/Documents/化学纤维研究/docs/) | 文档资料库 | **系统百科与工程报告**：包含 [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) (5480+行大百科) 与 [`chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) (工程报告) |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **核心物理数据库**：内置 5 张实体表（分类表、纤维主表、纺织工程档案表、经典混纺矩阵表、标准规范表）、1 个支持中英文分词的 FTS5 全文倒排虚拟表与 13 组高性能 B-Tree 索引 |
 | [`fiber_query.py`](file:///Users/don/Documents/化学纤维研究/fiber_query.py) | Python 3 CLI | **智能检索工具**：支持全文模糊检索、单品种白皮书、专项纺织技术卡、混纺配伍方案反查、多维纺织属性过滤与全景统计大盘 |
@@ -324,8 +324,8 @@ CREATE VIRTUAL TABLE fibers_fts USING fts5(
   - 图 1-2：化学纤维拉伸强度与初始模量 Ashby 材料性能双对数图谱
   - 图 1-3：化学纤维公定回潮率 (舒适度) 与极限氧指数 LOI (阻燃安全性) 四象限定位图
   - 图 1-4：现代化学纤维耐温极限服役温度天花板梯队排行 (Top 14)
-- **学术档案专栏卡 (Academic Dossier Box)**：
-  - 使用 `tcolorbox` 定制牛津藏青（Oxford Navy）主题微圆角档案卡（`arc=1mm, boxrule=0.75pt`），配合正文标准三线表（`booktabs`）。
+- **严格三线表规范与严禁彩色专栏卡片 (Academic Rigor)**：
+  - 严格恪守 `/texpdf` 规范：**绝对禁用商业宣传册式的彩色圆角专栏卡片（如 `tcolorbox`）**，全面采用标准学术层级标题与无框三线表（`booktabs`），确保纯粹严肃的学术出版风貌。
 - **标准文献库与索引 (Backmatter)**：
   - 规范引用 GB/T、ISO、ASTM、FZ/T、OEKO-TEX、GRS 等权威标准文献。
   - 附录收录 30+ 种化学纤维通用国际英文缩写索引（PET, PTT, CLY, CMD, PPTA, PBO, UHMWPE 等）。

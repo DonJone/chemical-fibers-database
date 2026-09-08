@@ -65,10 +65,10 @@
 
 | 文件物理路径 | 格式说明 | 规模与状态 |
 | :--- | :---: | :--- |
-| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**245页**) | **国家学术出版典藏级专著 PDF**：大16开全彩双面排版，Times New Roman、4幅投行级矢量图谱、CIP版权页、凡例换算表、学术档案专栏、标准文献库 |
+| [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**257页**) | **国家学术出版典藏级专著 PDF**：大16开全彩双面排版，Times New Roman、4幅投行级矢量图谱、CIP版权页、凡例换算表、纯正学术层级三线表、标准文献库 |
 | [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵循 `/texpdf` 美学规范，去除上右边框、极简浅灰网格，生成 4 幅 Ashby 图与分布图谱 |
-| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `book/` 专著排版体系 |
-| [`book/chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/book/chemical_fibers_book.tex) | LaTeX (6830行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`academicbox`、`booktabs`、`longtable` 构建，零缺失字符警告 |
+| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、绝对禁用彩色专栏卡片、输出至 `book/` 专著排版体系 |
+| [`book/chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/book/chemical_fibers_book.tex) | LaTeX (6689行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`booktabs`、`longtable` 构建，零缺失字符警告 |
 | [`book/figures/`](file:///Users/don/Documents/化学纤维研究/book/figures/) | PDF 矢量图 | 4幅学术矢量图谱（Ashby材料图谱、舒适阻燃象限、耐温梯队、分类分布） |
 | [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译发布流**：每日 00:00 UTC 自动重建数据库、渲染矢量图谱、容器编译 PDF 并发布 Release |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **117** 种纤维、**117** 份纺织工程档案、**12** 套混纺矩阵、**411** 条别名、**195** 项标准、**43** 个分类 |
@@ -144,19 +144,19 @@
      - **图 1-2**：化学纤维拉伸强度与初始模量 Ashby 材料性能双对数图谱
      - **图 1-3**：化学纤维公定回潮率 (舒适度) 与极限氧指数 LOI (阻燃安全性) 四象限定位图
      - **图 1-4**：现代化学纤维耐温极限服役温度天花板梯队排行 (Top 14)
-5. **学术档案专栏卡与三线表重构**：
-   - 将原有彩色卡片精简重构为微圆角牛津蓝底栏学术档案卡（`academicbox`, `arc=1mm, boxrule=0.75pt`），正文物化常数全部采用非浮动标准三线表（`booktabs`），杜绝浮动体漂移乱飞。
+5. **严格落实 `/texpdf` 约束：全面禁用彩色专栏卡片**：
+   - 彻底剔除商业海报/教材式的彩色浮动圆角卡片（`tcolorbox`、`academicbox`、`academicblendbox`）。纤维档案与混纺方案全面回归标准学术层级标题（`\section`、`\subsubsection*`）与三线表（`booktabs`），杜绝浮躁色彩，确保严肃纯粹的学术专著质感。
 6. **规范标准文献库与索引体系 (Backmatter)**：
    - 建立 12 项国家与国际核心标准文献库（GB/T 4146、ISO 2076、GB/T 9994、OEKO-TEX、GRS 等）。
    - 附录收录 30+ 种化学纤维通用国际缩写字母对照索引表。
 7. **专著构建工作区与纯净交付架构 (`book/`)**：
-   - 依据学术出版工程规范，所有专著 `.tex` 源码、矢量图表 `figures/` 与编译产生的 `.aux`, `.log`, `.toc`, `.lof`, `.lot` 中间件均统一归拢在 `book/` 专著排版目录下，最终纯净的 245 页 PDF 复制交付至工作区根目录，彻底保持仓库根目录整洁清爽。
+   - 依据学术出版工程规范，所有专著 `.tex` 源码、矢量图表 `figures/` 与编译产生的 `.aux`, `.log`, `.toc`, `.lof`, `.lot` 中间件均统一归拢在 `book/` 专著排版目录下，最终纯净的 257 页 PDF 复制交付至工作区根目录，彻底保持仓库根目录整洁清爽。
 
 ### 2. 编译成果与规格对比
 
 | 指标维度 | 升级前初始版本 | `/texpdf` 学术规范升级后版本 |
 | :--- | :---: | :---: |
-| **专著总页数** | 179 页 | **245 页** (+66 页深度学术内容) |
+| **专著总页数** | 179 页 | **257 页** (+78 页深度学术内容) |
 | **PDF 文件体积** | 1.7 MB | **2.0 MB** |
 | **学术矢量图表** | 0 幅 | **4 幅** (Ashby材料图谱/舒适阻燃象限/耐温梯队/分类分布) |
 | **出版级 Frontmatter** | 简易扉页 + 目录 | 扉页 + CIP编目 + 编委会 + 凡例换算表 + 目录 + 插图清单 + 表格清单 |

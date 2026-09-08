@@ -4,7 +4,6 @@
 \usepackage{booktabs,longtable,tabularx,array,multirow,makecell}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[skins,breakable]{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -72,44 +71,9 @@
 \titleformat{\chapter}[hang]{\Huge\bfseries\color{themeblue}}{\chaptertitlename\ \thechapter}{1.2em}{}
 \titlespacing*{\chapter}{0pt}{10pt}{20pt}
 
-% 学术品牌主色调
-\definecolor{themeblue}{RGB}{20, 50, 100}      % 牛津藏青 (Oxford Navy)
-\definecolor{themegreen}{RGB}{30, 90, 60}       % 常春藤绿 (Ivy Green)
-\definecolor{themegray}{RGB}{248, 250, 252}     % 浅灰卡片底色
-\definecolor{cardborder}{RGB}{180, 195, 215}    % 档案卡细边框
+% 学术出版典雅色系
+\definecolor{themeblue}{RGB}{20, 50, 100}      % 牛津藏青 (Oxford Navy 用于章节标题)
 \definecolor{darkslate}{RGB}{45, 55, 72}        % 正文深灰
-
-% 学术档案专栏卡样式 (Academic Dossier Box)
-\newtcolorbox{academicbox}[1]{
-    enhanced,
-    breakable,
-    colback=themegray,
-    colframe=themeblue,
-    arc=1mm,
-    fonttitle=\bfseries\small\color{white},
-    title={#1},
-    boxrule=0.75pt,
-    left=9pt,
-    right=9pt,
-    top=7pt,
-    bottom=7pt
-}
-
-% 学术混纺方案专栏样式
-\newtcolorbox{academicblendbox}[1]{
-    enhanced,
-    breakable,
-    colback=green!2!white,
-    colframe=themegreen,
-    arc=1mm,
-    fonttitle=\bfseries\small\color{white},
-    title={#1},
-    boxrule=0.75pt,
-    left=9pt,
-    right=9pt,
-    top=7pt,
-    bottom=7pt
-}
 
 \begin{document}
 
@@ -168,7 +132,7 @@
 \noindent 编\quad\quad 著：化学纤维与现代纺织工程学术编委会\\
 \noindent 出版发行：科学工程出版社 (Scientific Engineering Press)\\
 \noindent 责任编辑：数字化自动编撰管线 (GitHub Actions Automated Pipeline)\\
-\noindent 排版技术：XeLaTeX + ctexbook + tcolorbox + fontspec\\
+\noindent 排版技术：XeLaTeX + ctexbook + fontspec + booktabs\\
 \noindent 开\quad\quad 本：880mm $\times$ 1230mm \quad 1/16 (标准大16开 / A4)\\
 \noindent 版\quad\quad 次：2026 年 9 月第 1 版\\
 \noindent 印刷时间：2026年09月08日 (每日自动化构建交付版)\\
@@ -324,125 +288,137 @@
 
 单一纤维通常存在性能短板，现代面料工程通过多组分短纤混纺或长丝交织实现协同互补：
 
-\begin{academicblendbox}{配伍方案 1：涤棉混纺 (T/C \& CVC 混纺)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 1：涤棉混纺 (T/C \& CVC 混纺)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：PET聚酯纤维 (涤纶) + 天然棉纤维 (长绒棉/细绒棉)
     \item \textbf{经典黄金配比}：\texttt{T/C 65/35 (涤主) 或 CVC 60/40 (棉主)}
     \item \textbf{协同互补优势}：黄金互补：涤纶赋予面料极佳的断裂强力、抗皱保形性、耐磨损性与机洗免烫；棉纤维赋予高吸湿透气性、亲肤舒适感与消除静电积聚。
     \item \textbf{典型面料服饰}：经典男士正装商务衬衫、医院医护防静电白大褂、高强度耐洗工装制服、军训作训服、星级酒店耐洗床单被套。
     \item \textbf{染整关键与工艺策略}：分散染料染涤纶(130$^\circ\mathrm{C}$高温高压) + 活性染料染棉(60$^\circ\mathrm{C}$中温弱碱)，采用一浴两步法或两浴两步法连续轧染，控制热定型温度180-185$^\circ\mathrm{C}$以防棉泛黄脆损。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 2：涤粘混纺 (T/R 仿毛西服面料)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 2：涤粘混纺 (T/R 仿毛西服面料)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：PET聚酯纤维 (涤纶) + 粘胶纤维 (人造棉/人造丝)
     \item \textbf{经典黄金配比}：\texttt{T/R 65/35 或 T/R 70/30}
     \item \textbf{协同互补优势}：仿毛性价比之王：粘胶纤维有效消除涤纶静电、改善吸湿排汗手感并带来优雅悬垂感；涤纶提供永久褶裥记忆、高抗皱弹性与耐洗耐磨寿命。
     \item \textbf{典型面料服饰}：春秋季男女商务西服套装、男女职业西裤、百褶学生制服裙、免烫工装风衣。
     \item \textbf{染整关键与工艺策略}：分散染料染涤 + 活性/直接染料染粘胶，水洗缩水率控制在2\%以内，整理时加入抗起毛起球有机硅柔软剂改善手感。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 3：棉莫混纺 (Cotton / Modal 高端针织)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 3：棉莫混纺 (Cotton / Modal 高端针织)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：精梳天然棉 (Combed Cotton) + 莫代尔纤维 (Modal)
     \item \textbf{经典黄金配比}：\texttt{50/50 或 60/40}
     \item \textbf{协同互补优势}：极致贴身享受：莫代尔赋予面料丝滑软糯手感、天然光泽和持久鲜艳色泽，克服纯棉多次水洗后发硬板结缺陷；棉纤维提高湿态稳定性和骨感挺括度。
     \item \textbf{典型面料服饰}：轻奢贴身无痕内衣、高端家居睡衣、夏日丝滑T恤、婴幼儿A类贴身连体衣、轻柔针织床品。
     \item \textbf{染整关键与工艺策略}：活性染料中温一浴法均染（二者均为纤维素同类染色），染色极性均匀，注意严格控制碱剂浓度防止莫代尔在强碱下过度溶胀。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 4：羊毛/腈纶混纺 (Wool / Acrylic 毛纺经典)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 4：羊毛/腈纶混纺 (Wool / Acrylic 毛纺经典)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：天然绵羊毛 (Wool) + 聚丙烯腈纤维 (膨体腈纶)
     \item \textbf{经典黄金配比}：\texttt{70/30 (毛为主) 或 50/50 (平价毛线)}
     \item \textbf{协同互补优势}：保暖与抗缩绒协同：羊毛提供天然卷曲、高保暖性和高回弹性；腈纶（人造羊毛）显著降低面料自重，克服羊毛机洗毡缩起球缺点，降低原料成本且色彩更鲜亮。
     \item \textbf{典型面料服饰}：粗纺呢绒大衣面料、秋冬针织毛衣开衫、保暖围巾围脖、毛线手工编织纱线。
     \item \textbf{染整关键与工艺策略}：酸性染料(染羊毛) + 阳离子染料(染腈纶)，同浴两步法染色，严格防止两类阴阳电荷染料在水相中发生沉淀凝结，需加入非离子抗凝聚防沉淀剂。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 5：锦棉混纺 (Nylon / Cotton 户外高耐磨工装)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 5：锦棉混纺 (Nylon / Cotton 户外高耐磨工装)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：聚酰胺长丝/短纤 (锦纶/尼龙) + 天然精梳棉
     \item \textbf{经典黄金配比}：\texttt{N/C 50/50 或 锦纶25\% + 棉75\%}
     \item \textbf{协同互补优势}：硬核防撕裂：锦纶的耐磨性是棉纤维的10倍、聚酯的2-3倍，赋予织物极高撕破强力与耐摩擦性；棉纤维保证剧烈运动出汗时的吸汗透气和舒适透气。
     \item \textbf{典型面料服饰}：美军战术作战服(ACU/BDU)、户外攀岩耐磨裤、高档冲锋衣内胆、工装多袋风衣、重型露营帐篷。
     \item \textbf{染整关键与工艺策略}：弱酸性染料染锦纶 + 活性染料染棉，热定型温度170-175$^\circ\mathrm{C}$，通常采用格纹防撕裂组织(Ripstop)织造。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 6：氨纶包芯纱高弹牛仔体系 (Core-Spun Spandex Denim)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 6：氨纶包芯纱高弹牛仔体系 (Core-Spun Spandex Denim)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：聚氨酯弹性纤维 (氨纶Spandex) 芯丝 + 外包纯棉或棉涤短纤
     \item \textbf{经典黄金配比}：\texttt{棉 95\%-98\% + 氨纶 2\%-5\%}
     \item \textbf{协同互补优势}：随形而动与自然棉感：中心氨纶提供 25\%-40\% 的舒适拉伸回复弹性与低滞后损耗，外层纯棉确保手感干爽纯正、支持经典靛蓝染色与洗水磨白落色效果。
     \item \textbf{典型面料服饰}：弹力紧身牛仔裤、四面弹修身休闲裤、高弹修身衬衫、运动打底紧身衣。
     \item \textbf{染整关键与工艺策略}：关键在后整理拉幅定型控制热定型温度（通常185-190$^\circ\mathrm{C}$保持30-40秒），避免过度高温使氨纶断裂老化丧失回弹性。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 7：天丝/亚麻混纺 (Lyocell / Linen 凉爽夏布)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 7：天丝/亚麻混纺 (Lyocell / Linen 凉爽夏布)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：莱赛尔纤维 (天丝Lyocell) + 天然亚麻 (Flax/Linen)
     \item \textbf{经典黄金配比}：\texttt{天丝 70\% + 亚麻 30\% 或 50/50}
     \item \textbf{协同互补优势}：刚柔并济：亚麻具有天然粗犷竹节纹理、高导热凉感和干爽吸汗性能，但纯麻易刺痒、易褶皱发硬；天丝的加入赋予面料丝滑柔和触感与高悬垂抗皱性。
     \item \textbf{典型面料服饰}：高端度假风衬衫、夏季轻薄阔腿裤、法式文艺连衣裙、透气防晒风衣、天然凉爽夏被。
     \item \textbf{染整关键与工艺策略}：活性染料同浴染色，采用气流柔软机整理以充分消除粗麻纤维刺痒感，保留织物表面自然微竹节纹理。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 8：涤锦橘瓣复合超细纤维体系 (PET / PA Splittable Microfiber)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 8：涤锦橘瓣复合超细纤维体系 (PET / PA Splittable Microfiber)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：PET聚酯裂片 (80\%) + PA6锦纶裂片 (20\%) 橘瓣相间复合
     \item \textbf{经典黄金配比}：\texttt{PET 80\% + PA6 20\%}
     \item \textbf{协同互补优势}：微观毛细管力风暴：水刺或碱处理将双组分剥离成0.1-0.2 dtex微纤，聚酯疏水刮擦除油污、锦纶微亲水吸水，截面毛细管密度增加数倍，产生强劲物理吸附效应。
     \item \textbf{典型面料服饰}：高吸水干发毛巾、光学精密仪器洁净擦拭布、高吸液运动毛巾、高密防风防水滑雪服。
     \item \textbf{染整关键与工艺策略}：先开纤后染色，分散染料染PET组分，酸性染料染PA组分，通常直接利用PET组分吸色或双色同色染色。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 9：羊绒/蚕丝/铜氨高定混纺 (Cashmere / Silk / Cupro Luxury Blend)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 9：羊绒/蚕丝/铜氨高定混纺 (Cashmere / Silk / Cupro Luxury Blend)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：山羊绒 (Cashmere) + 桑蚕丝 (Mulberry Silk) + 铜氨纤维 (Cupro)
     \item \textbf{经典黄金配比}：\texttt{羊绒 50\% + 蚕丝 30\% + 铜氨 20\%}
     \item \textbf{协同互补优势}：顶级奢华与呼吸感：羊绒提供极致轻盈蓄热软糯感，天然蚕丝赋予珍珠般光泽与滑糯，铜氨纤维消除静电、赋予丝滑透气与内衬呼吸般的湿热平衡。
     \item \textbf{典型面料服饰}：顶级高定时装大衣、奢华晚礼服、高档双面呢绒披风、手工定制贴肤围巾。
     \item \textbf{染整关键与工艺策略}：极温和弱酸性及中性低温染色，严禁强机械揉搓与剧烈碱性水洗，整理采用蒸汽轻柔松弛整理。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 10：芳纶阻燃防电弧安全工装混纺 (Nomex IIIA 永久防护混纺)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 10：芳纶阻燃防电弧安全工装混纺 (Nomex IIIA 永久防护混纺)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：间位芳纶 (PMIA 93\%) + 对位芳纶 (PPTA 5\%) + 导电碳芯微丝 (2\%)
     \item \textbf{经典黄金配比}：\texttt{93 / 5 / 2 (Nomex IIIA 国际标准配方)}
     \item \textbf{协同互补优势}：生命防护盾：间位芳纶耐热370$^\circ\mathrm{C}$离火自熄；5\%对位芳纶作为骨架支撑高温爆燃时不破洞不收缩；2\%导电纤维瞬间导除摩擦静电，防止引发易燃易爆气体爆燃。
     \item \textbf{典型面料服饰}：中石油/中石化加油与炼油防静电阻燃服、国家电网带电检修防电弧服、消防战斗服外层面料、军用战车阻燃服。
     \item \textbf{染整关键与工艺策略}：由于全芳香链难染，通常采用原液着色(Dope-dyed)长丝短纤，或在载体助剂存在下高压特种染整，色牢度达5级极值。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 11：竹浆/棉/莫代尔三合一家纺混纺 (Bamboo / Cotton / Modal Home Textile)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 11：竹浆/棉/莫代尔三合一家纺混纺 (Bamboo / Cotton / Modal Home Textile)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：竹浆粘胶纤维 (40\%) + 精梳长绒棉 (30\%) + 莫代尔 (30\%)
     \item \textbf{经典黄金配比}：\texttt{40 / 30 / 30}
     \item \textbf{协同互补优势}：生态抑菌与丝滑呼吸：竹浆纤维自带天然多孔吸湿和抑菌清爽感，棉提供洗涤骨架耐磨性，莫代尔赋予光泽和柔垂质感，三者融合带来云朵般睡眠体感。
     \item \textbf{典型面料服饰}：高端抗菌床品四件套、抑菌柔巾、酒店豪华浴巾、夏日凉感睡眠薄毯。
     \item \textbf{染整关键与工艺策略}：纤维素系环保活性染料一浴法染色，采用无张力松弛烘干工艺确保织物蓬松透气度。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
-\begin{academicblendbox}{配伍方案 12：防切割5级特种复合装甲包覆纱 (Cut-Resistant Level 5 Armored Yarn)}
-\begin{itemize} \setlength{\itemsep}{2pt}
+\section{配伍方案 12：防切割5级特种复合装甲包覆纱 (Cut-Resistant Level 5 Armored Yarn)}
+
+\begin{itemize} \setlength{\itemsep}{2.5pt}
     \item \textbf{纤维组分构成}：超高分子量聚乙烯(UHMWPE) + 超细微不锈钢丝/玻纤微丝 + 涤纶外包 + 氨纶芯丝
     \item \textbf{经典黄金配比}：\texttt{UHMWPE 55\% + 不锈钢丝 20\% + 涤纶 20\% + 氨纶 5\%}
     \item \textbf{协同互补优势}：机械刃具物理阻隔：中心不锈钢丝直接钝化刀刃锋利尖端，UHMWPE高断裂强力与抗撕裂延展性吸收切割动能，外层涤纶抗磨损，氨纶赋予手套灵活穿戴抓握感。
     \item \textbf{典型面料服饰}：EN 388最高防切割5级工业防护手套、屠宰流水线防刺防割衣、警用防暴防割战术手套、玻璃搬运防护服。
     \item \textbf{染整关键与工艺策略}：空心锭精密双向包覆纱机加工，UHMWPE原液着色，无需高温水染，整理主要为针织成型后浸渍PU或丁腈橡胶涂层。
 \end{itemize}
-\end{academicblendbox}
+\vspace{0.3cm}
 
 \chapter{国际生态纺织品标准与绿色合规体系}
 
@@ -489,9 +465,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{锯齿形边缘，明显皮芯层结构 (Serrated skin-core)}
     \item \textbf{纺织细度指标范围}：1.33 - 3.3 dtex (棉型短纤/中长短纤)；40D - 120D (人造丝长丝)
     \item \textbf{纱线加工技术规格}：人棉纱 (21S-60S), 粘胶长丝 (Rayon filament), 涡流纺气流纺纱
@@ -506,7 +481,7 @@
     \item \textbf{洗涤保养与熨烫要点}：轻柔水洗或干洗，水温\textless{}40$^\circ\mathrm{C}$；避免死力拧干；中温熨烫 (\textless{}140$^\circ\mathrm{C}$) 恢复平整
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, FSC 森林浆粕可持续认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Rayon}、\texttt{人造棉}、\texttt{人造丝}、\texttt{粘纤}、\texttt{CV}\par
 \noindent\textbf{【代表性商业品牌】}：Danufil, Rayon, 人造丝, 人造棉\par
@@ -540,9 +515,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{近圆形或腰子形，全皮层或均质无皮芯微观结构}
     \item \textbf{纺织细度指标范围}：1.0 - 1.33 dtex (精梳棉型高湿模量短纤)
     \item \textbf{纱线加工技术规格}：紧密赛络纺短纤纱 (40S-100S 高支纱), 针织股线
@@ -557,7 +531,7 @@
     \item \textbf{洗涤保养与熨烫要点}：常规机洗，水温 40$^\circ\mathrm{C}$，无需特殊护理，洗后自然平整垂坠
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX 100 Class I, EU Ecolabel (欧盟生态之花认证)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Modal}、\texttt{木代尔}、\texttt{高湿模量粘胶}、\texttt{CMD}\par
 \noindent\textbf{【代表性商业品牌】}：Lenzing Modal, MicroModal\par
@@ -591,9 +565,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{极规整平滑的光滑圆形截面，无皮芯层均质结构}
     \item \textbf{纺织细度指标范围}：1.33 - 1.7 dtex (常规天丝)；1.0 - 1.2 dtex (细旦天丝)
     \item \textbf{纱线加工技术规格}：天丝纯纺纱 (30S-80S), 天丝长丝 (Lyocell Filament), 赛络紧密纺
@@ -608,7 +581,7 @@
     \item \textbf{洗涤保养与熨烫要点}：30-40$^\circ\mathrm{C}$轻柔机洗，反面洗涤，防止剧烈摩擦产生白霜，中温蒸汽熨烫
     \item \textbf{国际生态纺织认证}：\texttt{闭环绿色工艺 (NMMO回收率\textgreater{}99.7\%), OEKO-TEX 100, 欧盟生态标签}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Tencel}、\texttt{天丝}、\texttt{溶剂法纤维素纤维}、\texttt{CLY}\par
 \noindent\textbf{【代表性商业品牌】}：Tencel (天丝), Lenzing Lyocell, 中纺院绿纤\par
@@ -642,9 +615,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{极其均匀光滑的正圆形，无皮芯层结构}
     \item \textbf{纺织细度指标范围}：0.5 - 1.3 dtex (超细旦铜氨长丝，如 30D/30f, 50D/48f)
     \item \textbf{纱线加工技术规格}：铜氨长丝 (Cupro Filament / 宾霸丝 Bemberg), 极细高支短纤
@@ -659,7 +631,7 @@
     \item \textbf{洗涤保养与熨烫要点}：高档成衣建议优质干洗或30$^\circ\mathrm{C}$轻柔手洗，平铺阴干，低温垫布熨烫 (\textless{}120$^\circ\mathrm{C}$)
     \item \textbf{国际生态纺织认证}：\texttt{GRS认证 (利用棉籽短绒副产物再生), 生物可降解认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Bemberg}、\texttt{宾霸}、\texttt{铜氨丝}、\texttt{CUP}\par
 \noindent\textbf{【代表性商业品牌】}：Bemberg (宾霸), Asahi Kasei Cupro\par
@@ -693,9 +665,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{三叶形 / 多瓣凹槽形 (Trilobal / Multi-lobed)}
     \item \textbf{纺织细度指标范围}：55D - 150D (二醋酸长丝与短纤)
     \item \textbf{纱线加工技术规格}：醋酸长丝 (Acetate Filament), 醋酯混纺纱
@@ -710,7 +681,7 @@
     \item \textbf{洗涤保养与熨烫要点}：推荐专业优质干洗或30$^\circ\mathrm{C}$轻柔手洗，平铺晾干，严禁接触丙酮/香水等有机溶剂
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, 天然木浆生物基认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{醋酸纤维}、\texttt{二醋酸}、\texttt{Celanese}、\texttt{CA}\par
 \noindent\textbf{【代表性商业品牌】}：Celanese Acetate, Eastman Estron\par
@@ -744,9 +715,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{微多瓣三叶形 (三醋酯截面)}
     \item \textbf{纺织细度指标范围}：75D - 150D (三醋酸长丝)
     \item \textbf{纱线加工技术规格}：三醋酸高档时装长丝 (Triacetate Filament)
@@ -761,7 +731,7 @@
     \item \textbf{洗涤保养与熨烫要点}：支持轻柔机洗，耐受熨烫温度高达 200$^\circ\mathrm{C}$ (远胜二醋酸的120$^\circ\mathrm{C}$)，易打理不易泛黄
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, 绿色森林浆粕认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{三醋酸}、\texttt{三醋酯}、\texttt{Soalon}、\texttt{CTA}\par
 \noindent\textbf{【代表性商业品牌】}：Soalon (日本三菱化学), Arnel\par
@@ -795,9 +765,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{三维超细纳米带状原纤网 (直径 20-100 nm 纳米纤维素网络)}
     \item \textbf{纺织细度指标范围}：纳米级原纤，单丝线密度 \textless{} 0.0001 dtex
     \item \textbf{纱线加工技术规格}：发酵成型湿态纳米凝胶水刺纤网、超微纳米保暖片材
@@ -812,7 +781,7 @@
     \item \textbf{洗涤保养与熨烫要点}：医用一次性无菌包装，天然全生物降解
     \item \textbf{国际生态纺织认证}：\texttt{FDA 医疗器械生物相容性认证, ISO 10993}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{BC纤维}、\texttt{生化纤维素}\par
 \noindent\textbf{【代表性商业品牌】}：Biofibe, Nata de coco derived medical pulp\par
@@ -846,9 +815,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{椭圆形截面布满大小不一的微孔缝隙 (天然呼吸微气孔)}
     \item \textbf{纺织细度指标范围}：1.5 - 2.0 dtex (竹原短纤/竹浆短纤)
     \item \textbf{纱线加工技术规格}：竹纤维纯纺与混纺纱 (32S-60S), 提花毛巾长丝
@@ -863,7 +831,7 @@
     \item \textbf{洗涤保养与熨烫要点}：常规家庭机洗，避免与尖锐金属拉链混洗防勾丝，中温熨烫
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, FSC 竹林可持续环保认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{竹纤维}、\texttt{天竹}、\texttt{Tanboocel}\par
 \noindent\textbf{【代表性商业品牌】}：Tanboocel (天竹 / 吉林化纤)\par
@@ -897,9 +865,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{超高取向致密平行排列纳米纤维素宏观长丝}
     \item \textbf{纺织细度指标范围}：1.0 - 5.0 dtex (宏观微纤长丝)
     \item \textbf{纱线加工技术规格}：连续纳米长丝束, 医用高强加筋捻线
@@ -914,7 +881,7 @@
     \item \textbf{洗涤保养与熨烫要点}：耐生理盐水清洗，耐湿热高压蒸汽灭菌 (121$^\circ\mathrm{C}$)
     \item \textbf{国际生态纺织认证}：\texttt{100\% 天然植物微纳米生物基认证, 组织工程安全认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{CNF纤维}、\texttt{纳米纤维素丝}\par
 \noindent\textbf{【代表性商业品牌】}：NanocellFil, 华南理工纳米纤维素长丝\par
@@ -954,9 +921,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{扁平哑铃形 / 带有不规则微小凹槽与微孔}
     \item \textbf{纺织细度指标范围}：1.0 - 1.5 dtex (精梳棉型与毛型短纤)
     \item \textbf{纱线加工技术规格}：精梳大豆蛋白短纤纱 (32S-60S), 蛋白丝与棉混纺纱
@@ -971,7 +937,7 @@
     \item \textbf{洗涤保养与熨烫要点}：温水手洗或机洗轻柔档 (水温\textless{}40$^\circ\mathrm{C}$)，中性洗涤剂，平铺晾干，中温熨烫
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I, 生物基蛋白质纤维认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{大豆纤维}、\texttt{大豆蛋白丝}、\texttt{SPF}\par
 \noindent\textbf{【代表性商业品牌】}：Soybean Silk, 大豆羊绒\par
@@ -1005,9 +971,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 近圆形均质实心，表面光滑微孔分布}
     \item \textbf{纺织细度指标范围}：1.2 - 1.5 dtex (超柔贴身短纤)
     \item \textbf{纱线加工技术规格}：紧密赛络纺纱线 (40S-80S), 纯纺与棉混纺针织纱
@@ -1022,7 +987,7 @@
     \item \textbf{洗涤保养与熨烫要点}：温和手洗或洗衣袋轻柔机洗，禁止氯漂与高温暴晒
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 I类 (婴幼儿安全认证)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{牛奶丝}、\texttt{酪蛋白纤维}、\texttt{Lanital}\par
 \noindent\textbf{【代表性商业品牌】}：Lanital, QMilch, 普力纤维\par
@@ -1056,9 +1021,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{微不规则光滑三角形截面 (模拟天然蚕丝三叶结晶光泽)}
     \item \textbf{纺织细度指标范围}：0.8 - 1.5 dtex (高纯再生丝素长丝与短纤)
     \item \textbf{纱线加工技术规格}：再生蚕丝长丝, 丝棉混纺超细纱
@@ -1073,7 +1037,7 @@
     \item \textbf{洗涤保养与熨烫要点}：真丝专用中性丝毛洗剂，冷水轻柔手洗，不可拧绞，阴干低温熨烫
     \item \textbf{国际生态纺织认证}：\texttt{全天然生物可降解认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{丝素纤维}、\texttt{再生真丝}\par
 \noindent\textbf{【代表性商业品牌】}：SilkProtec, FibroinSilk\par
@@ -1113,9 +1077,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{锯齿形边缘多微孔吸液结构}
     \item \textbf{纺织细度指标范围}：1.5 - 2.5 dtex (高吸液医用短纤)
     \item \textbf{纱线加工技术规格}：海藻酸水刺无纺布 (医用敷料纤网), 海藻混纺短纤纱
@@ -1130,7 +1093,7 @@
     \item \textbf{洗涤保养与熨烫要点}：一次性无菌医疗用品，环氧乙烷或辐射灭菌，海洋多糖全降解
     \item \textbf{国际生态纺织认证}：\texttt{FDA / CE Class IIb 医用医疗器械认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{海藻纤维}、\texttt{海藻酸钙纤维}、\texttt{ALG}\par
 \noindent\textbf{【代表性商业品牌】}：Kaltostat, Sorbsan, 青岛明月海藻\par
@@ -1164,9 +1127,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{不规则多槽锯齿形，表面富含天然正电荷氨基基团}
     \item \textbf{纺织细度指标范围}：1.5 - 2.2 dtex (抗菌医卫短纤)
     \item \textbf{纱线加工技术规格}：甲壳素纯纺与混纺纱 (21S-40S), 水刺卫生面层纤网
@@ -1181,7 +1143,7 @@
     \item \textbf{洗涤保养与熨烫要点}：常规水洗机洗，抗菌功效源自天然大分子结构永不衰减
     \item \textbf{国际生态纺织认证}：\texttt{天然甲壳素生物基认证, 广谱抗菌抗病毒检验合格报告}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{甲壳素纤维}、\texttt{几丁质纤维}、\texttt{壳聚糖丝}、\texttt{CHT}\par
 \noindent\textbf{【代表性商业品牌】}：Chitopoly, 恒天海龙壳聚糖短纤\par
@@ -1215,9 +1177,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形实心粗单丝 (直径 0.3 - 1.2 mm)}
     \item \textbf{纺织细度指标范围}：500D - 3000D (粗旦天然乳胶橡筋丝)
     \item \textbf{纱线加工技术规格}：裸丝织带, 氨纶/涤纶双包覆橡筋线 (Covered Elastic Core)
@@ -1232,7 +1193,7 @@
     \item \textbf{洗涤保养与熨烫要点}：洗涤温度\textless{}40$^\circ\mathrm{C}$，避免高温烘烤与强日光直晒（防止胶丝氧化脆化）
     \item \textbf{国际生态纺织认证}：\texttt{天然三叶橡胶树乳胶来源, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{乳胶丝}、\texttt{橡筋线}、\texttt{橡胶纤维}、\texttt{ED}\par
 \noindent\textbf{【代表性商业品牌】}：Lastex, Rubber Flex\par
@@ -1272,9 +1233,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{锯齿形边缘，内含亚微米级有机磷阻燃粒子}
     \item \textbf{纺织细度指标范围}：1.7 - 2.2 dtex (短纤阻燃人棉)
     \item \textbf{纱线加工技术规格}：阻燃混纺精梳纱线 (20S-40S)
@@ -1289,7 +1249,7 @@
     \item \textbf{洗涤保养与熨烫要点}：耐工业高温洗涤与消毒，阻燃性能永久存续；耐受熨烫 150$^\circ\mathrm{C}$
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, EN ISO 11612, NFPA 2112}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Lenzing FR}、\texttt{阻燃粘胶}、\texttt{阻燃人棉}、\texttt{阻燃天丝棉}\par
 \noindent\textbf{【代表性商业品牌】}：Lenzing FR, Viscose FR, 阻燃粘纤, 唐山三友阻燃纤维\par
@@ -1323,9 +1283,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆润均匀微型截面 (Micro-Modal 均质纤芯)}
     \item \textbf{纺织细度指标范围}：0.8 - 1.0 dtex (超细微旦莫代尔)
     \item \textbf{纱线加工技术规格}：紧密纺高支纱 (80S-120S 极致高支精细纱线)
@@ -1340,7 +1299,7 @@
     \item \textbf{洗涤保养与熨烫要点}：机洗轻柔档或手洗，水温 30-40$^\circ\mathrm{C}$，平铺晾干
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I (婴童A类直接贴肤)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{MicroModal}、\texttt{微莫代尔}、\texttt{超细莫代尔}、\texttt{莫代尔超细旦}\par
 \noindent\textbf{【代表性商业品牌】}：MicroModal, TENCEL Modal Micro, 兰精微莫代尔\par
@@ -1374,9 +1333,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆润规整光滑截面 (分子间化学微交联固化结构)}
     \item \textbf{纺织细度指标范围}：1.33 - 1.5 dtex
     \item \textbf{纱线加工技术规格}：紧密纺低毛羽免烫纱线 (40S-80S)
@@ -1391,7 +1349,7 @@
     \item \textbf{洗涤保养与熨烫要点}：支持家庭标准机洗，洗涤后无需复杂熨烫，耐磨耐洗寿命长
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I, EU Ecolabel}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Tencel LF}、\texttt{天丝LF}、\texttt{交联天丝}、\texttt{Tencel A100}、\texttt{低原纤化天丝}\par
 \noindent\textbf{【代表性商业品牌】}：Tencel LF, Tencel A100, 交联型天丝, 低原纤化莱赛尔\par
@@ -1425,9 +1383,8 @@
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多微孔锯齿形，高洁净无油剂残留}
     \item \textbf{纺织细度指标范围}：1.33 - 1.67 dtex $\times$ 38mm (水刺专用短纤)
     \item \textbf{纱线加工技术规格}：高纯水刺非织造布纤网 (Spunlace Nonwoven Web)
@@ -1442,7 +1399,7 @@
     \item \textbf{洗涤保养与熨烫要点}：一次性使用或多次擦拭清洗，自然掩埋 4-8 周自然降解为水与CO2
     \item \textbf{国际生态纺织认证}：\texttt{可冲散可生物降解认证, 欧洲EDANA无纺布卫生认证, OEKO-TEX 100 I类}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{水刺粘胶}、\texttt{洗脸巾纤维}、\texttt{优可丝}、\texttt{可降解湿巾纤维}\par
 \noindent\textbf{【代表性商业品牌】}：EcoCosy (赛得利优可丝), Lenzing Viscose Spunlace, 纯水刺人造棉\par
@@ -1484,9 +1441,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 (常规) / 三角三叶形 (闪光仿丝)}
     \item \textbf{纺织细度指标范围}：1.0 - 3.3 dtex (民用长丝/短纤)；0.3 - 0.8 dtex (细旦仿丝)；5.0 - 20.0 dtex (工业高强粗丝)
     \item \textbf{纱线加工技术规格}：FDY (全拉伸长丝), POY (预取向丝), DTY (低弹丝 50D-150D), ATY (空变丝), 纯纺/混纺短纤纱 (21S-60S)
@@ -1501,7 +1457,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：常规机洗40-60$^\circ\mathrm{C}$，快干耐洗；耐氯漂；最高耐烫温度150$^\circ\mathrm{C}$(垫布熨烫)；防静电柔顺剂洗涤
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I (婴童级), GRS (全球回收标准), bluesign}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{涤纶}、\texttt{Polyester}、\texttt{Dacron}、\texttt{PET}\par
 \noindent\textbf{【代表性商业品牌】}：Dacron (达克纶), Terylene (特丽纶), 恒力聚酯, 桐昆涤纶\par
@@ -1535,9 +1491,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 并列双组分}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (长丝与针织短纤)
     \item \textbf{纱线加工技术规格}：PTT DTY (低弹自弹性丝), PTT/棉伴纺纱
@@ -1552,7 +1507,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：常规机洗 40$^\circ\mathrm{C}$，无需特殊护理，耐日光耐氯洗
     \item \textbf{国际生态纺织认证}：\texttt{杜邦 Sorona 生物基认证 (37\%生物基原料), OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PTT}、\texttt{Sorona}、\texttt{索罗娜}、\texttt{聚丙酯}\par
 \noindent\textbf{【代表性商业品牌】}：Sorona (杜邦索罗娜), Corterra\par
@@ -1586,9 +1541,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 多叶形}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (75D - 150D 弹性长丝)
     \item \textbf{纱线加工技术规格}：PBT DTY 低弹自卷曲长丝, 高弹牛仔纱
@@ -1603,7 +1557,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：耐反复常规机洗，耐氯漂剂，悬挂速干
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PBT}、\texttt{聚丁酯}\par
 \noindent\textbf{【代表性商业品牌】}：Wonderon, T-400 (与PET双组分复合)\par
@@ -1637,9 +1591,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{致密规整圆形}
     \item \textbf{纺织细度指标范围}：5.0 - 20.0 dtex (工业高强粗旦长丝)
     \item \textbf{纱线加工技术规格}：工业高强并捻线 (500D - 2000D)
@@ -1654,7 +1607,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：耐海水盐雾腐蚀、耐酸碱，免特殊护理
     \item \textbf{国际生态纺织认证}：\texttt{ISO 9001 工业品认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PEN}、\texttt{聚萘二甲酸乙二酯}、\texttt{Pentex}\par
 \noindent\textbf{【代表性商业品牌】}：Teonex, Pentex\par
@@ -1688,9 +1641,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三角三叶形 (闪光双色丝)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex (长丝与短纤)
     \item \textbf{纱线加工技术规格}：CDP DTY 低弹丝, 阳离子涤纶纱 (30S-50S)
@@ -1705,7 +1657,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：常规机洗，耐洗耐磨，不易褪色
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{阳离子涤纶}、\texttt{CDP}、\texttt{ECDP}\par
 \noindent\textbf{【代表性商业品牌】}：Dacron T-64, ECDP\par
@@ -1739,9 +1691,8 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{同轴皮芯复合 (皮层110-160$^\circ\mathrm{C}$低熔点聚酯，芯层250$^\circ\mathrm{C}$常规聚酯)}
     \item \textbf{纺织细度指标范围}：2.0 - 6.0 dtex (热风粘合短纤)
     \item \textbf{纱线加工技术规格}：热风粘合保暖短纤维 (Staple for thermal bonding)
@@ -1756,7 +1707,7 @@ PET、PTT、PBT、PEN、阳离子可染聚酯CDP/ECDP及低熔点共聚酯
     \item \textbf{洗涤保养与熨烫要点}：支持水洗，透水速干，耐霉变
     \item \textbf{国际生态纺织认证}：\texttt{零甲醛环保认证, OEKO-TEX Standard 100 Class I}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{低熔点涤纶}、\texttt{LMPET}、\texttt{皮芯热熔丝}\par
 \noindent\textbf{【代表性商业品牌】}：Huvis LMF, 远东新世纪LMPET\par
@@ -1796,9 +1747,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三角三叶形 (高光锦纶)}
     \item \textbf{纺织细度指标范围}：0.8 - 3.3 dtex (常规民用丝)；3.0 - 10.0 dtex (地毯与工业长丝)
     \item \textbf{纱线加工技术规格}：FDY (全牵伸长丝), DTY (低弹锦纶丝 40D/34f, 70D/68f), 短纤混纺纱
@@ -1813,7 +1763,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：温水洗涤 (\textless{}40$^\circ\mathrm{C}$)，严禁高温烘干与暴晒（易泛黄老化）；中温熨烫 (\textless{}110$^\circ\mathrm{C}$)
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, bluesign}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{锦纶6}、\texttt{尼龙6}、\texttt{Perlon}、\texttt{PA6}\par
 \noindent\textbf{【代表性商业品牌】}：Perlon (贝纶), Enka Nylon, 中石化巴陵己内酰胺\par
@@ -1847,9 +1797,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 多叶形}
     \item \textbf{纺织细度指标范围}：0.8 - 2.5 dtex (高档服装长丝)；5.0 - 25.0 dtex (工业与帘子线)
     \item \textbf{纱线加工技术规格}：FDY, DTY, 高强工业浸胶线 (1000D-2000D)
@@ -1864,7 +1813,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐温性好于PA6，允许水洗至50$^\circ\mathrm{C}$，防暴晒
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, bluesign, GRS认证再生锦纶66}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{锦纶66}、\texttt{尼龙66}、\texttt{Nylon}、\texttt{Cordura}、\texttt{PA66}\par
 \noindent\textbf{【代表性商业品牌】}：Nylon 66, Cordura (考杜拉), 华峰锦纶66\par
@@ -1898,9 +1847,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三叶光泽截面}
     \item \textbf{纺织细度指标范围}：0.8 - 2.0 dtex (细旦FDY与DTY)
     \item \textbf{纱线加工技术规格}：长丝FDY, 低弹丝DTY (20D-70D), 短纤精梳纱
@@ -1915,7 +1863,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规机洗40$^\circ\mathrm{C}$，防暴晒，中温熨烫
     \item \textbf{国际生态纺织认证}：\texttt{45\% 生物基碳含量认证 (以玉米等生物基戊二胺为原料), OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{生物基锦纶56}、\texttt{泰纶}、\texttt{Terryl}、\texttt{PA56}\par
 \noindent\textbf{【代表性商业品牌】}：Terryl (泰纶), 凯赛生物PA56\par
@@ -1949,9 +1897,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{平滑圆形实心}
     \item \textbf{纺织细度指标范围}：1.0 - 3.0 dtex (蓖麻油基长丝与短纤)
     \item \textbf{纱线加工技术规格}：FDY, DTY, 工业高韧性纱线
@@ -1966,7 +1913,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐各种机洗，耐受极端化学品腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{100\% 生物基蓖麻油衍生认证, Arkema Rilsan 认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{锦纶11}、\texttt{Rilsan}、\texttt{蓖麻尼龙}、\texttt{PA11}\par
 \noindent\textbf{【代表性商业品牌】}：Rilsan (阿科玛), Rilsan Clear\par
@@ -2000,9 +1947,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{高度对称紧密圆形}
     \item \textbf{纺织细度指标范围}：3.0 - 15.0 dtex (工业高强长丝)
     \item \textbf{纱线加工技术规格}：工业高强帘子线, 耐高温并捻工业纱
@@ -2017,7 +1963,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐工业清洗、耐热油浸泡
     \item \textbf{国际生态纺织认证}：\texttt{ISO 汽车安全体系认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{锦纶46}、\texttt{Stanyl}、\texttt{PA46}\par
 \noindent\textbf{【代表性商业品牌】}：Stanyl (斯泰尼尔)\par
@@ -2051,9 +1997,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形实心，耐热芳杂环微结构}
     \item \textbf{纺织细度指标范围}：3.0 - 10.0 dtex (耐热工业长丝)
     \item \textbf{纱线加工技术规格}：耐热工业复丝, 编织套管纱
@@ -2068,7 +2013,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐汽油、耐冷却液，耐工业高温清洗
     \item \textbf{国际生态纺织认证}：\texttt{UL94 V-0 阻燃认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PPA纤维}、\texttt{高温尼龙纤维}、\texttt{PA9T}、\texttt{PA10T}\par
 \noindent\textbf{【代表性商业品牌】}：Genestar (可乐丽 PA9T), Vicnyl (金发科技 PA10T)\par
@@ -2102,9 +2047,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{平滑圆形实心}
     \item \textbf{纺织细度指标范围}：2.0 - 8.0 dtex (长丝与工业单丝)
     \item \textbf{纱线加工技术规格}：精密工业单丝, 户外机织长丝
@@ -2119,7 +2063,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规水洗机洗，耐化学霉变
     \item \textbf{国际生态纺织认证}：\texttt{100\% 全生物基认证 (蓖麻油裂解癸二酸与癸二胺合成)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{锦纶1010}、\texttt{尼龙1010}、\texttt{PA1010}\par
 \noindent\textbf{【代表性商业品牌】}：Rilsan D, 东宝锦纶1010\par
@@ -2153,9 +2097,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{扁平微孔 / 超细微孔圆形 / 掺杂纳米矿石微晶截面}
     \item \textbf{纺织细度指标范围}：0.3 - 0.8 dtex (超细微旦，如 15D/24f, 20D/36f)
     \item \textbf{纱线加工技术规格}：极细旦FDY长丝, 高精密针织低弹丝
@@ -2170,7 +2113,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：轻柔冷水机洗（建议套洗衣袋防勾丝），阴凉处悬挂速干，严禁暴晒
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX 100 Class I (母婴贴身安全级)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{微细锦纶}、\texttt{冰丝尼龙}、\texttt{防晒衣锦纶}、\texttt{Meryl}、\texttt{Tactel}\par
 \noindent\textbf{【代表性商业品牌】}：Meryl, Tactel, 冰爽锦纶, 冰蚕丝, 锦江超细旦FDY\par
@@ -2204,9 +2147,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形高取向实心}
     \item \textbf{纺织细度指标范围}：1000D - 2000D (多股并捻工业高强浸胶线)
     \item \textbf{纱线加工技术规格}：高取向浸胶帘线 (Dipped Cord Yarn), 高强并股丝
@@ -2221,7 +2163,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐机油、耐汽油、耐受汽车全生命周期15年温湿度严苛老化测试
     \item \textbf{国际生态纺织认证}：\texttt{ISO/TS 16949 汽车工业体系认证, RoHS}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{气囊锦纶丝}、\texttt{PA66帘子线}、\texttt{高强锦纶66}、\texttt{安全气囊纱}\par
 \noindent\textbf{【代表性商业品牌】}：Shenma PA66 Cords, Ascend Airbag Yarn, 帘子线\par
@@ -2261,9 +2203,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{哑铃形 / 狗骨形 (干法纺丝) 或 圆形/腰圆形 (湿法纺丝)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (棉型/毛型短纤)；3.3 - 6.0 dtex (粗纺中长仿毛短纤)
     \item \textbf{纱线加工技术规格}：毛条 (Acrylic Tops), 腈纶纯纺与混纺纱线 (16S-48S), 膨体纱
@@ -2278,7 +2219,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：可家庭温水机洗 (40$^\circ\mathrm{C}$)，不缩水不毡缩（彻底克服纯羊毛水洗缩水），不耐强碱
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{腈纶}、\texttt{人造羊毛}、\texttt{Orlon}、\texttt{Dralon}、\texttt{PAN}\par
 \noindent\textbf{【代表性商业品牌】}：Orlon (奥纶), Dralon (德绒), 抚顺腈纶, 吉林化纤腈纶\par
@@ -2312,9 +2253,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{哑铃形 / 狗骨形 (含氯共聚微观截面)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (短纤)
     \item \textbf{纱线加工技术规格}：变性阻燃腈纶短纤纱 (20S-40S), 阻燃人造毛皮割绒纱
@@ -2329,7 +2269,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规水洗机洗，阻燃为共聚永久阻燃，耐洗涤50次不失效
     \item \textbf{国际生态纺织认证}：\texttt{GB 20286 阻燃1级, 16 CFR 1610 (美国睡衣阻燃标准)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{变性腈纶}、\texttt{阻燃腈纶}、\texttt{Kanecaron}、\texttt{MAC}\par
 \noindent\textbf{【代表性商业品牌】}：Kanecaron (钟化假发丝/阻燃丝), Protex\par
@@ -2363,9 +2303,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{双组分偏心或狗骨形截面，立体高曲折微空气槽}
     \item \textbf{纺织细度指标范围}：1.33 - 3.0 dtex (超细膨体短纤及纱线)
     \item \textbf{纱线加工技术规格}：膨体腈纶纱 (Bulked Acrylic Yarn), 德绒无痕发热纱
@@ -2380,7 +2319,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：机洗轻柔模式，中性洗涤剂，自然晾干，避免明火接触
     \item \textbf{国际生态纺织认证}：\texttt{Dralon 原厂认证, OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{德绒}、\texttt{Dralon}、\texttt{膨体腈纶}、\texttt{仿羊绒腈纶}、\texttt{发热内衣纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Dralon (德国德绒), Cashmilon, 膨体腈纶纱, 仿羊绒腈纶\par
@@ -2420,9 +2359,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三角三叶形 / 中空形}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (民用长丝/短纤)；5.0 - 15.0 dtex (工业与地毯)
     \item \textbf{纱线加工技术规格}：BCF 膨体地毯长丝, 原液着色丙纶色丝, 纺粘无纺布, 短纤纱
@@ -2437,7 +2375,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：必须低温洗涤 (\textless{}40$^\circ\mathrm{C}$)，严禁高温烘干与高温熨烫（超120$^\circ\mathrm{C}$极易收缩熔化）
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, 生产能耗极低}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{丙纶}、\texttt{聚丙烯短纤}、\texttt{PP}\par
 \noindent\textbf{【代表性商业品牌】}：Herculon, Meraklon, 蒙特卡蒂尼丙纶\par
@@ -2471,9 +2409,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{光滑圆形实心}
     \item \textbf{纺织细度指标范围}：3.0 - 15.0 dtex (单丝与裂膜扁丝)
     \item \textbf{纱线加工技术规格}：聚乙烯扁丝 (Slit Film Yarn), 农用防裂长丝
@@ -2488,7 +2425,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：清水或高压水枪直接冲洗冲砂，自然晾干
     \item \textbf{国际生态纺织认证}：\texttt{农用无毒环保认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{乙纶}、\texttt{聚乙烯纤维}、\texttt{PE}\par
 \noindent\textbf{【代表性商业品牌】}：Courlene, Polythene filament\par
@@ -2522,9 +2459,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形单丝}
     \item \textbf{纺织细度指标范围}：3.0 - 10.0 dtex
     \item \textbf{纱线加工技术规格}：精密过滤单丝, 离型基材长丝
@@ -2539,7 +2475,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐高温高压蒸气灭菌消毒，耐有机溶剂清洗
     \item \textbf{国际生态纺织认证}：\texttt{FDA 食品接触级认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{TPX}、\texttt{PMP}\par
 \noindent\textbf{【代表性商业品牌】}：TPX (三井化学)\par
@@ -2573,9 +2509,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{皮芯型 (PE外皮/PP芯) 或并列型复合微观截面}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex $\times$ 38mm (热风非织造短纤)
     \item \textbf{纱线加工技术规格}：热风粘合无纺布纤网 (Hot-air Through Nonwoven, 18-35 g/m²)
@@ -2590,7 +2525,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：一次性婴儿母婴卫生防护用品
     \item \textbf{国际生态纺织认证}：\texttt{皮肤致敏性0级, 细胞毒性阴性, OEKO-TEX 100 I类}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{ES纤维}、\texttt{热风纤维}、\texttt{皮芯复合纤维}\par
 \noindent\textbf{【代表性商业品牌】}：ES Fiber (JNC), 恒天江南高纤ES\par
@@ -2624,9 +2559,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{三维随机杂乱交错微纳米超细圆棒结构 (纤维直径 1-3 $\mu$m)}
     \item \textbf{纺织细度指标范围}：单丝直径 1.0 - 3.0 微米 (超细微米非织造纤网)
     \item \textbf{纱线加工技术规格}：驻极熔喷非织造布 (Meltblown Electret Nonwoven Fabric, 25-50 g/m²)
@@ -2641,7 +2575,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规医用口罩为一次性防护用品，受潮或水洗会使驻极静电荷消散丧失防护能力
     \item \textbf{国际生态纺织认证}：\texttt{YY 0469 医用标准, NIOSH N95 认证, CE EN 149}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{熔喷布纤维}、\texttt{口罩滤材}、\texttt{驻极PP}、\texttt{熔喷超细聚丙烯}\par
 \noindent\textbf{【代表性商业品牌】}：Exxpro, 中石化熔喷料, 3M Filtrete, 驻极熔喷布\par
@@ -2681,9 +2615,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{哑铃形或多叶形并合微丝束 (微孔并丝结构)}
     \item \textbf{纺织细度指标范围}：15D - 140D (民用长丝，以 20D, 30D, 40D, 70D 最通用)
     \item \textbf{纱线加工技术规格}：裸丝 (Bare Yarn), 空气包覆纱 (ACY), 机械包覆纱 (SCY), 氨纶包芯纱 (CSY)
@@ -2698,7 +2631,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：水洗温度建议\textless{}40$^\circ\mathrm{C}$，严禁含氯漂白剂；热定型温度建议 180-188$^\circ\mathrm{C}$ 精确控制
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I, GRS (再生氨纶认证)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{氨纶}、\texttt{Spandex}、\texttt{Lycra}、\texttt{莱卡}、\texttt{EL}\par
 \noindent\textbf{【代表性商业品牌】}：Lycra (莱卡), Creora (晓星), 华峰千禧氨纶\par
@@ -2732,9 +2665,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{致密圆形熔纺单丝 (直径 0.12 - 0.25 mm)}
     \item \textbf{纺织细度指标范围}：100D - 600D (熔纺热塑性聚氨酯高弹单丝)
     \item \textbf{纱线加工技术规格}：飞织鞋面单丝 (Flyknit Monofilament), 高弹包覆纱
@@ -2749,7 +2681,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：水洗极易清洁，泥土污渍刷洗即净，耐机洗耐暴晒
     \item \textbf{国际生态纺织认证}：\texttt{100\% 热塑可回收循环利用认证 (可重复熔融再造粒)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{TPU纤维}、\texttt{熔纺氨纶}\par
 \noindent\textbf{【代表性商业品牌】}：Elastollan (巴斯夫), 万华TPU熔纺纤维\par
@@ -2783,9 +2715,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多微孔并合长丝，内部含有微米级活性固氯水滑石结构}
     \item \textbf{纺织细度指标范围}：20D - 70D (泳装及运动高弹长丝)
     \item \textbf{纱线加工技术规格}：空气包覆纱 ACY, 经编用裸丝
@@ -2800,7 +2731,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：泳池游泳后冷水彻底冲洗即可，耐洗涤剂，阴凉平摊晾干
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, creora highclo 认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{耐氯氨纶}、\texttt{Lycra Xtra Life}、\texttt{泳装氨纶}、\texttt{抗老化氨纶}\par
 \noindent\textbf{【代表性商业品牌】}：Lycra Xtra Life, 千禧耐氯氨纶, 晓星creora highclo\par
@@ -2840,9 +2771,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{明显腰圆形/皮芯层，表面有沟槽}
     \item \textbf{纺织细度指标范围}：1.33 - 2.5 dtex (棉型短纤)；高强高模长丝
     \item \textbf{纱线加工技术规格}：维棉混纺纱, 工业帆布帘线纱
@@ -2857,7 +2787,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐热水性良好，可正常机洗，最高熨烫温度 130$^\circ\mathrm{C}$
     \item \textbf{国际生态纺织认证}：\texttt{无毒生态纤维}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{维纶}、\texttt{维尼纶}、\texttt{Kuralon}、\texttt{PVA}\par
 \noindent\textbf{【代表性商业品牌】}：Kuralon (可乐丽), Vinylon, 皖维维纶\par
@@ -2891,9 +2821,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 腰圆形}
     \item \textbf{纺织细度指标范围}：1.33 - 2.0 dtex (20$^\circ\mathrm{C}$-90$^\circ\mathrm{C}$ 不同溶水温度等级)
     \item \textbf{纱线加工技术规格}：水溶伴纺短纤纱, 水溶绣花底布长丝
@@ -2908,7 +2837,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：洗涤温度达到设定溶解点即完全消失分解，绿色环保降解于水
     \item \textbf{国际生态纺织认证}：\texttt{生物水溶分解认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{水溶维纶}、\texttt{水溶纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Kuralon K-II, 皖维水溶纤维\par
@@ -2942,9 +2871,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{高度取向致密圆形微晶原纤}
     \item \textbf{纺织细度指标范围}：1.5 - 2.5 dtex (高强高模短纤与长丝)
     \item \textbf{纱线加工技术规格}：水泥增强短纤, 工业增强机织线
@@ -2959,7 +2887,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐受户外50年风吹雨淋冻融循环
     \item \textbf{国际生态纺织认证}：\texttt{无石棉环保健康认证 (Asbestos-Free)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{高强高模维纶}、\texttt{高模PVA}\par
 \noindent\textbf{【代表性商业品牌】}：Kuralon II, 川维高强高模PVA\par
@@ -2999,9 +2927,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{哑铃形 / 腰圆形 (氯纶截面)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (短纤及膨体纱)
     \item \textbf{纱线加工技术规格}：纯纺纱与毛混纺纱 (20S-32S)
@@ -3016,7 +2943,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：必须冷水洗涤 (\textless{}35$^\circ\mathrm{C}$)，严禁热水烫洗、烘干和熨烫 (超70$^\circ\mathrm{C}$极度收缩)
     \item \textbf{国际生态纺织认证}：\texttt{GB/T 4146 通用规范}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{氯纶}、\texttt{Rhovyl}、\texttt{PVC纤维}、\texttt{CLF}\par
 \noindent\textbf{【代表性商业品牌】}：Rhovyl (法国罗维尔), PeCe, 氯纶\par
@@ -3050,9 +2977,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形单丝与粗旦复丝}
     \item \textbf{纺织细度指标范围}：5.0 - 20.0 dtex
     \item \textbf{纱线加工技术规格}：工业耐腐机织单丝 (Saran Yarn)
@@ -3067,7 +2993,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐酸碱冲洗，耐日晒耐雨淋
     \item \textbf{国际生态纺织认证}：\texttt{工业耐候防腐认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{偏氯纶}、\texttt{莎纶}、\texttt{Saran}\par
 \noindent\textbf{【代表性商业品牌】}：Saran (莎纶 / 陶氏)\par
@@ -3107,9 +3033,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{十字形 / 四槽形 (Cruciform 4-channel cross-section) 连续凹槽毛细结构}
     \item \textbf{纺织细度指标范围}：1.0 - 2.2 dtex (短纤及吸排长丝)
     \item \textbf{纱线加工技术规格}：DTY (75D/72f, 100D/144f 多微孔低弹丝), 环锭纺与涡流纺吸湿混纺纱
@@ -3124,7 +3049,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：冷水或温水40$^\circ\mathrm{C}$机洗，极易快干；严禁使用含硅油柔顺剂（会堵塞毛细导湿微槽）；免熨烫
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, HIGG Index, EcoMade (再生环保认证)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Coolmax}、\texttt{吸湿排汗纤维}、\texttt{速干纤维}、\texttt{十字异形涤纶}、\texttt{Cooldry}\par
 \noindent\textbf{【代表性商业品牌】}：Coolmax, Cooldry, Topcool, 排汗快干纤维\par
@@ -3158,9 +3083,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{单孔中空 (Hollow) 或四孔/七孔中空截面，中空度 25\%-40\%}
     \item \textbf{纺织细度指标范围}：1.33 - 3.3 dtex (超柔中空短纤/絮片)
     \item \textbf{纱线加工技术规格}：高蓬松梳理絮片、三维立体螺旋卷曲保暖短纤维 (Staple for batting)
@@ -3175,7 +3099,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：支持30$^\circ\mathrm{C}$轻柔机洗，脱水快干，洗后拍打即可恢复蓬松，不可高温烘干（建议\textless{}60$^\circ\mathrm{C}$）
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class I, GRS认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Thermolite}、\texttt{中空纤维}、\texttt{保暖纤维}、\texttt{仿羽丝棉}、\texttt{七孔棉}\par
 \noindent\textbf{【代表性商业品牌】}：Thermolite, 3M Thinsulate, 仿羽绒棉, 中空卷曲纤维\par
@@ -3209,9 +3133,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三角异形 / 粗细均匀度与原生PET相当}
     \item \textbf{纺织细度指标范围}：0.8 - 3.3 dtex (服装用)；5.0 - 15.0 dtex (箱包与汽车内饰)
     \item \textbf{纱线加工技术规格}：FDY, DTY, POY, 再生聚酯短纤纱线
@@ -3226,7 +3149,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规机洗，耐洗耐磨，悬挂速干
     \item \textbf{国际生态纺织认证}：\texttt{GRS (全球回收标准) 全链条追踪 TC 证书, OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{rPET}、\texttt{再生涤纶}、\texttt{环保聚酯纤维}、\texttt{Repreve}、\texttt{再生纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Repreve (Unifi), Eco-Fi, 佳人循环再生丝, 原生品质再生涤纶\par
@@ -3260,9 +3183,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 三叶形}
     \item \textbf{纺织细度指标范围}：1.0 - 3.3 dtex (黑丝/全彩色色丝)
     \item \textbf{纱线加工技术规格}：DTY (75D/36f, 150D/48f 黑丝低弹丝), FDY 色长丝
@@ -3277,7 +3199,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：极耐高温洗涤，百次机洗不掉色，甚至可耐含氯消毒剂洗涤
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX 100, 碳足迹核查认证, 绿色纤维标志}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{原液着色涤纶}、\texttt{色纺丝}、\texttt{Solution-dyed}、\texttt{黑涤长丝}\par
 \noindent\textbf{【代表性商业品牌】}：Solution-Dyed Poly, 盛虹黑丝, 恒力原液色丝, 易色丝\par
@@ -3311,9 +3233,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (阻燃短纤及长丝)
     \item \textbf{纱线加工技术规格}：DTY (阻燃低弹丝), 阻燃纯纺短纤纱 (20S-40S)
@@ -3328,7 +3249,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：可家庭标准水洗 50 次以上，阻燃效能零衰减；最高熨烫 130$^\circ\mathrm{C}$
     \item \textbf{国际生态纺织认证}：\texttt{GB 20286 阻燃1级, DIN 4102 B1, NFPA 701, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Trevira CS}、\texttt{阻燃涤纶}、\texttt{FR涤纶}、\texttt{防火纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Trevira CS, 泰光FR涤纶, 圣润阻燃纤维, 耐火涤纶\par
@@ -3362,9 +3283,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{雪人形 / 哑铃形并列双组分 (PTT/PET Side-by-Side)}
     \item \textbf{纺织细度指标范围}：50D / 75D / 150D 并列复合长丝
     \item \textbf{纱线加工技术规格}：自卷曲高弹丝 (取代常规加捻包覆氨纶的复合弹性丝)
@@ -3379,7 +3299,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐反复剧烈机洗与烘干，耐高温熨烫（150$^\circ\mathrm{C}$），耐漂白剂洗涤不老化断裂
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100, 部分采用生物基PDO原料 (Sorona)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{T400}、\texttt{聚酯弹性纤维}、\texttt{双组分高弹纤维}、\texttt{Elastomultiester}\par
 \noindent\textbf{【代表性商业品牌】}：Lycra T400, Elastomultiester, PTT/PET复合高弹丝, 舒弹丝\par
@@ -3419,9 +3339,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{定岛型海岛复合截面 (开纤前为多岛包覆圆形；开纤脱海后为成百上千根 0.001-0.05 dtex 超微细圆形单丝)}
     \item \textbf{纺织细度指标范围}：单丝直径 0.5 - 3.0 $\mu$m (单纤细度 0.001 - 0.05 dtex 极度微细化)
     \item \textbf{纱线加工技术规格}：海岛定岛短纤 (针刺无纺基布) / 海岛复合长丝 (高档仿麂皮绒经编/机织丝)
@@ -3436,7 +3355,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：可直接水洗机洗（天然真皮无法水洗！），耐真菌霉变，防日光暴晒硬化
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100 Class II, 碳中和Alcantara体系认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{海岛纤维}、\texttt{Sea-island}、\texttt{定岛纤维}、\texttt{Alcantara母丝}、\texttt{超细纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Alcantara, Ultrasuede, 人工麂皮绒, 华峰超纤, 双象超纤\par
@@ -3470,9 +3389,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{橘瓣相间裂片形 (8瓣/16瓣交替辐射，开纤后呈尖锐楔形刀锋状截面)}
     \item \textbf{纺织细度指标范围}：开纤后单丝细度 0.1 - 0.2 dtex
     \item \textbf{纱线加工技术规格}：DTY (75D/36f$\times$8瓣 = 288根微纤低弹丝), 涤锦复合水刺无纺布
@@ -3487,7 +3405,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐40-60$^\circ\mathrm{C}$水洗，忌加柔软剂（柔软剂会填平微细毛细缝隙降低吸水性）
     \item \textbf{国际生态纺织认证}：\texttt{OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{橘瓣纤维}、\texttt{涤锦复合微纤}、\texttt{开纤丝}、\texttt{擦镜布微纤}\par
 \noindent\textbf{【代表性商业品牌】}：Belima X, 涤锦复合丝, 橘瓣超细纤维, 洁净魔布\par
@@ -3529,9 +3447,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整圆形 / 三叶异形}
     \item \textbf{纺织细度指标范围}：1.33 - 3.0 dtex (短纤及长丝FDY/DTY)
     \item \textbf{纱线加工技术规格}：PLA 纯纺针织纱, PLA 熔喷/纺粘非织造布, PLA/棉混纺纱
@@ -3546,7 +3463,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：水洗水温建议\textless{}40$^\circ\mathrm{C}$，避免强碱性洗衣粉；熨烫温度\textless{}110$^\circ\mathrm{C}$；工业堆肥下6个月全降解
     \item \textbf{国际生态纺织认证}：\texttt{100\% 生物基认证 (USDA BioPreferred), 工业可堆肥认证 (EN 13432), OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{玉米纤维}、\texttt{PLA纤维}、\texttt{Ingeo}、\texttt{PLA}\par
 \noindent\textbf{【代表性商业品牌】}：Ingeo (NatureWorks), 海正PLA, 丰原生物玉米纤维\par
@@ -3580,9 +3497,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整圆形实心 (微生物胞内天然合成)}
     \item \textbf{纺织细度指标范围}：1.33 - 3.0 dtex (短纤及长丝)
     \item \textbf{纱线加工技术规格}：水刺无纺布纤网, 针织短纤纱
@@ -3597,7 +3513,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：温和洗涤，避免久置强碱湿热环境防降解
     \item \textbf{国际生态纺织认证}：\texttt{TÜV OK biobased 四星认证, TÜV OK biodegradable MARINE (海洋可降解最高认证)}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PHA纤维}、\texttt{PHBV}、\texttt{P34HB}\par
 \noindent\textbf{【代表性商业品牌】}：Bluepha PHA, Kaneka Green Planet, Danimer Nodax\par
@@ -3631,9 +3547,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{低熔点圆形长丝与熔喷微纤}
     \item \textbf{纺织细度指标范围}：2.0 - 5.0 dtex
     \item \textbf{纱线加工技术规格}：医用网眼织物, 热塑成型绑带纱
@@ -3648,7 +3563,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：严禁接触 60$^\circ\mathrm{C}$ 以上热水与烘干，常温酒精或生理盐水清洁
     \item \textbf{国际生态纺织认证}：\texttt{FDA / CE 医用植入级认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PCL}、\texttt{聚己内酯}\par
 \noindent\textbf{【代表性商业品牌】}：Capa (Ingevity), Monocryl 组分\par
@@ -3682,9 +3597,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{超精密光滑实心单丝与多股编织束 (Dexon)}
     \item \textbf{纺织细度指标范围}：医用规格 USP 8-0 至 USP 2 (极其精细微丝编织)
     \item \textbf{纱线加工技术规格}：医用编织外科缝合线 (Braid Suture)
@@ -3699,7 +3613,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：一次性无菌铝箔密封包装，严禁受潮
     \item \textbf{国际生态纺织认证}：\texttt{FDA PMA 医疗器械最高上市许可认证, ISO 13485}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PGA}、\texttt{聚羟基乙酸}、\texttt{Dexon}\par
 \noindent\textbf{【代表性商业品牌】}：Dexon, Kureha PGA, 国能神华包头煤制PGA\par
@@ -3733,9 +3647,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{光滑精密圆形多复丝微丝}
     \item \textbf{纺织细度指标范围}：USP 规格外科精密线
     \item \textbf{纱线加工技术规格}：精密医用圆编缝线 (Vicryl 维克利缝线)
@@ -3750,7 +3663,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：环氧乙烷灭菌无菌包装
     \item \textbf{国际生态纺织认证}：\texttt{FDA / CE 医用植入耗材认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PLGA}、\texttt{Vicryl}、\texttt{薇乔}\par
 \noindent\textbf{【代表性商业品牌】}：Vicryl (薇乔), Polyglactin 910\par
@@ -3784,9 +3697,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{单股均质光滑正圆形 (Monofilament PDS)}
     \item \textbf{纺织细度指标范围}：USP 7-0 至 1 单股单丝线
     \item \textbf{纱线加工技术规格}：单股免打结倒刺外科缝合线 (Barbed Suture)
@@ -3801,7 +3713,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：严格防潮密封无菌保存
     \item \textbf{国际生态纺织认证}：\texttt{FDA 认证最高级别可吸收单丝线}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PDS}、\texttt{PDO}、\texttt{PPDO}、\texttt{快翎线}\par
 \noindent\textbf{【代表性商业品牌】}：PDS II (强生), 恒生PPDO提拉线\par
@@ -3835,9 +3747,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形短纤及长丝}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex
     \item \textbf{纱线加工技术规格}：纺粘非织造布, 短纤混纺纱
@@ -3852,7 +3763,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规水洗，用后可堆肥还田
     \item \textbf{国际生态纺织认证}：\texttt{BPI 堆肥认证, DIN CERTCO 可堆肥认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PBS纤维}、\texttt{PBAT纤维}、\texttt{Bionolle}\par
 \noindent\textbf{【代表性商业品牌】}：Bionolle, Ecoflex (BASF), 金发PBS\par
@@ -3892,9 +3803,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整圆形实心长丝}
     \item \textbf{纺织细度指标范围}：1.0 - 2.5 dtex (高阻隔生物基长丝)
     \item \textbf{纱线加工技术规格}：FDY, DTY, 高支细旦针织纱
@@ -3909,7 +3819,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：标准机洗与高温熨烫 (耐烫达 160$^\circ\mathrm{C}$)
     \item \textbf{国际生态纺织认证}：\texttt{100\% 植物基原料认证 (全生物基FDCA与乙二醇), 碳足迹减排70\%}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PEF}、\texttt{呋喃聚酯}、\texttt{生物基PEF}\par
 \noindent\textbf{【代表性商业品牌】}：Releaf, Avantium PEF\par
@@ -3943,9 +3853,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{细旦圆形复丝}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex
     \item \textbf{纱线加工技术规格}：低熔点固碳复合短纤, 降解非织造布
@@ -3960,7 +3869,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：温和洗涤，单次使用或短期循环后堆肥降解
     \item \textbf{国际生态纺织认证}：\texttt{碳减排固碳认证, 生物可降解认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PPC纤维}、\texttt{二氧化碳纤维}、\texttt{固碳纤维}\par
 \noindent\textbf{【代表性商业品牌】}：PPC Fiber, 中科院负碳纤维\par
@@ -4002,9 +3911,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形，高度原纤化结晶皮芯结构}
     \item \textbf{纺织细度指标范围}：1.1 - 3.3 dtex (高强长丝 200D - 3000D)
     \item \textbf{纱线加工技术规格}：长丝并股纱, 芳纶短纤机织混纺纱, 芳纶防切割包覆纱
@@ -4019,7 +3927,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐受工业洗涤，严禁长时间强日光紫外线直射暴晒，耐化学酸碱腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{NIJ 防弹标准认证, GA 68 警用防刺服认证, ISO 11612}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{芳纶1414}、\texttt{对位芳纶}、\texttt{Kevlar}、\texttt{Twaron}、\texttt{凯夫拉}、\texttt{PPTA}\par
 \noindent\textbf{【代表性商业品牌】}：Kevlar (杜邦凯夫拉), Twaron (帝人芳纶), 泰和新材泰普龙\par
@@ -4053,9 +3961,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 腰圆形}
     \item \textbf{纺织细度指标范围}：1.7 - 2.5 dtex (短纤及长丝)
     \item \textbf{纱线加工技术规格}：精梳短纤纱线 (30S-40S), 芳纶纸浆沉析纤维
@@ -4070,7 +3977,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规工业耐洗 100 次，阻燃防电弧性能永久不衰减；水温可达 60$^\circ\mathrm{C}$
     \item \textbf{国际生态纺织认证}：\texttt{NFPA 1971 消防标准, OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{芳纶1313}、\texttt{间位芳纶}、\texttt{Nomex}、\texttt{诺梅克斯}、\texttt{PMIA}\par
 \noindent\textbf{【代表性商业品牌】}：Nomex (诺梅克斯), Conex (帝人), 美士达 (泰和新材)\par
@@ -4104,9 +4011,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{致密圆形，含苯并咪唑杂环共轭刚性链}
     \item \textbf{纺织细度指标范围}：1.1 - 2.5 dtex (高强束长丝)
     \item \textbf{纱线加工技术规格}：特级高强长丝并捻线, 宇航特种织带
@@ -4121,7 +4027,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐受工业洗涤与各种航空滑油，严格避免长期阳光直射
     \item \textbf{国际生态纺织认证}：\texttt{军用特种高性能材料准入认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{芳纶III}、\texttt{杂环芳香聚酰胺}、\texttt{Armos}、\texttt{Rusar}\par
 \noindent\textbf{【代表性商业品牌】}：Rusar-S, Armos, 中蓝晨光芳纶III\par
@@ -4155,9 +4061,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整圆形或微腰圆形 (芳砜纶)}
     \item \textbf{纺织细度指标范围}：1.7 - 2.5 dtex (短纤及长丝)
     \item \textbf{纱线加工技术规格}：阻燃纯纺与混纺纱 (20S-40S), 高温除尘针刺毡
@@ -4172,7 +4077,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：常规耐工业洗涤 100 次阻燃耐温性能零衰减，水温可达 60$^\circ\mathrm{C}$
     \item \textbf{国际生态纺织认证}：\texttt{GB 8965 阻燃A级认证, OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{芳砜纶}、\texttt{PSA纤维}、\texttt{Tanlon}\par
 \noindent\textbf{【代表性商业品牌】}：Tanlon (芳砜纶 / 上纤所)\par
@@ -4206,9 +4111,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{平滑圆形实心 (共聚芳纶)}
     \item \textbf{纺织细度指标范围}：1.7 - 3.3 dtex (长丝束)
     \item \textbf{纱线加工技术规格}：高韧性共聚芳纶长丝线, 深海系泊高强缆绳
@@ -4223,7 +4127,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：耐海水浸泡、耐油脂腐蚀，淡水冲洗即可
     \item \textbf{国际生态纺织认证}：\texttt{DNV 船级社海工系泊认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Technora}、\texttt{泰诺拉}、\texttt{共聚芳纶}\par
 \noindent\textbf{【代表性商业品牌】}：Technora (泰诺拉 / Teijin)\par
@@ -4263,9 +4167,8 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{平滑圆形 / 多原纤复合束}
     \item \textbf{纺织细度指标范围}：50D - 1600D (高强细旦长丝与工业粗纱)
     \item \textbf{纱线加工技术规格}：超高强长丝 (Dyneema/Spectra), 超高强包覆纱
@@ -4280,7 +4183,7 @@ PA6、PA66、PA610、PA11、PA12、PA46、PA56、长碳链尼龙及耐热半芳�
     \item \textbf{洗涤保养与熨烫要点}：水洗温度严禁超过 60$^\circ\mathrm{C}$（其熔点仅 145$^\circ\mathrm{C}$，耐热温度\textless{}90$^\circ\mathrm{C}$），严禁蒸汽熨烫
     \item \textbf{国际生态纺织认证}：\texttt{EN 388 最高5级切割认证, 军工防弹防爆鉴定}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{UHMWPE}、\texttt{大力马}、\texttt{迪尼玛}、\texttt{Dyneema}、\texttt{Spectra}、\texttt{高强PE}\par
 \noindent\textbf{【代表性商业品牌】}：Dyneema (迪尼玛 / Avient), Spectra (霍尼韦尔), 同益中, 九九久\par
@@ -4320,9 +4223,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{光滑圆形实心刚性棒状大分子}
     \item \textbf{纺织细度指标范围}：1.5 - 2.5 dtex (超级长丝柴隆 Zylon)
     \item \textbf{纱线加工技术规格}：特级超级长丝复丝束 (250D - 1500D)
@@ -4337,7 +4239,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐各种强酸强碱，严禁受光照暴晒与长期高湿蒸汽存放
     \item \textbf{国际生态纺织认证}：\texttt{FIA 国际汽联一级方程式安全认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PBO}、\texttt{Zylon}、\texttt{柴隆}、\texttt{超级纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Zylon (柴隆 / 东洋纺 Toyobo), 中蓝晨光PBO\par
@@ -4371,9 +4273,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形 / 腰圆形均质结构}
     \item \textbf{纺织细度指标范围}：1.5 - 2.2 dtex (短纤及长丝)
     \item \textbf{纱线加工技术规格}：PBI 精梳阻燃纱线 (20S-40S), PBI混纺防护布
@@ -4388,7 +4289,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：支持工业高温机洗 100 次，防火效能永久保真
     \item \textbf{国际生态纺织认证}：\texttt{NFPA 1971 (美国消防最高标配认证), OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PBI}、\texttt{聚苯并咪唑}、\texttt{Celazole}\par
 \noindent\textbf{【代表性商业品牌】}：PBI (Celazole / PBI Performance Products)\par
@@ -4422,9 +4323,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{刚性棒状双氢键网络晶体截面 (M5超级纤维)}
     \item \textbf{纺织细度指标范围}：1.5 - 2.0 dtex
     \item \textbf{纱线加工技术规格}：超高强长丝复丝线
@@ -4439,7 +4339,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐热耐酸碱耐辐射
     \item \textbf{国际生态纺织认证}：\texttt{军工先进材料鉴定}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{M5纤维}、\texttt{PIPD}\par
 \noindent\textbf{【代表性商业品牌】}：M5 Fiber\par
@@ -4473,9 +4373,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{全芳香热致液晶多层取向结构 (Vectran)}
     \item \textbf{纺织细度指标范围}：200D - 1500D (高强聚芳酯长丝)
     \item \textbf{纱线加工技术规格}：长丝并捻线, 高密抗切割包覆纱
@@ -4490,7 +4389,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受海水腐蚀与漂白剂，避免强碱水煮
     \item \textbf{国际生态纺织认证}：\texttt{NASA 宇航严选飞行认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Vectran}、\texttt{聚芳酯}、\texttt{威克特纶}、\texttt{TLCP}\par
 \noindent\textbf{【代表性商业品牌】}：Vectran (威克特纶 / Kuraray)\par
@@ -4530,9 +4429,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整圆形实心 / 三叶截面 (聚苯硫醚)}
     \item \textbf{纺织细度指标范围}：1.7 - 2.5 dtex (工业耐腐短纤及长丝)
     \item \textbf{纱线加工技术规格}：高温除尘针刺毡短纤维, PPS 机织长丝
@@ -4547,7 +4445,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受高压烟气与强酸水洗冲刷，耐工业高温清洗
     \item \textbf{国际生态纺织认证}：\texttt{国家超低排放脱硫脱硝烟气除尘达标产品}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PPS}、\texttt{聚苯硫醚}、\texttt{Ryton}\par
 \noindent\textbf{【代表性商业品牌】}：Ryton, Toray PPS, 新和成PPS短纤\par
@@ -4581,9 +4479,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{光滑圆形实心 (聚醚醚酮特种工程长丝)}
     \item \textbf{纺织细度指标范围}：3.0 - 15.0 dtex (100D - 1000D 长丝及单丝)
     \item \textbf{纱线加工技术规格}：特种工业复丝, 编织套管单丝
@@ -4598,7 +4495,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐一切有机溶剂与除浓硫酸外的所有酸碱，耐受反复高温蒸汽灭菌
     \item \textbf{国际生态纺织认证}：\texttt{FDA 接触级认证, 航空级材料准入认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PEEK}、\texttt{聚醚醚酮}、\texttt{Zyex}\par
 \noindent\textbf{【代表性商业品牌】}：Zyex (Victrex), PEEK filament, 吉大特塑\par
@@ -4632,9 +4529,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整平滑圆形截面 (聚酰亚胺)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex (短纤及金黄长丝)
     \item \textbf{纱线加工技术规格}：高温除尘短纤针刺毡, 宇航多层隔热织物长丝
@@ -4649,7 +4545,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受工业干洗与高温水洗，耐辐射不老化
     \item \textbf{国际生态纺织认证}：\texttt{国家绿色先进制造认证, 航天军工标准}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PI纤维}、\texttt{P84}、\texttt{聚酰亚胺}\par
 \noindent\textbf{【代表性商业品牌】}：P84 (赢创 Evonik), 奥神PI短纤, 惠生PI长丝\par
@@ -4689,9 +4585,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多孔撕裂膜扁平原纤化截面 (特氟龙/氟纶)}
     \item \textbf{纺织细度指标范围}：2.0 - 5.0 dtex (短纤及裂膜长丝)
     \item \textbf{纱线加工技术规格}：PTFE 长丝缝纫线, PTFE 针刺滤毡短纤, 膨体ePTFE膜复合布
@@ -4706,7 +4601,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐强酸强碱冲洗消毒，抗一切污渍黏附，清水一冲即净
     \item \textbf{国际生态纺织认证}：\texttt{FDA 食品医用级认证, ISO 14001}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PTFE纤维}、\texttt{特氟龙纤维}、\texttt{氟纶}、\texttt{Teflon}、\texttt{FLR}\par
 \noindent\textbf{【代表性商业品牌】}：Teflon (特氟龙), Gore-Tex (戈尔), Profilen\par
@@ -4740,9 +4635,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形实心氟碳长丝}
     \item \textbf{纺织细度指标范围}：2.0 - 6.0 dtex (高耐候长丝及钓鱼线)
     \item \textbf{纱线加工技术规格}：建筑张拉膜基布长丝, 压电传感长丝
@@ -4757,7 +4651,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐酸雨、耐日光暴晒，免维护清洗
     \item \textbf{国际生态纺织认证}：\texttt{建筑绿色耐久认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{PVDF}、\texttt{聚偏氟乙烯}、\texttt{Kynar}、\texttt{氟碳线}\par
 \noindent\textbf{【代表性商业品牌】}：Kynar (阿科玛), Solef (索尔维), 氟碳鱼线\par
@@ -4797,9 +4691,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{不规则椭圆形实心 (酚醛树脂纤维 Kynol)}
     \item \textbf{纺织细度指标范围}：1.7 - 2.5 dtex (短纤)
     \item \textbf{纱线加工技术规格}：酚醛短纤混纺纱 (20S-32S), 防火针刺毡
@@ -4814,7 +4707,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受工业常规机洗，耐化学有机溶剂
     \item \textbf{国际生态纺织认证}：\texttt{NFPA 消防防火安全认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{酚醛纤维}、\texttt{Kynol}、\texttt{Novoloid}、\texttt{NOV}\par
 \noindent\textbf{【代表性商业品牌】}：Kynol (群荣化学), Novoloid\par
@@ -4848,9 +4741,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多叶形或近圆形微观截面 (三聚氰胺纤维 Basofil)}
     \item \textbf{纺织细度指标范围}：2.0 - 3.0 dtex $\times$ 51mm (短纤)
     \item \textbf{纱线加工技术规格}：阻燃吸音无纺絮片 (Nonwoven Batting), 阻燃混纺纱
@@ -4865,7 +4757,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐化学干洗与水洗，不可明火长时间直接烘烤
     \item \textbf{国际生态纺织认证}：\texttt{FAR 25.853 (航空座椅防火垂直燃烧标准认证), OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{密胺纤维}、\texttt{三聚氰胺纤维}、\texttt{Basofil}、\texttt{MEL}\par
 \noindent\textbf{【代表性商业品牌】}：Basofil (巴斯夫), 密胺纤维\par
@@ -4907,9 +4799,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{规整平滑光滑圆形微观结构 (直径 5-7 $\mu$m)}
     \item \textbf{纺织细度指标范围}：1K / 3K / 12K / 24K 碳纤维连续丝束 (单丝约 0.66 dtex)
     \item \textbf{纱线加工技术规格}：碳纤维无捻粗纱 (Carbon Tow), 预浸料单向织物 (UD), 碳布 (Carbon Fabric)
@@ -4924,7 +4815,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：复合固化为复合材料后终身免洗维护，耐酸碱盐雾腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{航空航天复合材料适航认证, 绿色轻量化节能认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{碳纤维}、\texttt{T700}、\texttt{T800}、\texttt{T1000}、\texttt{Torayca}、\texttt{CF}\par
 \noindent\textbf{【代表性商业品牌】}：Torayca T700/T800/T1100, 中复神鹰 SYT55S, 光威复材, 恒神\par
@@ -4958,9 +4849,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{高度石墨化同心圆取向碳层结构}
     \item \textbf{纺织细度指标范围}：3K / 6K 高模量碳纤维束 (M40J - M65J)
     \item \textbf{纱线加工技术规格}：高模碳纤维单向布 (UD Tape), 高精度预浸料
@@ -4975,7 +4865,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受高真空与零下180$^\circ\mathrm{C}$至150$^\circ\mathrm{C}$剧烈热循环交替
     \item \textbf{国际生态纺织认证}：\texttt{国家航天工程宇航级认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{高模碳纤维}、\texttt{石墨纤维}、\texttt{M55J}、\texttt{M60J}\par
 \noindent\textbf{【代表性商业品牌】}：Torayca M40J / M55J / M60J, 光威复材QM40/QM55\par
@@ -5015,9 +4905,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{中间相液晶辐射状或同心圆石墨微晶片层}
     \item \textbf{纺织细度指标范围}：粗束长丝 (2000 - 4000 Tex)
     \item \textbf{纱线加工技术规格}：超高导热碳织物, 均温预浸料
@@ -5032,7 +4921,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐高温耐化学腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{航天热控系统权威认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{沥青基碳纤维}、\texttt{中间相碳纤维}、\texttt{DIALEAD}\par
 \noindent\textbf{【代表性商业品牌】}：DIALEAD (三菱化学), Granoc (日本新日铁), 湖南大学沥青基CF\par
@@ -5072,9 +4961,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{锯齿形多微孔仿人造丝轮廓，低热导疏松碳网}
     \item \textbf{纺织细度指标范围}：短纤纱及无捻长丝布
     \item \textbf{纱线加工技术规格}：高纯粘胶基碳布 (Rayon Carbon Cloth)
@@ -5089,7 +4977,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受极端火箭燃烧室温冲刷
     \item \textbf{国际生态纺织认证}：\texttt{宇航防热战略材料认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{粘胶基碳纤维}、\texttt{烧蚀防热碳纤维}\par
 \noindent\textbf{【代表性商业品牌】}：AvCarb, UCC Thornel-25, 航天材料及工艺研究所粘胶基CF\par
@@ -5129,9 +5017,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{数万根纳米碳管沿轴向高度定向自组装紧密束状截面}
     \item \textbf{纺织细度指标范围}：连续宏观单丝长丝 (直径 5-30 $\mu$m)
     \item \textbf{纱线加工技术规格}：连续导电微细长丝束, 导电缝纫线
@@ -5146,7 +5033,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：支持常温水洗机洗，耐化学清洗，导电性终身不衰退
     \item \textbf{国际生态纺织认证}：\texttt{前沿低维纳米材料认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{CNT纤维}、\texttt{碳纳米管长丝}、\texttt{Galvorn}\par
 \noindent\textbf{【代表性商业品牌】}：Tortech Nano, Nanocomp DexMat Galvorn, 碳纳米管连续纺丝\par
@@ -5180,9 +5067,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多层石墨烯微片同轴有序液晶排列形成的微波纹同心截面}
     \item \textbf{纺织细度指标范围}：宏观连续长丝 (50D - 300D)
     \item \textbf{纱线加工技术规格}：石墨烯导热导电长丝, 柔性发热织带
@@ -5197,7 +5083,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：支持家庭安全水洗（断电拔除电池后正常机洗），低温悬挂晾干
     \item \textbf{国际生态纺织认证}：\texttt{远红外保健发热检测认证, CE 穿戴安全低压认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{石墨烯纤维}、\texttt{GF}\par
 \noindent\textbf{【代表性商业品牌】}：高超团队石墨烯长丝, 杭州高烯科技\par
@@ -5237,9 +5123,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{微孔密布海绵状圆柱体 (孔径 \textless{} 2 nm 超微孔占90\%以上)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex 短纤及连续长丝毡
     \item \textbf{纱线加工技术规格}：活性炭纤维毡 (ACF Felt), 活性炭纤维机织布
@@ -5254,7 +5139,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：使用后可采用 120-150$^\circ\mathrm{C}$ 热水蒸汽通气脱附吹干，循环重复使用达上百次
     \item \textbf{国际生态纺织认证}：\texttt{GB 2626 防颗粒毒气认证, 环保高效吸附认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{活性碳纤维}、\texttt{ACF}、\texttt{碳吸附纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Kynol ACF, Kuractive, 赛普乐斯ACF\par
@@ -5296,9 +5181,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{极其光滑的透明无机玻璃态正圆形 (直径 6-13 $\mu$m)}
     \item \textbf{纺织细度指标范围}：无捻粗纱 (300 - 4800 Tex)；超细电子玻纤 (BC/D/E 级单丝 4-9 $\mu$m)
     \item \textbf{纱线加工技术规格}：电子级玻璃纤维布 (7628 / 2116 / 1080 电子布), 无捻粗纱机织布
@@ -5313,7 +5197,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：工业复合后免维护，耐油耐潮耐真菌霉变
     \item \textbf{国际生态纺织认证}：\texttt{RoHS 认证, UL94 V-0 不燃认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{E玻纤}、\texttt{无碱玻纤}、\texttt{玻璃纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Advantex, 中国巨石E6/E7/E8, 泰山玻纤, 重庆国际\par
@@ -5347,9 +5231,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{光滑致密高纯镁铝硅酸盐玻璃态正圆}
     \item \textbf{纺织细度指标范围}：单丝直径 7 - 9 $\mu$m (高强玻纤长丝束)
     \item \textbf{纱线加工技术规格}：高强玻璃纤维平纹布, 环向缠绕纱
@@ -5364,7 +5247,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐高温耐酸碱，免特殊清洗
     \item \textbf{国际生态纺织认证}：\texttt{军工高强材料鉴定}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{S玻纤}、\texttt{S-2玻纤}、\texttt{高强玻璃纤维}\par
 \noindent\textbf{【代表性商业品牌】}：S-2 Glass, HS4/HS6 (中材科技南玻院)\par
@@ -5398,9 +5281,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{高纯二氧化硅(纯度\textgreater{}99.95\%)光滑圆柱体}
     \item \textbf{纺织细度指标范围}：单丝直径 5 - 9 $\mu$m (石英纤维长丝束)
     \item \textbf{纱线加工技术规格}：石英纤维三维机织布, 航天透波缝线
@@ -5415,7 +5297,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐除氢氟酸和热磷酸外的一切强酸，耐受宇宙强辐照
     \item \textbf{国际生态纺织认证}：\texttt{国家航天防热透波材料认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{石英纤维}、\texttt{Quartzel}、\texttt{二氧化硅纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Quartzel (圣戈班), 菲利华石英纤维\par
@@ -5449,9 +5331,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{超精密微细光滑正圆 (直径 4-7 $\mu$m)}
     \item \textbf{纺织细度指标范围}：超细旦电子布长丝 (1010, 1027, 1037 超薄布规格)
     \item \textbf{纱线加工技术规格}：低介电超薄电子玻纤布 (厚度 10-30 $\mu$m)
@@ -5466,7 +5347,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：电子洁净无尘室密闭包装
     \item \textbf{国际生态纺织认证}：\texttt{IPC-4412 电子级玻纤布国际标准认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Low-Dk玻纤}、\texttt{低介电玻璃纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Low-Dk Glass, 巨石高频印制板基布\par
@@ -5500,9 +5381,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{含16\%-20\%二氧化锆(ZrO2)抗碱玻璃圆柱截面}
     \item \textbf{纺织细度指标范围}：单丝直径 13 - 20 $\mu$m (粗旦抗裂短纤及网格布纱)
     \item \textbf{纱线加工技术规格}：耐碱网格布 (AR Mesh), 抗裂水泥砂浆短切丝 (Length 6-12 mm)
@@ -5517,7 +5397,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：建筑使用寿命长达50年以上，免维护
     \item \textbf{国际生态纺织认证}：\texttt{JC/T 841 建筑耐碱玻纤网格布行标认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{AR玻纤}、\texttt{耐碱玻纤}、\texttt{Cem-FIL}\par
 \noindent\textbf{【代表性商业品牌】}：Cem-FIL, 泰山耐碱玻纤\par
@@ -5557,9 +5437,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{平滑致密均匀天然火山岩熔融圆形微晶 (直径 7-15 $\mu$m)}
     \item \textbf{纺织细度指标范围}：无捻粗纱 (300 - 2400 Tex), 短切纤维
     \item \textbf{纱线加工技术规格}：玄武岩平纹斜纹机织布, 玄武岩阻燃防火毡, 编织套管
@@ -5574,7 +5453,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：绿色纯天然矿物，废弃后回归自然岩石风化，全生命周期环保
     \item \textbf{国际生态纺织认证}：\texttt{生态绿色建材认证, 消防A1级不燃认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{玄武岩纤维}、\texttt{火山岩纤维}、\texttt{CBF}\par
 \noindent\textbf{【代表性商业品牌】}：Kamenny Vek, 四川拓鑫玄武岩纤维, 江苏天龙\par
@@ -5614,9 +5493,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{纳米近化学计量比碳化硅多晶致密圆形 (直径 8-14 $\mu$m)}
     \item \textbf{纺织细度指标范围}：连续复丝束 (500芯 - 800芯)
     \item \textbf{纱线加工技术规格}：连续陶瓷纤维复丝线, 三维编织预制体 (3D Preform)
@@ -5631,7 +5509,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐受数千小时航空发动机严苛高压热燃气冲刷
     \item \textbf{国际生态纺织认证}：\texttt{国家两机重大专项先进适航认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{碳化硅纤维}、\texttt{SiC纤维}、\texttt{Nicalon}\par
 \noindent\textbf{【代表性商业品牌】}：Nicalon (1代), Hi-Nicalon (2代), Hi-Nicalon Type S (3代), Tyranno, 湖南赛菲\par
@@ -5665,9 +5543,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{纳米微晶高纯氧化铝/莫来石致密圆柱体 (Nextel 610/720)}
     \item \textbf{纺织细度指标范围}：单丝直径 10 - 12 $\mu$m (复丝束 400 - 1000 单丝)
     \item \textbf{纱线加工技术规格}：高温陶瓷机织布 (Ceramic Cloth), 缝纫线
@@ -5682,7 +5559,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐一切氧化剂与腐蚀性工业废气冲刷
     \item \textbf{国际生态纺织认证}：\texttt{航空航天热障材料认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{氧化铝纤维}、\texttt{Nextel}、\texttt{刚玉纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Nextel 610, Nextel 720 (3M)\par
@@ -5716,9 +5593,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{高纯非晶/微晶氮化硅实心光滑圆形}
     \item \textbf{纺织细度指标范围}：单丝直径 8 - 12 $\mu$m
     \item \textbf{纱线加工技术规格}：高频透波陶瓷三维编织布
@@ -5733,7 +5609,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐高低温极限骤变冲击
     \item \textbf{国际生态纺织认证}：\texttt{国防重大科技尖端认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{氮化硅纤维}、\texttt{Si3N4}\par
 \noindent\textbf{【代表性商业品牌】}：Tonen Si3N4, 聚硅氮烷基氮化硅纤维\par
@@ -5767,9 +5643,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{以微细钨丝或碳丝为芯的化学气相沉积(CVD)粗单丝 (直径 100-140 $\mu$m)}
     \item \textbf{纺织细度指标范围}：粗单丝 (直径 0.1-0.14 mm 粗单丝)
     \item \textbf{纱线加工技术规格}：单向硼预浸带 (Boron Prepreg Tape)
@@ -5784,7 +5659,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：复合为机翼部件后免维护
     \item \textbf{国际生态纺织认证}：\texttt{先进战机主承力构件认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{硼纤维}、\texttt{CVD硼纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Specialty Materials Boron, Textron Boron\par
@@ -5818,9 +5693,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多晶硅酸铝(3Al2O3·2SiO2)致密针状共生截面}
     \item \textbf{纺织细度指标范围}：单丝直径 10 - 13 $\mu$m
     \item \textbf{纱线加工技术规格}：莫来石平纹机织布, 耐火隔热套管
@@ -5835,7 +5709,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐特高温明火冲刷，免清洗
     \item \textbf{国际生态纺织认证}：\texttt{特种耐火隔热标准认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{莫来石纤维}、\texttt{硅酸铝陶瓷纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Nextel 440 (3M), 莫来石连续丝\par
@@ -5869,9 +5743,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{纳米氧化钇全稳定四方相二氧化锆致密微晶 (直径 6-10 $\mu$m)}
     \item \textbf{纺织细度指标范围}：陶瓷复丝长丝束
     \item \textbf{纱线加工技术规格}：极高温隔热布, 贵金属熔炼过滤网
@@ -5886,7 +5759,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：耐浓酸浓碱水热腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{特级超高温材料国家战略准入}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{氧化锆纤维}、\texttt{ZrO2纤维}、\texttt{Zircar}\par
 \noindent\textbf{【代表性商业品牌】}：Zircar Zirconia, 上硅所氧化锆纤维毡\par
@@ -5926,9 +5799,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{超细 316L 医用级不锈钢多边形微丝 (直径 2-8 $\mu$m)}
     \item \textbf{纺织细度指标范围}：金属微丝束 (单丝比重 7.9 g/cm³，细如蚕丝可纺纱)
     \item \textbf{纱线加工技术规格}：纯金属导电纱 (100\% SS Yarn), 不锈钢与棉涤混纺导电纱 (混纺比 2\%-20\%)
@@ -5943,7 +5815,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：常温中性洗涤剂轻柔机洗，不可强力拧绞，阴凉悬挂自然风干
     \item \textbf{国际生态纺织认证}：\texttt{GB/T 30126 防电磁辐射织物认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{不锈钢纤维}、\texttt{金属纤维}、\texttt{Bekinox}、\texttt{ME}\par
 \noindent\textbf{【代表性商业品牌】}：Bekinox (贝卡尔特), Bekaert Beki-sheld, 西部材料金属纤维\par
@@ -5977,9 +5849,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{同轴超柔弹性硅胶空心管包裹镓铟液态合金 (EGaIn) 流体金属芯}
     \item \textbf{纺织细度指标范围}：外径 0.2 - 0.8 mm 柔性伸缩单丝
     \item \textbf{纱线加工技术规格}：超弹性导电传感单丝, 智能穿戴数据线
@@ -5994,7 +5865,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：两端封装密封后支持标准水洗机洗，耐汗渍防渗漏
     \item \textbf{国际生态纺织认证}：\texttt{无毒低熔点液态金属生物安全性检验认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{液态金属纤维}、\texttt{镓铟合金丝}、\texttt{EGaIn}\par
 \noindent\textbf{【代表性商业品牌】}：LiquidConduct, EGaIn Fiber\par
@@ -6036,9 +5907,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{微纳米结晶原纤仿生致密结构 (重组大肠杆菌/酵母基因工程重组蛛丝)}
     \item \textbf{纺织细度指标范围}：1.0 - 2.0 dtex (轻奢高韧长丝)
     \item \textbf{纱线加工技术规格}：连续重组蛛丝长丝束, 极细高支针织纱
@@ -6053,7 +5923,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：高档成衣建议温和中性洗涤剂手洗或干洗，平铺晾干
     \item \textbf{国际生态纺织认证}：\texttt{100\% 生物合成零石油基认证, 天然全生物降解, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{人造蜘蛛丝}、\texttt{蜘蛛丝纤维}、\texttt{Brewed Protein}、\texttt{Biosteel}\par
 \noindent\textbf{【代表性商业品牌】}：Brewed Protein (Spiber), Biosteel (AMSilk), QMONOS\par
@@ -6093,9 +5963,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形/皮芯多微孔，内部包裹亚微米级微胶囊正烷烃相变相吸热蓄能材料}
     \item \textbf{纺织细度指标范围}：1.5 - 3.3 dtex (短纤及长丝 Outlast 型)
     \item \textbf{纱线加工技术规格}：相变调温纯纺短纤纱 (32S-50S), 恒温针织低弹丝
@@ -6110,7 +5979,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：常规机洗 40$^\circ\mathrm{C}$，不可剧烈氯漂与强酸强碱洗，中温熨烫
     \item \textbf{国际生态纺织认证}：\texttt{NASA Certified Space Technology (太空认证技术), OEKO-TEX Standard 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{相变纤维}、\texttt{恒温纤维}、\texttt{Outlast}、\texttt{PCM纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Outlast (奥特莱斯), 恒温天丝, 溢达PCM微胶囊纤维\par
@@ -6144,9 +6013,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{温敏形状记忆嵌段聚氨酯微多孔异形截面}
     \item \textbf{纺织细度指标范围}：2.0 - 5.0 dtex
     \item \textbf{纱线加工技术规格}：智能透湿自适应长丝, 记忆透气涂层面料
@@ -6161,7 +6029,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：正常机洗，温风吹拂或穿着即自然免熨烫恢复平挺
     \item \textbf{国际生态纺织认证}：\texttt{智能自适应纺织品前沿认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{形状记忆纤维}、\texttt{呼吸纤维}、\texttt{SMP纤维}\par
 \noindent\textbf{【代表性商业品牌】}：DiAPLEX (透湿记忆薄膜与纤维), MemoryTex\par
@@ -6195,9 +6063,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{同轴电致发光微缆 (中心导电芯 + 交流电致发光ZnS发光层 + 透明导电聚合物外层套)}
     \item \textbf{纺织细度指标范围}：外径 0.15 - 0.5 mm 柔性发光微丝
     \item \textbf{纱线加工技术规格}：全柔性发光长丝, 织物显示经纬纱
@@ -6212,7 +6079,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：两端封装后支持标准水洗机洗（洗涤50次发光亮度保持\textgreater{}80\%）
     \item \textbf{国际生态纺织认证}：\texttt{国际低压人体安全电气认证, CE, FCC}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{发光纤维}、\texttt{显示纤维}、\texttt{发光织物}\par
 \noindent\textbf{【代表性商业品牌】}：LumiTextile, DisplayFiber\par
@@ -6252,9 +6119,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{同轴多层环形电芯结构 (中心集流体+正极+凝胶电解质隔膜+负极+气密柔性保护套)}
     \item \textbf{纺织细度指标范围}：同轴微缆单丝 (外径 0.5 - 1.2 mm)
     \item \textbf{纱线加工技术规格}：可机织柔性储能纱线 (Weavable Fiber Battery)
@@ -6269,7 +6135,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：通过国际商用洗衣机标准清洗测试（洗涤剂中机洗浸泡 2 小时完全防水绝缘）
     \item \textbf{国际生态纺织认证}：\texttt{UN 38.3 锂电池航空运输安全认证, IEC 62133 穿戴电气安全认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{纤维电池}、\texttt{电池纤维}、\texttt{储能纤维}\par
 \noindent\textbf{【代表性商业品牌】}：FiberBatt, 彭慧胜团队纤维电池\par
@@ -6303,9 +6169,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{同轴摩擦电皮芯结构 (高负摩擦极性硅橡胶外皮 + 导电液态金属/碳管芯线)}
     \item \textbf{纺织细度指标范围}：外径 0.3 - 0.8 mm 柔性同轴单丝
     \item \textbf{纱线加工技术规格}：人体机械能捕获纱线, 智能自发电传感织物
@@ -6320,7 +6185,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：完全防水抗汗液，日常正常机洗洗涤，阴干即恢复强劲发电效能
     \item \textbf{国际生态纺织认证}：\texttt{绿色自供电能源前沿认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{TENG纤维}、\texttt{摩擦发电纤维}、\texttt{自驱动纤维}\par
 \noindent\textbf{【代表性商业品牌】}：NanoTENG Fiber, 纳米能源所自驱动织物\par
@@ -6360,9 +6225,8 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{仿北极熊毛中空且壳层密布纳米气凝胶微孔 (壳层气凝胶微孔率\textgreater{}90\%)}
     \item \textbf{纺织细度指标范围}：1.5 - 3.0 dtex (超轻量气凝胶保暖短纤/长丝)
     \item \textbf{纱线加工技术规格}：超绝热梳理保暖絮片, 气凝胶轻量针织纱
@@ -6377,7 +6241,7 @@ PBO(聚苯并双恶唑)、PBZT(聚苯并双噻唑)、PBI(聚苯并咪唑)、PIPD
     \item \textbf{洗涤保养与熨烫要点}：支持洗衣机轻柔水洗脱水（水洗100次绝热性能不衰减），平摊速干
     \item \textbf{国际生态纺织认证}：\texttt{中国纺织科技一等奖成果, 超绝热保温国家标杆认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{气凝胶纤维}、\texttt{北极熊毛纤维}、\texttt{极寒纤维}\par
 \noindent\textbf{【代表性商业品牌】}：PolarAerogel, 仿生极地绒\par
@@ -6417,9 +6281,8 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{二维过渡金属碳化物纳米片层同轴紧密定向堆叠微波纹截面}
     \item \textbf{纺织细度指标范围}：超细连续导电长丝 (10D - 50D)
     \item \textbf{纱线加工技术规格}：超柔高导电长丝, 智能电磁屏蔽嵌纱
@@ -6434,7 +6297,7 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
     \item \textbf{洗涤保养与熨烫要点}：常温中性轻柔手洗，阴凉处干燥，耐汗液腐蚀
     \item \textbf{国际生态纺织认证}：\texttt{先进二维智能材料前沿鉴定}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{MXene纤维}、\texttt{碳化钛纤维}\par
 \noindent\textbf{【代表性商业品牌】}：MXeneFil, 钛碳烯纤维\par
@@ -6474,9 +6337,8 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{多微孔异形，纳米石墨烯微片均匀锚定在基体微纤中}
     \item \textbf{纺织细度指标范围}：1.33 - 3.0 dtex
     \item \textbf{纱线加工技术规格}：石墨烯改性复合粘胶/涤纶短纤纱 (32S-60S), 石墨烯长丝
@@ -6491,7 +6353,7 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
     \item \textbf{洗涤保养与熨烫要点}：常规水洗机洗，长效纳米共混不脱落，抗菌与发热效能长期稳定
     \item \textbf{国际生态纺织认证}：\texttt{AAA级长效抗菌认证, 远红外发射率认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{石墨烯纤维}、\texttt{石墨烯发热纤维}、\texttt{内暖纤维}、\texttt{石墨烯抑菌纤维}\par
 \noindent\textbf{【代表性商业品牌】}：内暖 (圣泉集团), 烯晶纤维, 石墨烯导热纤维\par
@@ -6525,9 +6387,8 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{圆形皮芯复合，纳米银晶体载体均匀弥散}
     \item \textbf{纺织细度指标范围}：1.5 - 2.5 dtex
     \item \textbf{纱线加工技术规格}：长丝FDY/DTY, 纯纺与混纺抗菌短纤纱
@@ -6542,7 +6403,7 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
     \item \textbf{洗涤保养与熨烫要点}：常规机洗，耐洗涤 50-100 次，广谱抑菌率仍稳定在 99\% 以上
     \item \textbf{国际生态纺织认证}：\texttt{GB/T 20944 抗菌认证, 瑞士 Sanitized 认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{银离子纤维}、\texttt{X-Static}、\texttt{防臭纤维}、\texttt{抑菌纤维}\par
 \noindent\textbf{【代表性商业品牌】}：X-Static, AlphaSan, 洁尔爽抗菌纤维, 银离子色丝\par
@@ -6576,9 +6437,8 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{微扁平高光滑圆形 (高热导分子定向排列)}
     \item \textbf{纺织细度指标范围}：50D - 200D (细旦纺织服用长丝)
     \item \textbf{纱线加工技术规格}：低旦超柔长丝, 凉感复合纱
@@ -6593,7 +6453,7 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
     \item \textbf{洗涤保养与熨烫要点}：常温轻柔机洗，快速甩干阴凉处悬挂速干，严禁暴晒烘干与熨烫
     \item \textbf{国际生态纺织认证}：\texttt{GB/T 35263 凉感顶级认证, OEKO-TEX 100}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{超高分子凉感纤维}、\texttt{冰晶纤维}、\texttt{防割凉感纱}、\texttt{Cooler纤维}\par
 \noindent\textbf{【代表性商业品牌】}：Cooler (帝斯曼凉感纤维), 冰晶超高强丝, 凉霸纤维\par
@@ -6627,9 +6487,8 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
 \end{center}
 \vspace{0.15cm}
 
-\begin{academicbox}{现代纺织工程技术与面料应用学术档案}
-\small
-\begin{itemize} \setlength{\itemsep}{2.5pt}
+\subsubsection*{现代纺织工程技术与面料应用规范}
+\begin{itemize} \setlength{\itemsep}{2pt}
     \item \textbf{微观截面几何形态}：\texttt{紧密赛络纺双股纱，PMIA/PPTA/碳导电微丝三合一紧密纠缠}
     \item \textbf{纺织细度指标范围}：24S/2, 30S/2, 40S/2 工业高强阻燃纱线
     \item \textbf{纱线加工技术规格}：紧密赛络双股机织纱 (Compact Siro-Spun 2-ply Yarn)
@@ -6644,7 +6503,7 @@ MXene基导电屏蔽纤维、石墨炔微纳光催化纤维
     \item \textbf{洗涤保养与熨烫要点}：可耐工业重度水洗与烘干，严禁使用含次氯酸钠漂白水
     \item \textbf{国际生态纺织认证}：\texttt{NFPA 2112, NFPA 70E (防电弧等级2级), GB 8965.1 阻燃最高A级认证}
 \end{itemize}
-\end{academicbox}
+\vspace{0.2cm}
 
 \noindent\textbf{【商标与别名】}：\texttt{Nomex IIIA}、\texttt{防电弧纱}、\texttt{芳纶工装纱}、\texttt{阻燃防静电布纱}\par
 \noindent\textbf{【代表性商业品牌】}：Nomex IIIA, 泰和新材美士达防护纱, Kermel, 芳纶阻燃服纱\par
