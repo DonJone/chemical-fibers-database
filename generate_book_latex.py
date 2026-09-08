@@ -20,9 +20,8 @@ import datetime
 import re
 
 DB_PATH = "chemical_fibers.db"
-TEXLOG_DIR = "texlog"
-OUTPUT_TEX = os.path.join(TEXLOG_DIR, "chemical_fibers_book.tex")
-ROOT_TEX = "chemical_fibers_book.tex"
+BOOK_DIR = "book"
+OUTPUT_TEX = os.path.join(BOOK_DIR, "chemical_fibers_book.tex")
 
 EMOJI_MAP = {
     "🌱": "[生物基] ",
@@ -91,8 +90,8 @@ def generate_book():
     if not os.path.exists(DB_PATH):
         raise FileNotFoundError(f"Database {DB_PATH} not found. Please run build_all.py first.")
 
-    os.makedirs(TEXLOG_DIR, exist_ok=True)
-    os.makedirs(os.path.join(TEXLOG_DIR, "figures"), exist_ok=True)
+    os.makedirs(BOOK_DIR, exist_ok=True)
+    os.makedirs(os.path.join(BOOK_DIR, "figures"), exist_ok=True)
 
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -778,18 +777,13 @@ CBF & 连续玄武岩纤维 & Continuous Basalt Fiber \\
 
     full_content = "".join(lines)
     
-    # 写入 texlog/ 目录 (遵照 /texpdf 规范)
+    # 写入 book/ 专著目录
     with open(OUTPUT_TEX, "w", encoding="utf-8") as f:
-        f.write(full_content)
-
-    # 同步写入根目录以便直接访问
-    with open(ROOT_TEX, "w", encoding="utf-8") as f:
         f.write(full_content)
 
     line_count = len(full_content.splitlines())
     print(f"Academic LaTeX monograph generated successfully:")
     print(f"  - {OUTPUT_TEX} (Lines: {line_count})")
-    print(f"  - {ROOT_TEX} (Lines: {line_count})")
     conn.close()
 
 if __name__ == "__main__":

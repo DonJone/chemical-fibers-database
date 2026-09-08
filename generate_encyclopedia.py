@@ -7,9 +7,10 @@ import sqlite3
 import os
 
 DB_PATH = "chemical_fibers.db"
-OUTPUT_MD = "chemical_fibers_encyclopedia.md"
+OUTPUT_MD = os.path.join("docs", "chemical_fibers_encyclopedia.md")
 
 def generate_markdown():
+    os.makedirs("docs", exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()

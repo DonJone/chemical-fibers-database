@@ -17,7 +17,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-OUTPUT_DIR = "texlog/figures"
+OUTPUT_DIR = os.path.join("book", "figures")
 DB_PATH = "chemical_fibers.db"
 
 # 1. 字体配置 (兼容 macOS 与 Linux 容器)

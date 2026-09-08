@@ -64,26 +64,26 @@ jobs:
         run: |
           echo "=== Step 2: Generating Full Encyclopedia Markdown ==="
           python3 generate_encyclopedia.py
-          head -n 20 chemical_fibers_encyclopedia.md
+          head -n 20 docs/chemical_fibers_encyclopedia.md
 
       - name: Generate Academic Vector Charts (/texpdf Standard)
         run: |
           echo "=== Step 3: Generating Consulting-Grade Matplotlib Vector Charts ==="
           python3 generate_academic_charts.py
-          ls -lh texlog/figures/
+          ls -lh book/figures/
 
       - name: Generate Academic LaTeX Monograph Source
         run: |
           echo "=== Step 4: Generating Academic LaTeX Monograph Source ==="
           python3 generate_book_latex.py
-          head -n 30 texlog/chemical_fibers_book.tex
-          wc -l texlog/chemical_fibers_book.tex
+          head -n 30 book/chemical_fibers_book.tex
+          wc -l book/chemical_fibers_book.tex
 
-      - name: Compile Academic LaTeX Book to PDF via XeLaTeX (texlog isolated build)
+      - name: Compile Academic LaTeX Book to PDF via XeLaTeX (book isolated build)
         uses: xu-cheng/latex-action@v4
         with:
           root_file: chemical_fibers_book.tex
-          working_directory: texlog
+          working_directory: book
           latexmk_use_xelatex: true
           extra_system_packages: "fontconfig font-noto-cjk"
           args: "-xelatex -file-line-error -halt-on-error -interaction=nonstopmode"
@@ -91,7 +91,7 @@ jobs:
       - name: Sync and Verify PDF Generation
         run: |
           echo "=== Step 5: Syncing compiled PDF to root workspace ==="
-          cp texlog/chemical_fibers_book.pdf ./chemical_fibers_book.pdf
+          cp book/chemical_fibers_book.pdf ./chemical_fibers_book.pdf
           if [ ! -f "chemical_fibers_book.pdf" ]; then
             echo "Error: chemical_fibers_book.pdf not found!"
             exit 1
@@ -105,11 +105,9 @@ jobs:
           name: chemical-fibers-monograph-${{ github.sha }}
           path: |
             chemical_fibers_book.pdf
-            chemical_fibers_book.tex
-            texlog/chemical_fibers_book.pdf
-            texlog/chemical_fibers_book.tex
-            texlog/figures/*.pdf
-            chemical_fibers_encyclopedia.md
+            book/chemical_fibers_book.tex
+            book/figures/*.pdf
+            docs/chemical_fibers_encyclopedia.md
             chemical_fibers_dataset.json
             chemical_fibers_catalog.csv
             chemical_fibers.db
@@ -158,8 +156,8 @@ jobs:
             | 文件名 | 格式 | 描述 |
             | :--- | :--- | :--- |
             | **`chemical_fibers_book.pdf`** | PDF | **完整专著学术典藏书籍**（245页、全彩矢量图、CIP编目、直接打印或离线精读） |
-            | **`chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`academicbox`、`booktabs`） |
-            | **`chemical_fibers_encyclopedia.md`** | Markdown | 完整知识库 Markdown 全景大百科全集（万行长文全景手册） |
+            | **`book/chemical_fibers_book.tex`** | TeX | 完整 LaTeX 学术专著排版源码（基于 `ctexbook`、`academicbox`、`booktabs`） |
+            | **`docs/chemical_fibers_encyclopedia.md`** | Markdown | 完整知识库 Markdown 全景大百科全集（万行长文全景手册） |
             | **`chemical_fibers.db`** | SQLite | 完整 SQLite 数据库（含 FTS5 全文倒排检索三元分词索引） |
             | **`chemical_fibers_dataset.json`** | JSON | 机器友好全量结构化数据集 |
             | **`chemical_fibers_catalog.csv`** | CSV | 核心物理与化学性能参数指标速查表 |
@@ -172,8 +170,8 @@ jobs:
           make_latest: true
           files: |
             chemical_fibers_book.pdf
-            chemical_fibers_book.tex
-            chemical_fibers_encyclopedia.md
+            book/chemical_fibers_book.tex
+            docs/chemical_fibers_encyclopedia.md
             chemical_fibers_dataset.json
             chemical_fibers_catalog.csv
             chemical_fibers.db

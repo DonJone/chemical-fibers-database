@@ -34,6 +34,6 @@ venv/
 *.snm
 *.vrb
 
-# Ignore intermediate build PDF in texlog
-texlog/*.pdf
-!texlog/figures/*.pdf
+# Ignore intermediate build PDF in book directory
+book/*.pdf
+!book/figures/*.pdf

@@ -11,21 +11,55 @@
 
 所有核心成果文件均物理保存在当前工作区目录：
 
-| 文件名称 | 格式 | 核心内容与技术说明 |
+| 文件 / 目录路径 | 格式 / 类型 | 核心内容与技术说明 |
 | :--- | :---: | :--- |
 | [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**245页**) | **国家学术出版典藏级专著 PDF**：大16开双面排版、Times New Roman英文字体、4幅投行级矢量图谱、CIP版权页、凡例换算表、学术档案专栏、标准文献库 |
-| [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵照 `/texpdf` 美学规范，去除上右边框、极简浅灰网格、学术色系，生成 4 幅 Ashby 图与分布图谱 |
-| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `texlog/` 隔离编译体系 |
-| [`chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.tex) | LaTeX (6830行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`academicbox`、`booktabs`、`longtable` 规范构建，零缺失字符警告 |
-| [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译与发布工作流**：每日定时执行 Python 管线重建数据库、生成矢量图、渲染 TeX 源码并在 `texlog/` 中容器编译 PDF 发布 Release |
+| [`book/`](file:///Users/don/Documents/化学纤维研究/book/) | 专著工作区 | **学术专著出版排版沙盒**：包含 `chemical_fibers_book.tex` (6830行) 与 4 幅高清矢量图表 `book/figures/`，隔离编译缓存保持根目录纯净 |
+| [`docs/`](file:///Users/don/Documents/化学纤维研究/docs/) | 文档资料库 | **系统百科与工程报告**：包含 [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) (5480+行大百科) 与 [`chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) (工程报告) |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **核心物理数据库**：内置 5 张实体表（分类表、纤维主表、纺织工程档案表、经典混纺矩阵表、标准规范表）、1 个支持中英文分词的 FTS5 全文倒排虚拟表与 13 组高性能 B-Tree 索引 |
-| [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_encyclopedia.md) | Markdown | **现代纺织化学纤维大百科**（5400+行）：含四大纺织工程总论专题、117 种纤维全量双卡片（物化常数卡 + 纺织工程档案卡）、12 大黄金混纺矩阵与极限性能排行榜 |
 | [`fiber_query.py`](file:///Users/don/Documents/化学纤维研究/fiber_query.py) | Python 3 CLI | **智能检索工具**：支持全文模糊检索、单品种白皮书、专项纺织技术卡、混纺配伍方案反查、多维纺织属性过滤与全景统计大盘 |
 | [`chemical_fibers_dataset.json`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_dataset.json) | JSON | **全量结构化数据集**：全量 117 种纤维对象内置完整 `textile_profile` 嵌套字段与根级经典混纺矩阵，直接支持 RESTful API 及前端可视化 |
 | [`chemical_fibers_catalog.csv`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_catalog.csv) | CSV (UTF-8 BOM) | **全量纺织编目数据表**：新增 11 列核心纺织工程指标，可直接在 Excel、Numbers 或 Pandas 中进行数据分析 |
 | [`schema.sql`](file:///Users/don/Documents/化学纤维研究/schema.sql) | SQL DDL | 数据库物理建表、双向外键、B-Tree 索引与 FTS5 全文倒排检索引擎 DDL 定义脚本 |
 | [`build_all.py`](file:///Users/don/Documents/化学纤维研究/build_all.py) | Python 3 | 数据库自动化构建、清洗、多维纺织字段组装与全量导出管线脚本 |
-| [`generate_encyclopedia.py`](file:///Users/don/Documents/化学纤维研究/generate_encyclopedia.py) | Python 3 | 纺织大百科全书自动化渲染生成脚本 |
+| [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵照 `/texpdf` 美学规范，去除上右边框、极简浅灰网格、学术色系，生成 4 幅 Ashby 图与分布图谱至 `book/figures/` |
+| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `book/` 专著排版体系 |
+| [`generate_encyclopedia.py`](file:///Users/don/Documents/化学纤维研究/generate_encyclopedia.py) | Python 3 | 纺织大百科全书自动化渲染生成脚本，输出至 `docs/` 目录 |
+| [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译与发布工作流**：每日定时执行 Python 管线重建数据库、生成矢量图、渲染 TeX 源码并在 `book/` 中容器编译 PDF 发布 Release |
+
+### 🌲 仓库组织架构 (Repository Layout)
+
+为保持仓库整洁易维护，根目录仅保留直接可执行脚本、基础数据集与最终专著成果，其他构建沙盒与文档归拢至子目录：
+
+```text
+chemical-fibers-database/
+├── chemical_fibers_book.pdf          # 📚 最终交付：245页典藏版学术专著 (根目录直达)
+├── chemical_fibers.db                # 🗄️ 核心数据：SQLite3 数据库 (含 FTS5 倒排索引)
+├── chemical_fibers_dataset.json      # 📦 开放数据：JSON 完整导出格式
+├── chemical_fibers_catalog.csv       # 📊 开放数据：Excel/Numbers 兼容表格
+├── schema.sql                        # 📐 结构定义：DDL 物理模式
+├── fiber_query.py                    # ⚡ 核心工具：CLI 终端智能检索引擎
+├── build_all.py                      # ⚙️ 构建管线：全量数据库重建与数据装载
+├── generate_academic_charts.py       # 📈 渲染工具：Ashby/分布等4幅学术矢量图表
+├── generate_book_latex.py            # 📑 渲染工具：6830行学术出版级 LaTeX 生成器
+├── generate_encyclopedia.py          # 📖 渲染工具：5480+行大百科 Markdown 生成器
+├── fibers_data_*.py                  # 🧩 数据源：7大门类纤维原始结构化数据
+│
+├── book/                             # 🏛️ 专著排版构建沙盒 (隔离 aux/log/toc 等编译垃圾)
+│   ├── chemical_fibers_book.tex      # LaTeX 专著完整源码 (6830行)
+│   └── figures/                      # 矢量图表目录 (Matplotlib 导出的 4 幅 PDF)
+│       ├── fig1_category_distribution.pdf
+│       ├── fig2_ashby_strength_modulus.pdf
+│       ├── fig3_comfort_vs_flame.pdf
+│       └── fig4_service_temp_ladder.pdf
+│
+├── docs/                             # 📚 文档与技术报告库
+│   ├── chemical_fibers_encyclopedia.md # 现代纺织化学纤维大百科全书 (5480+行)
+│   └── chemical_fibers_report.md       # 纺织升级与学术专著重构总结报告
+│
+└── .github/workflows/
+    └── daily_build_book.yml          # ⏰ CI/CD：每日 00:00 UTC 自动化编译发布流
+```
 
 ---
 
@@ -313,26 +347,26 @@ on:
 #### 工作流完整执行步骤：
 1. **源码检出与环境就绪**：检出完整仓库代码，配置 Python 3.11 并安装 `matplotlib`, `numpy`。
 2. **底层数据库与数据集全量重建**：执行 `python3 build_all.py`，校验 117 种纤维及全量外键约束完整性。
-3. **大百科全书与咨询级矢量图表生成**：执行 `python3 generate_encyclopedia.py` 与 `python3 generate_academic_charts.py`，输出 4 幅高精度矢量图谱至 `texlog/figures/`。
-4. **学术 LaTeX 专著源码生成**：执行 `python3 generate_book_latex.py`，输出 6,830 行学术 TeX 专著源码至 `texlog/chemical_fibers_book.tex`。
-5. **Docker 容器内高精度 XeLaTeX 隔离编译**：调用 `xu-cheng/latex-action@v4`，在 `texlog/` 隔离目录下完成 2-pass 编译，生成完整的 `chemical_fibers_book.pdf`（**245 页**）。
+3. **大百科全书与咨询级矢量图表生成**：执行 `python3 generate_encyclopedia.py` (输出至 `docs/`) 与 `python3 generate_academic_charts.py`，输出 4 幅高精度矢量图谱至 `book/figures/`。
+4. **学术 LaTeX 专著源码生成**：执行 `python3 generate_book_latex.py`，输出 6,830 行学术 TeX 专著源码至 `book/chemical_fibers_book.tex`。
+5. **Docker 容器内高精度 XeLaTeX 隔离编译**：调用 `xu-cheng/latex-action@v4`，在 `book/` 隔离目录下完成 2-pass 编译，生成完整的 `chemical_fibers_book.pdf`（**245 页**）。
 6. **产物同步与 Release 自动化发布**：将编译完成的 245 页 PDF 同步至项目根目录，上传至 Actions Artifacts（保留 30 天），并自动更新 `nightly-book` 标签与 GitHub Release 资产。
 
 ### 3. 本地手动编译与调试命令
-遵照 `/texpdf` 隔离编译标准规范，在本地构建专著书籍：
+遵照学术出版与编译规范，在本地构建专著书籍：
 
 ```bash
 # 1. 确保已运行构建管线生成数据库
 python3 build_all.py
 
-# 2. 生成 4 幅咨询级矢量学术图谱 (输出至 texlog/figures/)
+# 2. 生成 4 幅咨询级矢量学术图谱 (输出至 book/figures/)
 python3 generate_academic_charts.py
 
-# 3. 从数据库导出学术 LaTeX 专著源码 (生成 texlog/chemical_fibers_book.tex)
+# 3. 从数据库导出学术 LaTeX 专著源码 (生成 book/chemical_fibers_book.tex)
 python3 generate_book_latex.py
 
-# 4. 在 texlog 目录下进行 XeLaTeX 双 Pass 编译并同步至项目根目录
-cd texlog
+# 4. 在 book 目录下进行 XeLaTeX 双 Pass 编译并同步至项目根目录
+cd book
 xelatex -interaction=nonstopmode -halt-on-error chemical_fibers_book.tex
 xelatex -interaction=nonstopmode -halt-on-error chemical_fibers_book.tex
 cp chemical_fibers_book.pdf ../chemical_fibers_book.pdf

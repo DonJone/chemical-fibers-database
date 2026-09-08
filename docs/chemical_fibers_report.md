@@ -67,11 +67,13 @@
 | :--- | :---: | :--- |
 | [`chemical_fibers_book.pdf`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.pdf) | PDF (**245页**) | **国家学术出版典藏级专著 PDF**：大16开全彩双面排版，Times New Roman、4幅投行级矢量图谱、CIP版权页、凡例换算表、学术档案专栏、标准文献库 |
 | [`generate_academic_charts.py`](file:///Users/don/Documents/化学纤维研究/generate_academic_charts.py) | Python 3 | **高端咨询级矢量图表生成器**：遵循 `/texpdf` 美学规范，去除上右边框、极简浅灰网格，生成 4 幅 Ashby 图与分布图谱 |
-| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `texlog/` 隔离编译体系 |
-| [`chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_book.tex) | LaTeX (6830行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`academicbox`、`booktabs`、`longtable` 构建，零缺失字符警告 |
+| [`generate_book_latex.py`](file:///Users/don/Documents/化学纤维研究/generate_book_latex.py) | Python 3 | **学术 LaTeX 专著生成器**：严密实现孤行控制 (10000)、黄金行距 (1.35)、数学希腊符号转义、输出至 `book/` 专著排版体系 |
+| [`book/chemical_fibers_book.tex`](file:///Users/don/Documents/化学纤维研究/book/chemical_fibers_book.tex) | LaTeX (6830行) | **学术出版级专著 TeX 完整源码**：基于 `ctexbook`、`academicbox`、`booktabs`、`longtable` 构建，零缺失字符警告 |
+| [`book/figures/`](file:///Users/don/Documents/化学纤维研究/book/figures/) | PDF 矢量图 | 4幅学术矢量图谱（Ashby材料图谱、舒适阻燃象限、耐温梯队、分类分布） |
 | [`.github/workflows/daily_build_book.yml`](file:///Users/don/Documents/化学纤维研究/.github/workflows/daily_build_book.yml) | GitHub Action | **每日自动化编译发布流**：每日 00:00 UTC 自动重建数据库、渲染矢量图谱、容器编译 PDF 并发布 Release |
 | [`chemical_fibers.db`](file:///Users/don/Documents/化学纤维研究/chemical_fibers.db) | SQLite 3 | **117** 种纤维、**117** 份纺织工程档案、**12** 套混纺矩阵、**411** 条别名、**195** 项标准、**43** 个分类 |
-| [`chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_encyclopedia.md) | Markdown | **5480+** 行大百科全书，含四大纺织工程总论、全系双卡片与极限排行榜 |
+| [`docs/chemical_fibers_encyclopedia.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_encyclopedia.md) | Markdown | **5480+** 行大百科全书，含四大纺织工程总论、全系双卡片与极限排行榜 |
+| [`docs/chemical_fibers_report.md`](file:///Users/don/Documents/化学纤维研究/docs/chemical_fibers_report.md) | Markdown | 纺织知识库升级与专著学术排版完整工程总结报告 |
 | [`fiber_query.py`](file:///Users/don/Documents/化学纤维研究/fiber_query.py) | Python 3 | 交互式终端检索工具，支持 `search`, `get`, `textile`, `blend`, `filter`, `stats` |
 | [`chemical_fibers_dataset.json`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_dataset.json) | JSON | 全量 117 种纤维与混纺矩阵结构化数据，支持 RESTful API 调用 |
 | [`chemical_fibers_catalog.csv`](file:///Users/don/Documents/化学纤维研究/chemical_fibers_catalog.csv) | CSV | Excel/Numbers 兼容表格，含 11 组新增纺织关键维度列 |
@@ -147,8 +149,8 @@
 6. **规范标准文献库与索引体系 (Backmatter)**：
    - 建立 12 项国家与国际核心标准文献库（GB/T 4146、ISO 2076、GB/T 9994、OEKO-TEX、GRS 等）。
    - 附录收录 30+ 种化学纤维通用国际缩写字母对照索引表。
-7. **隔离编译与纯净交付架构 (`texlog/`)**：
-   - 依据 `/texpdf` 规定，所有 `.tex` 源码与 `.aux`, `.log`, `.toc`, `.lof`, `.lot` 中间件均严格限制在 `texlog/` 隔离目录下，最终纯净的 245 页 PDF 复制交付至工作区根目录，彻底避免中间文件污染代码仓库。
+7. **专著构建工作区与纯净交付架构 (`book/`)**：
+   - 依据学术出版工程规范，所有专著 `.tex` 源码、矢量图表 `figures/` 与编译产生的 `.aux`, `.log`, `.toc`, `.lof`, `.lot` 中间件均统一归拢在 `book/` 专著排版目录下，最终纯净的 245 页 PDF 复制交付至工作区根目录，彻底保持仓库根目录整洁清爽。
 
 ### 2. 编译成果与规格对比
 
@@ -161,7 +163,7 @@
 | **排版字号与字体** | 10pt (默认西文字体) | **11pt** (Times New Roman / TeX Gyre Termes 学术英文字体) |
 | **页面密度控制** | 未设置断行惩罚 | 锁定 `clubpenalty=10000`, `widowpenalty=10000`, `linespread=1.35` |
 | **缺失字符警告** | 存在希腊字母/度数警告 | **100% 零缺失字符警告 (Zero Missing Character)** |
-| **编译输出结构** | 根目录混杂编译 | **`texlog/` 隔离编译，根目录纯净交付** |
+| **编译与工程结构** | 根目录混杂编译 | **`book/` 专属工作区，根目录纯净交付** |
 
 ### 3. GitHub Actions 每日自动化编译工作流 (`daily_build_book.yml`)
 工作流同步升级，支持自动安装 `matplotlib`/`numpy`、执行矢量图表绘制、渲染 TeX 并由 `xu-cheng/latex-action@v4` 在 Docker 容器中隔离完成编译与 Nightly Release 资产发布。
